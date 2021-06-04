@@ -13,7 +13,7 @@ Node.js, Javascript, mySql, Express.js, Sequelize, Socket.Io, Bcrypt, Handlebars
 [License](https://opensource.org/licenses/MIT)
 
 # Links to application
-Link to repo:  
+Link to repo: https://github.com/NIASKAA/ThePlugSelect
 
 # Contribution 
 Thomas, Christian, Avi, Santos, Alan
