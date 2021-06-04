@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS plugSelect_db;
+CREATE DATABASE plugSelect_db;
