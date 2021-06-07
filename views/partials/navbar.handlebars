@@ -1,0 +1,16 @@
+<navbar>
+      <h1 class="nav-item">
+        <a href="/" class="nav-link">The Plug Select</a>
+      </h1>
+      <h3 class="nav-item">
+        {{#if loggedIn}}
+          <a href="/profile" class="nav-link">Your Profile</a>
+          <a href="/about" class="nav-link">About Us</a>
+      </h3>
+      <nav class="nav-link">
+         <button id="logout" class="nav-link active">logout</button>
+        {{else}}
+         <a href="/login" class="nav-link">login</a>
+        {{/if}}
+      </nav>
+</navbar>
