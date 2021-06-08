@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body {
+    min-height: 100vh;
+}
+
+#logo-main {
+    display: block;
+    margin: 20px auto;
+}
+
+.title {
+    font-family: "Bangers";
+}
+
+.card-title {
+    font-family: "Bangers";
+}
+
+.rounded {
+    border-top: 8px solid black;
+    border-radius: 5px;
+}
+
+#aboutContain {
+    background-color: #FFC312;
+    border-color: black;
+    border-style: solid;
+    border-width: 10px;
+}
+
+#aboutTitle {
+    font-size: 100px;
+}
+
+.card {
+    margin: 5px;
+}
+
+#loginContain {
+    height: 100%;
+    align-content: center;
+}
+
+#cardLogin{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+
+.card-header h3{
+    color: white;
+    font-family: "Bangers";
+}
+
+.loginLabel {
+    font-family: "Bangers";
+    color: white;
+}
+
+.loginBtn{
+    color: black;
+    background-color: #FFC312;
+    font-family: "Bangers";
+    width: 100px;
+    float: right;
+    margin: 8px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    }
+    
+.loginBtn:hover{
+    color: black;
+    background-color: white;
+}
+
+#dropdownMenuButton {
+    background-color: #FFC312;
+    font-family: "Bangers";
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+
+#dropdownMenuButton:hover {
+    color: black;
+    background-color: white;
+}
+
+.signup-form {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.signUpBtn {
+    font-family: "Bangers";
+    background-color: #FFC312;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.navbar-header {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navBtns {
+    font-family: "Bangers";
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.navBtns:hover {
+    background-color: white;
+}
+
+.card-body{
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#brands {
+    width: 100%;
+    max-height: 20%;
+}
+
+.card-title {   
+    font-size: 24px;
+}
+
+.col {
+    font-family: "Bangers";
+    font-size: 19px;
+}
+
+.nav-tabs {
+    font-family: "Bangers";
+}
+
+.profileTab {
+    color: black;
+    font-size: 20px;
+}
+
+.profileTab:hover {
+    color: black;
+}
+
+.profileInfo {
+    font-family: "Bangers";
+}
+
+.form-control-label {
+    font-family: "Bangers";
+    color: black;
+}
+.bg-light {
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.saveBtn {
+    background-color: #FFC312;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Bangers"
+}
+
+.addBid {
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Bangers"
+}
+
+.regularFont {
+    font-family: "Bangers";
+    font-size: 20px;
+}
+
+.basicFont {
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Bangers";
+}
