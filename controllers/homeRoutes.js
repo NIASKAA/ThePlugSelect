@@ -17,29 +17,29 @@ router.get('/', async (req, res) => {
                     model: Brand,
                     attributes: ['brand_name']
                 },
-                {
-                    model: ProductTag,
-                    attributes: [],
-                    include:
-                    [
-                        {
-                            model: Product,
-                            attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
-                        },
-                        {
-                            model: Tag,
-                            attributes: ['tag_name'],
-                        },
-                        {
-                            model: Brand,
-                            attributes: ['brand_name'],
-                        },
-                    ],
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                }
+                // {
+                //     model: ProductTag,
+                //     attributes: [],
+                //     include:
+                //     [
+                //         {
+                //             model: Product,
+                //             attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
+                //         },
+                //         {
+                //             model: Tag,
+                //             attributes: ['tag_name'],
+                //         },
+                //         {
+                //             model: Brand,
+                //             attributes: ['brand_name'],
+                //         },
+                //     ],
+                // },
+                // {
+                //     model: User,
+                //     attributes: ['username'],
+                // }
             ]
         });
         const products = dbProductData.map((product) => product.get({ plain: true }));
@@ -117,7 +117,7 @@ router.get('/product/:id', async (req, res) => {
        const product = dbProductData.get({ plain: true });
 
        res.render('product', {
-           prodcut,
+           product,
            loggedIn: req.session.loggedIn
        });
     } catch(err) {
