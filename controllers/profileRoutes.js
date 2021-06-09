@@ -5,10 +5,6 @@ router.get('/', (req, res) => {
     res.render('main', {title: 'The Plug Select'});
 });
 
-router.get('/about', (req, res) => {
-    res.render('about', {title: 'About Us'});
-});
-
 router.get('/bid', (req, res) => {
     res.render('homepage', {title: 'Bids'});
 });
