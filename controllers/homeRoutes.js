@@ -117,7 +117,7 @@ router.get('/product/:id', async (req, res) => {
        const product = dbProductData.get({ plain: true });
 
        res.render('product', {
-           prodcut,
+           product,
            loggedIn: req.session.loggedIn
        });
     } catch(err) {

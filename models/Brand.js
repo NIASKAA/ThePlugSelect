@@ -6,7 +6,7 @@ class Brand extends Model {}
 
 Brand.init(
     {
-        id: {
+        brand_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
