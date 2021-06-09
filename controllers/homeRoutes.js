@@ -65,12 +65,8 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('signup');
+router.get('/postItem', (req, res) => {
+    res.render('postItem');
 });
 
 router.get('/product/:id', async (req, res) => {
