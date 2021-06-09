@@ -6,7 +6,7 @@ class Product extends Model {}
 
 Product.init(
     {
-        id: {
+        product_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -40,7 +40,7 @@ Product.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'category',
-                key: 'id',
+                key: 'category_id',
                 unique: false
             }
         },
@@ -48,7 +48,7 @@ Product.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'brand',
-                key: 'id',
+                key: 'brand_id',
                 unique: false
             }
         }
