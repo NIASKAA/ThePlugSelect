@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 router.get('/', async (req, res) => {
     try {
         const dbProductData = await Product.findAll({
-            attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
+            attributes: ['product_id', 'product_name', 'price', 'stock', 'size', 'description'],
             include:
             [
                 {
@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
             ]
         });
         const products = dbProductData.map((product) => product.get({ plain: true }));
-
+        console.log(products);
         res.render('homepage', {
             products,
             loggedIn: req.session.loggedIn

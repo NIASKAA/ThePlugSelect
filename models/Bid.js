@@ -6,7 +6,7 @@ class Bid extends Model {}
 
 Bid.init(
     {
-        id: {
+        bid_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -17,13 +17,13 @@ Bid.init(
             type: DataTypes.INTEGER,
             allowNull:true
         },
-        
+
         item_id: {
             type: DataTypes.INT,
             allowNull: false,
             references: {
                 model:"Product",
-                key:'id'
+                key:'product_id'
             }
         }
     },

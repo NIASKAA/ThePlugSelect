@@ -2,6 +2,8 @@
 
 body {
     min-height: 100vh;
+    margin-top:20px;
+    background:#eee;
 }
 
 #logo-main {
@@ -31,6 +33,11 @@ body {
 
 #aboutTitle {
     font-size: 100px;
+}
+
+.aboutText {
+    font-family: "Bangers";
+    text-align: center;
 }
 
 .card {
@@ -193,4 +200,173 @@ body {
     border-style: solid;
     border-width: 3px;
     font-family: "Bangers";
+}
+
+.postCard {
+    max-width: 50%;
+}
+
+.formLabel {
+    font-family: "Bangers";
+}
+
+.addBtn {
+    margin: 3px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Bangers";
+}
+
+.teamMember {
+    position: relative;
+    margin-bottom: 50px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    z-index: 1;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+    box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+}
+
+.teamMember .teamImage {
+    position: relative;
+    z-index: 1;
+    border-radius: 15px 15px 0 0;
+    margin: 0 auto;
+    padding: 30px 30px 0 30px;
+    background-color: #FFC312;
+    overflow: hidden;
+}
+
+.teamMember .teamImage::after {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+    width: 150%;
+    height: 80px;
+    bottom: -45px;
+    left: -25%;
+    content: "";
+    background-color: #ffffff;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+@media only screen and (max-width: 575px) {
+    .teamMember .teamImage::after {
+        height: 160px;
+        bottom: -90px;
+    }
+}
+
+.teamMember .teamImage .social-info {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    bottom: 0;
+    right: 30px;
+    text-align: right;
+}
+
+.teamMember .teamImage .social-info a {
+    font-size: 14px;
+    color: #020710;
+    padding: 0 5px;
+}
+
+.teamMember .teamImage .social-info a:hover,
+.teamMember .teamImage .social-info a:focus {
+    color: #FFC312;
+}
+
+.teamMember .teamImage .social-info a:last-child {
+    padding-right: 0;
+}
+
+.teamMember .teamInfo {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    text-align: right;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+    font-family: "Bangers";
+}
+
+.teamMember .teamInfo::after {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    content: "";
+    top: 12px;
+    right: 30px;
+}
+
+.teamMember .teamInfo h6 {
+    margin-bottom: 0.25rem;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .teamMember .teamInfo h6 {
+        font-size: 14px;
+    }
+}
+
+.teamMember .teamInfo p {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .single_advisor_profile .teamInfo p {
+        font-size: 12px;
+    }
+}
+
+.teamMember:hover .teamImage::after,
+.teamMember:focus .teamImage::after {
+    background-color: black
+}
+
+.teamMember:hover .teamImage .social-info a,
+.teamMember:focus .teamImage .social-info a {
+    color: #ffffff;
+}
+
+.teamMember:hover .teamImage .social-info a:hover,
+.teamMember:hover .teamImage .social-info a:focus,
+.teamMember:focus .teamImage .social-info a:hover,
+.teamMember:focus .teamImage .social-info a:focus {
+    color: #ffffff;
+}
+
+.teamMember:hover .teamInfo,
+.teamMember:focus .teamInfo {
+    background-color: black
+}
+
+.teamMember:hover .teamInfo::after,
+.teamMember:focus .teamInfo::after {
+    background-color: #ffffff;
+}
+
+.teamMember:hover .teamInfo h6,
+.teamMember:focus .teamInfo h6 {
+    color: #ffffff;
+}
+
+.teamMember:hover .teamInfo p,
+.teamMember:focus .teamInfo p {
+    color: #ffffff;
 }
