@@ -1,90 +1,74 @@
-<navbar>
-      <h1 class="nav-item">
-        <a href="/" class="nav-link">The Plug Select</a>
-      </h1>
-      <h3 class="nav-item">
-        {{#if loggedIn}}
-          <a href="/profile" class="nav-link">Your Profile</a>
-          <a href="/about" class="nav-link">About Us</a>
-      </h3>
-      <nav class="nav-link">
-         <button id="logout" class="nav-link active">logout</button>
-        {{else}}
-         <a href="/login" class="nav-link">login</a>
-        {{/if}}
-      </nav>
-</navbar>
-
 <header role="banner">
-            <img id="logo-main" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32877/logo-thing.png" width="200" alt="Logo Thing main logo" role="banner">
-        <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                  {{#if loggedIn}}
-                    <a href="/profile" class="btn navBtns ">Your Profile</a>
-                    <a href="/bids" class="btn navBtns">Current Bids</a>
-                    <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
-                    <a href="/about" class="btn navBtns">About Us</a>
-                    <a class="btn navBtns" id="logout">Logout</a>
-                  {{else}}
-                    <a href="/profile" class="btn navBtns ">Your Profile</a>
-                    <a href="/bids" class="btn navBtns">Current Bids</a>
-                    <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
-                    <a href="/about" class="btn navBtns">About Us</a>
-                    <a href="/login" class="btn navBtns">Login</a>
-                  {{/if}}
-                </div>
+    <a href="/">
+        <img id="logo-main" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32877/logo-thing.png" width="200" alt="Logo Thing main logo" role="banner">
+    </a>
+    <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                {{#if loggedIn}}
+                <a href="/profile" class="btn navBtns ">Your Profile</a>
+                <a href="/bids" class="btn navBtns">Current Bids</a>
+                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
+                <a href="/about" class="btn navBtns">About Us</a>
+                <a class="btn navBtns" id="logout">Logout</a>
+                {{else}}
+                <a href="/bids" class="btn navBtns">Current Bids</a>
+                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
+                <a href="/about" class="btn navBtns">About Us</a>
+                <a href="/login" class="btn navBtns">Login</a>
+                {{/if}}
             </div>
-            <div class="collapse" id="brands">
-                <div class="card card-body">
-                    <div class="card-title">
-                        Top Brands
-                    </div>
-                    <div class="card-content">
-                        <div class="row">
-                            <div class="col">
-                                <p>Off White</p>
-                            </div>
-                            <div class="col">
-                                <p>Supreme</p>
-                            </div>
-                            <div class="col">
-                                <p>KAWS</p>
-                            </div>
-                            <div class="col">
-                                <p>MasterMind</p>
-                            </div>
+        </div>
+        <div class="collapse" id="brands">
+            <div class="card card-body">
+                <div class="card-title">
+                    Top Brands
+                </div>
+                <div class="card-content">
+                    <div class="row">
+                        <div class="col">
+                            <p>Off White</p>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <p>Balenciaga</p>
-                            </div>
-                            <div class="col">
-                                <p>Vetements</p>
-                            </div>
-                            <div class="col">
-                                <p>Y-3</p>
-                            </div>
-                            <div class="col">
-                                <p>Gucci</p>
-                            </div>
+                        <div class="col">
+                            <p>Supreme</p>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <p>Givenchy</p>
-                            </div>
-                            <div class="col">
-                                <p>Burrberry</p>
-                            </div>
-                            <div class="col">
-                                <p>Alexander Wang</p>
-                            </div>
-                            <div class="col">
-                                <p>Saint Laurent</p>
-                            </div>
+                        <div class="col">
+                            <p>KAWS</p>
+                        </div>
+                        <div class="col">
+                            <p>MasterMind</p>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>Balenciaga</p>
+                        </div>
+                        <div class="col">
+                            <p>Vetements</p>
+                        </div>
+                        <div class="col">
+                            <p>Y-3</p>
+                        </div>
+                        <div class="col">
+                            <p>Gucci</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>Givenchy</p>
+                        </div>
+                        <div class="col">
+                            <p>Burrberry</p>
+                        </div>
+                        <div class="col">
+                            <p>Alexander Wang</p>
+                        </div>
+                        <div class="col">
+                            <p>Saint Laurent</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </nav>
-          </header>
+        </div>
+    </nav>
+</header>

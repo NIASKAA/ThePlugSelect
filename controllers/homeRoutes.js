@@ -54,11 +54,15 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.sessionloggedin) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
     res.render('login');
+});
+
+router.get('/about', (req, res) => {
+    res.render('about');
 });
 
 router.get('/signup', (req, res) => {
@@ -124,5 +128,7 @@ router.get('/product/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;
