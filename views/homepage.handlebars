@@ -3,44 +3,18 @@
     <h2 class="font-weight-light">Current Live Biddings</h2>
     <a href="/" class="btn addBid">Add new Bid</a>
     <div class="row mx-auto my-auto">
+        {{#each products as |product| }}
         <div class="card" style="width: 18rem;">
             <img src="/public/images/work-3.jpg" class="card-img-top">
             <div class="card-body">
                 <div class="row">
-                    <p class="regularFont">Item:</p>
+                    <p class="regularFont">{{product.product_name}}:</p>
+                    <p class="regularFont">Price: {{product.price}}:</p>
                 </div>
                 <a href="/chatroom" class="btn basicFont">Bid</a>
             </div>
         </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="/public/images/work-3.jpg" class="card-img-top">
-            <div class="card-body">
-                <div class="row">
-                    <p class="regularFont">Item:</p>
-                </div>
-                <a href="/chatroom" class="btn basicFont">Bid</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="/public/images/work-3.jpg" class="card-img-top">
-            <div class="card-body">
-                <div class="row">
-                    <p class="regularFont">Item:</p>
-                </div>
-                <a href="/chatroom" class="btn basicFont">Bid</a>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="/public/images/work-3.jpg" class="card-img-top">
-            <div class="card-body">
-                <div class="row">
-                    <p class="regularFont">Item:</p>
-                </div>
-                <a href="/chatroom" class="btn basicFont">Bid</a>
-            </div>
-        </div>
+        {{/each}}
+        
     </div>
 </div>

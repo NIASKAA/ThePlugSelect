@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 router.get('/', async (req, res) => {
     try {
         const dbProductData = await Product.findAll({
-            attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
+            attributes: ['product_id', 'product_name', 'price', 'stock', 'size', 'description'],
             include:
             [
                 {
@@ -17,33 +17,33 @@ router.get('/', async (req, res) => {
                     model: Brand,
                     attributes: ['brand_name']
                 },
-                {
-                    model: ProductTag,
-                    attributes: [],
-                    include:
-                    [
-                        {
-                            model: Product,
-                            attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
-                        },
-                        {
-                            model: Tag,
-                            attributes: ['tag_name'],
-                        },
-                        {
-                            model: Brand,
-                            attributes: ['brand_name'],
-                        },
-                    ],
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                }
+                // {
+                //     model: ProductTag,
+                //     attributes: [],
+                //     include:
+                //     [
+                //         {
+                //             model: Product,
+                //             attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
+                //         },
+                //         {
+                //             model: Tag,
+                //             attributes: ['tag_name'],
+                //         },
+                //         {
+                //             model: Brand,
+                //             attributes: ['brand_name'],
+                //         },
+                //     ],
+                // },
+                // {
+                //     model: User,
+                //     attributes: ['username'],
+                // }
             ]
         });
         const products = dbProductData.map((product) => product.get({ plain: true }));
-
+        console.log(products);
         res.render('homepage', {
             products,
             loggedIn: req.session.loggedIn
