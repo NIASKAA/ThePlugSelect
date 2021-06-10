@@ -5,14 +5,14 @@
     <div class="row mx-auto my-auto">
         {{#each products as |product| }}
         <div class="card" style="width: 18rem;">
-            <img src="/images/work-3.jpg" class="card-img-top">
+            <img src={{product.image}} class="card-img-top">
             <div class="card-body">
                 <div class="row">
                     <p class="regularFont">{{product.product_name}}:</p>
                     <p class="regularFont">Price: {{product.price}}:</p>
                     <p class="regularFont">Size: {{product.size}} </p>
                 </div>
-                <a href="/chatroom" class="btn basicFont">Bid</a>
+                <a href="/bid" class="btn basicFont">Bid</a>
             </div>
         </div>
         {{/each}}

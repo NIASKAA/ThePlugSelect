@@ -33,7 +33,7 @@ Product.init(
             allowNull: true
         },
         image: {
-            type: DataTypes.STRING,
+            type: DataTypes.BLOB,
             allowNull: true,
         },
         category_id: {
