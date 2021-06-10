@@ -2,14 +2,14 @@ const {Product} = require('../models');
 
 const productData = [
     {
-      product_name: 'Gundam Unicorn Figure',
-      price: 2000,
-      stock: 2,
-      size: "1/144",
-      description: "Gundam fig perfect condition",
-      category_id: 5,
-      brand_id: 1,
-      img: ""
+        product_name: 'Phenex Unicorn',
+        price: 2000,
+        stock: 2,
+        size: "1/60",
+        description: "PG Unicorn Phenex NIB",
+        category_id: 5,
+        brand_id: 1,
+        image: '/pubic/images/phenex.jpeg'
     },
     {
         product_name: 'Gibberish',

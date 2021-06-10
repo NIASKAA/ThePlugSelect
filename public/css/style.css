@@ -393,60 +393,52 @@ body {
 
 
 /* ChatRoom Style */
+.timerStyle {
+    font-family: "Bangers";
+
+}
+.imageCard {
+    height: 600px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    border-width: 4px;
+    background-color: white !important;
+}
+
+.itemInfo {
+    border-top: solid;
+    border-color: black;
+}
+.infoList{
+    font-family: "Bangers";
+    font-size: 14px;
+    list-style: none;
+}
+
 .chatCard{
     height: 600px;
-    border-radius: 15px !important;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    border-width: 4px;
     background-color: rgba(0,0,0,0.4) !important;
-    
 }
 
 .chatHeader {
     height: 12%;
     border-radius: 15px 15px 0 0 !important;
-    border-color: black;
-    border-style: solid;
+    border-bottom: black;
+    border-bottom-style: solid;
 }
 
 .msgBody{
-    border-color: black;
-    border-style: solid;
+    border: none;
 }
 
 .cardEnd{
     border-radius: 0 0 15px 15px !important;
-    border-top: 0 !important;
-    border-color: black;
-    border-style: solid;
-}
-
-.typeContainer{
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color:white !important;
-    height: 60px !important;
-}
-
-.typeContainer:focus{
-    box-shadow:none !important;
-    outline:0px !important;
-}
-
-.attachBtn{
-    border-radius: 15px 0 0 15px !important;
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color: white !important;
-    height: 60px !important;
-    cursor: pointer;
-}
-
-.sendBtn{
-    border-radius: 0 15px 15px 0 !important;
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color: white !important;
-    height: 60px !important;
-    cursor: pointer;
+    border-top: solid;
 }
 
 .userName{
@@ -461,13 +453,13 @@ body {
 }
 
 .msgContainer{
-margin-top: auto;
-margin-bottom: auto;
-margin-left: 10px;
-border-radius: 25px;
-background-color: white;
-padding: 10px;
-position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    background-color: white;
+    padding: 10px;
+    position: relative;
 }
 
 .msgContainerReply{
@@ -481,11 +473,21 @@ position: relative;
 }
 
 .msgTime{
-position: absolute;
-left: 0;
-bottom: -15px;
-color: rgba(255,255,255,0.5);
-font-size: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+}
+
+.bidBtns {
+    background-color: white;
+    color:black;
+    margin: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    font-family: "Bangers";
 }
 
 
