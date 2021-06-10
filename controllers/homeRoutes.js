@@ -54,19 +54,29 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.sessionloggedin) {
-        res.redirect('/');
+    if (req.session.loggedIn) {
+        res.redirect('/profile');
         return;
     }
     res.render('login');
 });
 
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('signup');
+router.get('profile', (req, res) => {
+    res.render('profile');
+});
+
+router.get('/about', (req, res) => {
+    res.render('about');
+});
+
+router.get('/postItem', (req, res) => {
+    res.render('postItem');
+});
+
+router.get('/bid', (req, res) => {
+    res.render('chatRoom', {
+        products,
+        loggedIn: req.session.loggedIn});
 });
 
 router.get('/product/:id', async (req, res) => {
@@ -124,5 +134,7 @@ router.get('/product/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;
