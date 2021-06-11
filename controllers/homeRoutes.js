@@ -74,9 +74,7 @@ router.get('/postItem', (req, res) => {
 });
 
 router.get('/bid', (req, res) => {
-    res.render('chatRoom', {
-        products,
-        loggedIn: req.session.loggedIn});
+    res.render('chatRoom')
 });
 
 router.get('/product/:id', async (req, res) => {
