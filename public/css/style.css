@@ -263,6 +263,19 @@ body {
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
+.card-header h4{
+    color: #FFC312;
+    font-family: "Bangers";
+}
+
+.btn-primary{
+    background-color: #FFC312;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Bangers"
+}
+
 
 @media only screen and (max-width: 575px) {
     .teamMember .teamImage::after {
