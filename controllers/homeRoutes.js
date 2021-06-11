@@ -55,13 +55,13 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/');
         return;
     }
     res.render('login');
 });
 
-router.get('profile', (req, res) => {
+router.get('/profile', (req, res) => {
     res.render('profile');
 });
 
@@ -132,7 +132,5 @@ router.get('/product/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
 
 module.exports = router;

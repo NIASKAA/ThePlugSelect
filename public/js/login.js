@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
             });
 
             if(response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
             } else {      
                 alert('Failed to log in');
             }
@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     
             if(response.ok) {
                 console.log('success');
-                document.location.replace('/dashboard');
+                document.location.replace('/');
             } else {
                 alert('Failed to sing up.');
             }
