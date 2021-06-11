@@ -55,10 +55,14 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/profile');
         return;
     }
     res.render('login');
+});
+
+router.get('profile', (req, res) => {
+    res.render('profile');
 });
 
 router.get('/about', (req, res) => {
@@ -67,6 +71,10 @@ router.get('/about', (req, res) => {
 
 router.get('/postItem', (req, res) => {
     res.render('postItem');
+});
+
+router.get('/bid', (req, res) => {
+    res.render('chatRoom')
 });
 
 router.get('/product/:id', async (req, res) => {
