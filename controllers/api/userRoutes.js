@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const {User} = require('../../models');
+const {User, Product, ProductTag, Brand, Category} = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
         attributes: {exclude: ['password']},
         where: {
             id: req.params.id
-        }
+        },
     })
     .then(userData => {
         if(!userData) {

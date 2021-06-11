@@ -55,13 +55,13 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/');
         return;
     }
     res.render('login');
 });
 
-router.get('profile', (req, res) => {
+router.get('/profile', (req, res) => {
     res.render('profile');
 });
 
