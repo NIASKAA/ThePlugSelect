@@ -50,6 +50,20 @@ async function signupFormHandler(event) {
         }
     };
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
+async function loadLogin() {
+    console.log("connected");
+    let login = document.querySelector('.login-form');
+
+    console.log(login);
+
+    login.addEventListener('submit', loginFormHandler);
+};
+
+async function loadSignUp() {
+    console.log("connected");
+    let signUp = document.querySelector('.signup-form');
+
+    console.log(signUp);
+    signUp.addEventListener('submit', signupFormHandler);
+};
