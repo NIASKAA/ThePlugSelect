@@ -119,7 +119,7 @@ router.get('/product/:id', async (req, res) => {
             ]
         });
        if (!dbProductData[0]) {
-           res.status(404).json({ message: 'This product is unavailabe.' });
+           res.status(404).json({ message: 'This product is unavailable.' });
            return;
        } 
        const product = dbProductData.get({ plain: true });
