@@ -12,31 +12,31 @@ const productData = [
         image: '/images/phenex.jpeg'
     },
     {
-        product_name: 'Gibberish',
-        price: 323,
+        product_name: 'Off-White Jackets',
+        price: 500,
         stock: 14,
-        size: "One-Size",
-        description: "",
+        size: "L",
+        description: "Galaxy paint inspired",
         category_id: 1,
         brand_id: 1,
         image: '/images/balenciagashoes.jpg'
     },
     {
         product_name: 'Off-White T-Shirt',
-        price: 2332,
+        price: 300,
         stock: 14,
         size: "M",
-        description: "",
+        description: "Luggage Tag Style",
         category_id: 3,
         brand_id: 1,
         img: '/images/mastermind.jpeg'
     },
     {
-        product_name: 'Superfluous',
-        price: 3456,
+        product_name: 'Off-White Shoes',
+        price: 800,
         stock: 14,
-        size: "A",
-        description: "",
+        size: "43",
+        description: "Moto-Wrap",
         category_id: 1,
         brand_id: 1,
         img: ""
@@ -61,6 +61,9 @@ const productData = [
         brand_id: 1,
         img: ""
     },
+    {
+        
+    }
   ];
   
 
