@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
                 },
                 {
                     model: Brand,
-                    attributes: ['brand_name']
+                    attributes: ['brand_id', 'brand_name']
                 },
                 // {
                 //     model: ProductTag,
