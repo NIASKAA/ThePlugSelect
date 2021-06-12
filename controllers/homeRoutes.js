@@ -1,6 +1,6 @@
 //home page//
 const router = require('express').Router();
-const { Brand, Category, Product, ProductTag, Tag, User } = require('../models');
+const { Brand, Category, Product, ProductTag, Tag, User, Bid } = require('../models');
 const sequelize = require('../config/connection');
 
 router.get('/', async (req, res) => {
@@ -133,4 +133,28 @@ router.get('/product/:id', async (req, res) => {
     }
 });
 
+
+router.get('/bid/:id', async (req, res) => {
+    const productData = await Product.findByPk(req.params.id, {
+        raw:true,
+        include:
+        [
+            {
+                model: Category
+            },
+            {
+                model:Brand
+            }, 
+            {
+                model:Bid
+            }, 
+        ]  
+    });
+    console.log(productData);
+    res.render('chatRoom', {
+        productData,
+        loggedIn:req.session.loggedIn
+    })
+    
+})
 module.exports = router;
