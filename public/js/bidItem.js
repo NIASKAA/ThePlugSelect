@@ -1,5 +1,7 @@
-
+// get the current bidding item id
 const item_id = document.location.href.split('/')[4];
+
+// request to back end for bidding item
 const bidItem = async (price) => {
     console.log(item_id)
 

@@ -18,6 +18,13 @@ Bid.init(
       allowNull: true,
     },
 
+    user_id: {
+        type:DataTypes.INTEGER,
+        reference: {
+            model: "user",
+            key: "user_id"
+        }
+    },
     item_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
