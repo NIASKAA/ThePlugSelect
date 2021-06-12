@@ -5,17 +5,21 @@
     <div class="row mx-auto my-auto">
         {{#each products as |product| }}
         <div class="card" style="width: 18rem;">
-            <img src={{product.image}} class="card-img-top">
+            <img src= "{{this.image}}"class="card-img-top">
             <div class="card-body">
                 <div class="row">
-                    <p class="regularFont">{{product.product_name}}:</p>
-                    <p class="regularFont">Price: {{product.price}}:</p>
+                    <p class="regularFont">{{product.product_name}}</p>
+                    <p class="regularFont">Price: {{product.price}}</p>
                     <p class="regularFont">Size: {{product.size}} </p>
+                    <p class="regularFont">Brand: {{brand.brand_name}}</p>
                 </div>
-                <a href="/bid" class="btn basicFont">Bid</a>
+                <a href="/bid/{{product.product_id}}" class="btn basicFont">Bid</a>
             </div>
         </div>
+
         {{/each}}
         
     </div>
 </div>
+
+<script src="/js/postItem.js"></script>

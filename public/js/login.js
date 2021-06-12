@@ -1,3 +1,4 @@
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -20,7 +21,7 @@ async function loginFormHandler(event) {
             });
 
             if(response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/profile');
             } else {      
                 alert('Failed to log in');
             }
@@ -43,13 +44,31 @@ async function signupFormHandler(event) {
     
             if(response.ok) {
                 console.log('success');
-                document.location.replace('/dashboard');
+                document.location.replace('/profile');
             } else {
                 alert('Failed to sing up.');
             }
         }
     };
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
+async function loadLogin() {
+    console.log("connected");
+    let login = document.querySelector('.login-form');
+
+    console.log(login);
+
+    login.addEventListener('submit', loginFormHandler);
+};
+
+async function loadSignUp() {
+    console.log("connected");
+    let signUp = document.querySelector('.signup-form');
+
+    console.log(signUp);
+    signUp.addEventListener('submit', signupFormHandler);
+};
+
+
+loadLogin();
+loadSignUp();
