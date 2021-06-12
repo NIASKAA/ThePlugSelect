@@ -1,3 +1,4 @@
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -67,3 +68,7 @@ async function loadSignUp() {
     console.log(signUp);
     signUp.addEventListener('submit', signupFormHandler);
 };
+
+
+loadLogin();
+loadSignUp();

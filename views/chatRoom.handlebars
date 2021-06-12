@@ -54,14 +54,19 @@
                             <div class="bidDescript text-center" style="font-family: Bangers;">
                                 <h5>To start bidding, click the amount you wish to drop it</h5>
                             </div>
+                            
 							<div class="d-flex justify-content-center">
+                                {{#if loggedIn}}
                                 <button class="btn bidBtns" type="submit">100</button>
                                 <button class="btn bidBtns" type="submit">200</button>
                                 <button class="btn bidBtns" type="submit">300</button>
                                 <button class="btn bidBtns" type="submit">400</button>
                                 <button class="btn bidBtns" type="submit">500</button>
                                 <button class="btn bidBtns" type="submit">1000</button>
+                                {{else}}
+                                <p>You must be logged in to make a bid</p>>
                             </div>
+                            {{/if}}
 						</div>
 					</div>
 				</div>

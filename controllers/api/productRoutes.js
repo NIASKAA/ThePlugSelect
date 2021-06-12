@@ -73,6 +73,7 @@ router.post("/:id/bid", async (req, res) => {
   try {
     // create a new bid
     const bid = await Bid.create({
+      user_id: req.session.user_id,
       bid: req.body.price,
       item_id: req.params.id,
     });
