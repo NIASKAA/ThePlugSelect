@@ -103,12 +103,16 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 order-lg-1 text-center">
-                    <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                <form enctype="multipart/form-data" method="post" class="col-lg-4 order-lg-1 text-center">
                     <h6 class="mt-2">Upload a photo</h6>
                     <label class="custom-file">
-                        <input type="file" id="file" class="custom-file-input">
+                        <input type="text" name="title" /><br/>
+                        <input type="file" name="upload" multiple="multiple" /><br/>
+                        <input type="submit" id="file" class="custom-file-input">
                     </label>
-                </div>
+                </form>
             </div>
         </div>
+
+
+        <script src="/js/imageUpload.js"></script>

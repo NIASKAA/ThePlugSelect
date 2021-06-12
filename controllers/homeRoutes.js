@@ -63,10 +63,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/profile', withAuth, (req, res) => {
-    if(req.session.loggedIn) {
+    /*if(req.session.loggedIn) {
         res.redirect('/profile');
         return;
-    }
+    }*/
     res.render('profile');
 });
 
