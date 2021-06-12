@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const { Brand, Category, Product, ProductTag, Tag, User, Bid } = require('../models');
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -61,7 +62,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/profile', (req, res) => {
+router.get('/profile', withAuth, (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/profile');
+        return;
+    }
     res.render('profile');
 });
 

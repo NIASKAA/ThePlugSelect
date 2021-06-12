@@ -11,4 +11,13 @@ async function logout() {
     }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+async function loggingOut() {
+    console.log("connected");
+    let signoff = document.querySelector('#logout')
+
+    console.log(signoff);
+
+    signoff.addEventListener('click', logout);
+};
+
+loggingOut();
