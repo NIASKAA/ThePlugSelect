@@ -1,7 +1,8 @@
 //home page//
 const router = require('express').Router();
-const { Brand, Category, Product, ProductTag, Tag, User } = require('../models');
+const { Brand, Category, Product, ProductTag, Tag, User, Bid } = require('../models');
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
                 },
                 {
                     model: Brand,
-                    attributes: ['brand_name']
+                    attributes: ['brand_id', 'brand_name']
                 },
                 // {
                 //     model: ProductTag,
@@ -55,13 +56,17 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/');
         return;
     }
     res.render('login');
 });
 
-router.get('profile', (req, res) => {
+router.get('/profile', withAuth, (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/profile');
+        return;
+    }
     res.render('profile');
 });
 
@@ -119,7 +124,7 @@ router.get('/product/:id', async (req, res) => {
             ]
         });
        if (!dbProductData[0]) {
-           res.status(404).json({ message: 'This product is unavailabe.' });
+           res.status(404).json({ message: 'This product is unavailable.' });
            return;
        } 
        const product = dbProductData.get({ plain: true });
@@ -134,5 +139,27 @@ router.get('/product/:id', async (req, res) => {
 });
 
 
-
+router.get('/bid/:id', async (req, res) => {
+    const productData = await Product.findByPk(req.params.id, {
+        raw:true,
+        include:
+        [
+            {
+                model: Category
+            },
+            {
+                model:Brand
+            }, 
+            {
+                model:Bid
+            }, 
+        ]  
+    });
+    console.log(productData);
+    res.render('chatRoom', {
+        productData,
+        loggedIn:req.session.loggedIn
+    })
+    
+})
 module.exports = router;

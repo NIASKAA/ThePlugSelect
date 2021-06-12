@@ -8,8 +8,8 @@ const productData = [
         size: "1/60",
         description: "PG Unicorn Phenex NIB",
         category_id: 5,
-        brand_id: 1,
-        image: '/pubic/images/phenex.jpeg'
+        brand_id: 5,
+        image: '/images/phenex.jpeg'
     },
     {
         product_name: 'Gibberish',

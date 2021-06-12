@@ -6,7 +6,7 @@
                 <div class="col-md-8 col-xl-6">
                     <div class="card imageCard">
                         <div class="card-header border-bottom-0 infoHeader">
-                            <h4 class="itemName text-center" style="font-family: Bangers;">Unicorn</h4>
+                            <h4 class="itemName text-center" style="font-family: Bangers;">{{productData.product_name}}</h4>
                         </div>
                         <div class="card-body border-0 imageContain">
                             <img src="/images/phenex.jpeg" style="width: 80%;" class="rounded d-block mx-auto">
@@ -14,11 +14,11 @@
                         <div class="card-footer itemInfo">
                             <div class="d-flex justify-content-start">
                                 <ul>
-                                    <li class="infoList">Category: </li>
-                                    <li class="infoList">Brand: </li>
-                                    <li class="infoList">Description: </li>
-                                    <li class="infoList">Price: </li>
-                                    <li class="infoList">Size: </li>
+                                    <li class="infoList">Category: {{getObjectProperty productData "category.category_name"}} </li>
+                                    <li class="infoList">Brand: {{getObjectProperty productData "brand.brand_name"}} </li>
+                                    <li class="infoList">Description: {{productData.description}} </li>
+                                    <li class="infoList">Price: {{productData.price}} </li>
+                                    <li class="infoList">Size: {{productData.size}} </li>
                                 </ul>
                             </div>
                         </div>
@@ -54,16 +54,23 @@
                             <div class="bidDescript text-center" style="font-family: Bangers;">
                                 <h5>To start bidding, click the amount you wish to drop it</h5>
                             </div>
+                            
 							<div class="d-flex justify-content-center">
+                                {{#if loggedIn}}
                                 <button class="btn bidBtns" type="submit">100</button>
                                 <button class="btn bidBtns" type="submit">200</button>
                                 <button class="btn bidBtns" type="submit">300</button>
                                 <button class="btn bidBtns" type="submit">400</button>
                                 <button class="btn bidBtns" type="submit">500</button>
                                 <button class="btn bidBtns" type="submit">1000</button>
+                                {{else}}
+                                <p>You must be logged in to make a bid</p>>
                             </div>
+                            {{/if}}
 						</div>
 					</div>
 				</div>
             </div>
         </div>
+
+        <script src="/js/bidItem.js"></script>
