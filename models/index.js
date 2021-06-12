@@ -12,6 +12,9 @@ Product.hasMany(Bid, {
 Bid.belongsTo(Product, {
   foreignKey: "product_id"
 })
+Bid.belongsTo(User, {
+  foreignKey: "user_id"
+})
 
 Product.belongsTo(Category, {
   foreignKey: "category_id"
