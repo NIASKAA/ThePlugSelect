@@ -1,23 +1,61 @@
 const router = require("express").Router();
-const cloudinary = require("../../config/cloudinary");
-const upload = require('../../config/multer')
+const cloudinary = require("cloudinary");
+const upload = require("../../config/multer");
 const fs = require("fs");
-require('dotenv').config();
+const formidable = require('formidable');
+require("dotenv").config();
+
+cloudinary.config({
+   cloud_name: process.env.CLOUD_NAME,
+   api_key: process.env.API_KEY,
+   api_secret: process.env.API_SECRET,
+});
+
+// router.post("/", (req, res, next) => {
+//    stream = cloudinary.uploader.upload_stream(
+//       function (result) {
+//          console.log(result);
+//          console.log("\n\n\n\n" + req.body + "\n\n\n\n\n\n");
+//          res.send(
+//             'Done:<br/> <img src="' +
+//                result.url +
+//                '"/><br/>' +
+//                cloudinary.image(result.public_id, {
+//                   format: "png",
+//                   width: 100,
+//                   height: 130,
+//                   crop: "fill",
+//                })
+//          );
+//       },
+//       { public_id: req.body.title }
+//    );
+//    fs.createReadStream(req.files.image.path, { encoding: "binary" })
+//       .on("data", stream.write)
+//       .on("end", stream.end);
+// });
 
 
-router.post('/', upload.single('image'), async(req, res) => {
+router.post("/test", async (req, res) => {
   try {
-    //const result = await cloudinary.uploader.upload(req.body)
-    console.log(req.file)
-    res.status(200).json(req.body);
+  console.log(req.files)
+   res.status(200).json(req.files);
   }
   catch (err) {
     console.log(err);
-    res.status(500).json(err.message);
   }
+});
+
+
+router.post('/formidable', async(req,res) => {
+      const form = formidable({ multiples: true });
+
+      form.parse(req, (err, fields, files) => {
+         res.writeHead(200, { "content-type": "application/json" });
+         res.end(JSON.stringify({ fields, files }, null, 2));
+      });
+      return;
+
 })
 
-router.get('/test', async(req, res) => {
-  res.status(200).send("This works!");
-})
 module.exports = router;
