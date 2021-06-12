@@ -41,6 +41,7 @@ app.use(express.static("images"));
 app.use(express.static("video"));
 app.use(routes);
 
+
 sequelize.sync({force: false}).then(() => {
     server.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 });

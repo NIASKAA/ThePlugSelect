@@ -1,10 +1,22 @@
+const cloudinary = require('../config/cloudinary');
+const Formidable = require('formidable');
 
+const uploadImage = () => {
+    if(req.method.toLowerCase() === 'post'){
+        const form = new Formidable();
 
-const uploadImage = (event) => {
-    event.preventDefault();
-    let file = event.target.files[0];
-    console.log(file);
-}
+        form.parse(req, (files) => {
 
+            cloudinary.uploader.upload(files.upload.path, result => {
 
-document.querySelector('#file').addEventListener("change", uploadImage);
+                console.log(result)
+                if (result.public_id) {
+                    alert("Uploaded Image");
+                }
+            }
+            );
+        });
+        return;
+};}
+
+uploadImage();

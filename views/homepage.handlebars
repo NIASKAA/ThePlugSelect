@@ -5,7 +5,7 @@
     <div class="row mx-auto my-auto">
         {{#each products as |product| }}
         <div class="card" style="width: 18rem;">
-            <img src="/images/phenex.jpeg" class="card-img-top">
+            <img src= "{{this.image}}"class="card-img-top">
             <div class="card-body">
                 <div class="row">
                     <p class="regularFont">{{product.product_name}}</p>
@@ -16,6 +16,7 @@
                 <a href="/bid/{{product.product_id}}" class="btn basicFont">Bid</a>
             </div>
         </div>
+
         {{/each}}
         
     </div>
