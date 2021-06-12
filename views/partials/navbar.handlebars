@@ -5,13 +5,16 @@
     <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                {{#if loggedIn}}
                 <a href="/" class="btn navBtns">Current Bids</a>
                 <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
                 <a href="/about" class="btn navBtns">About Us</a>
-                {{#if loggedIn}}
                 <a href="/profile" class="btn navBtns ">Your Profile</a>
                 <a class="btn navBtns" id="logout">Logout</a>
                 {{else}}
+                <a href="/" class="btn navBtns">Current Bids</a>
+                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
+                <a href="/about" class="btn navBtns">About Us</a>
                 <a href="/login" class="btn navBtns">Login</a>
                 {{/if}}
             </div>
@@ -118,3 +121,4 @@
         </div>
     </nav>
 </header>
+
