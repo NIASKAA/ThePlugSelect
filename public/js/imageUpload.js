@@ -1,7 +1,6 @@
 const cloudinary = require('../config/cloudinary');
 const Formidable = require('formidable');
 
-
 const uploadImage = () => {
     if(req.method.toLowerCase() === 'post'){
         const form = new Formidable();
