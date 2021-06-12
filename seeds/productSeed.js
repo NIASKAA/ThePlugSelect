@@ -19,7 +19,7 @@ const productData = [
         description: "",
         category_id: 1,
         brand_id: 1,
-        img: ""
+        image: '/images/balenciagashoes.jpg'
     },
     {
         product_name: 'Off-White T-Shirt',
@@ -29,7 +29,7 @@ const productData = [
         description: "",
         category_id: 3,
         brand_id: 1,
-        img: ""
+        img: '/images/mastermind.jpeg'
     },
     {
         product_name: 'Superfluous',
