@@ -1,5 +1,5 @@
 <div class="timer">
-            <h3 class="timerStyle text-center">TIME LEFT: </h3>
+            <h3 class="timerStyle text-center">TIME LEFT:{{> timer}}</h3>
         </div>
         <div class="container">
             <div class="row justify-content-center">
@@ -9,7 +9,7 @@
                             <h4 class="itemName text-center" style="font-family: Bangers;">{{productData.product_name}}</h4>
                         </div>
                         <div class="card-body border-0 imageContain">
-                            <img src= "{{this.image}}" style="width: 80%;" class="rounded d-block mx-auto">
+                            <img src= "{{productData.image}}" style="width: 80%;" class="rounded d-block mx-auto">
                         </div>
                         <div class="card-footer itemInfo">
                             <div class="d-flex justify-content-start">
@@ -71,6 +71,25 @@
                                 <button class="btn bidBtns" type="submit">400</button>
                                 <button class="btn bidBtns" type="submit">500</button>
                                 <button class="btn bidBtns" type="submit">1000</button>
+                                <div class="dropdown">
+                                    <button class=" btn bidBtns" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     Custom Bid
+                                    </button>
+                                    <div class="dropdown-menu">
+                                    <form class="customBid-form">
+                                       <div class="form-group">
+                                           <label class="customBidLabel" for="custom-Bid">Bid:</label>
+                                           <input class="form-control" type="text" id="bid-form" />
+                                      </div>
+                                    <div class="form-group">
+                                        <button class="btn bidBtns" type="submit">Enter</button>
+                                   </div>
+                                   </form>
+                    
+                
+
+                                </div>
+                                
                                 {{else}}
                                 <p>You must be logged in to make a bid</p>>
                             </div>

@@ -12,6 +12,9 @@ Product.hasMany(Bid, {
 Bid.belongsTo(Product, {
   foreignKey: "product_id"
 })
+Bid.belongsTo(User, {
+  foreignKey: "user_id"
+})
 
 Product.belongsTo(Category, {
   foreignKey: "category_id"
@@ -24,6 +27,15 @@ Category.hasMany(Product, {
 Product.belongsTo(Brand, {
     foreignKey: 'brand_id'
 })
+
+User.hasMany(Product, {
+  foreignKey: "id"
+})
+
+Product.belongsTo(User, {
+  foreignKey: "id"
+})
+
 
 Brand.hasMany(Product, {
     foreignKey: "brand_id"

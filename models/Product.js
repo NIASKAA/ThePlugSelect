@@ -33,7 +33,7 @@ Product.init(
             allowNull: true
         },
         image: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         category_id: {
@@ -50,6 +50,15 @@ Product.init(
                 model: 'brand',
                 key: 'brand_id',
                 unique: false
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references : {
+                model: 'user',
+                key: 'id',
+                unique: false,
+                allowNull: true
             }
         }
     },

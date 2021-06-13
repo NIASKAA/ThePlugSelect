@@ -435,6 +435,13 @@ body {
     font-family: "Bangers";
 
 }
+.d-flex{
+    display:flex;
+    flex-wrap: wrap;;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
 /*Checkout Style*/
 .card-header h4{
     color: #FFC312;

@@ -29,11 +29,31 @@ chatForm.addEventListener('submit', e => {
     e.preventDefault();
 
     // Get message text
-    const msg = e.target.elements.msg.value;
+    let msg = e.target.elements.msg.value;
+
+    msg = msg.trim();
+
+    if(!msg) {
+        return false;
+    }
 
     // Emit message to server
     socket.emit('chatMessage', msg);
+
+    // Clear input
+    e.target.elements.msg.value = '';
+    e.target.elements.msg.focus();    
 });
+
+// Output message to page
+function outputMessage(message) {
+    const div = document.createElement('div');
+    div.classList.add('message');
+    const p = document.createElement('p');
+    p.classList.add('meta');
+    p.innerText = message.username;
+    p.innerH
+}
 
 // socket.on('message', message => {
 //     console.log(message);

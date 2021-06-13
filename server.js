@@ -8,6 +8,10 @@ const socketio = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
+const fileUpload = require("express-fileupload");
+const bodyParser = require("body-parser");
+let app = express();
+const io = require('socket.io')(server);
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
@@ -36,7 +40,6 @@ const hbs = exphbs.create({helpers});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -91,6 +94,14 @@ io.on('connecton', socket => {
         io.to(user.bidRoom).emit('message', formatMessage(user.username,msg));
     });
 });
+app.use(
+   fileUpload({
+      createParentPath: true,
+   })
+);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 sequelize.sync({force: false}).then(() => {
     server.listen(PORT, () => console.log(`App listening on port ${PORT}`));

@@ -1,22 +1,16 @@
-const cloudinary = require('../config/cloudinary');
-const Formidable = require('formidable');
+const uploadImage = async () => {
 
-const uploadImage = () => {
-    if(req.method.toLowerCase() === 'post'){
-        const form = new Formidable();
+  const inputImage = document.querySelector("#file").files[0];
+  const formData = new FormData();
+  formData.append("image", inputImage);
+  console.log(formData.get("image"));
+  const response = await fetch("/api/upload", {
+    method: "POST",
+    body: formData,
+    formData: { image: formData.get("image") },
+  });
+  const data = await response.json();
+  return JSON.stringify(data.image);
+};
 
-        form.parse(req, (files) => {
-
-            cloudinary.uploader.upload(files.upload.path, result => {
-
-                console.log(result)
-                if (result.public_id) {
-                    alert("Uploaded Image");
-                }
-            }
-            );
-        });
-        return;
-};}
-
-uploadImage();
+//document.querySelector(".addBtn").addEventListener("click", uploadReq);

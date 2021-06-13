@@ -29,7 +29,7 @@ const productData = [
         description: "Luggage Tag Style",
         category_id: 3,
         brand_id: 1,
-        img: '/images/mastermind.jpeg'
+        image: '/images/mastermind.jpeg'
     },
     {
         product_name: 'Off-White Shoes',
@@ -39,7 +39,7 @@ const productData = [
         description: "Moto-Wrap",
         category_id: 1,
         brand_id: 1,
-        img: ""
+        image: "/images/bape.png"
     },
     {
         product_name: 'Plain T-Shirt',
@@ -49,7 +49,7 @@ const productData = [
         description: "",
         category_id: 1,
         brand_id: 1,
-        img: ""
+        image: "/images/kaws.jpeg"
     },
     {
         product_name: 'Amongus chicken nugget',
@@ -59,11 +59,8 @@ const productData = [
         description: "Sus",
         category_id: 1,
         brand_id: 1,
-        img: ""
+        image: ""
     },
-    {
-        
-    }
   ];
   
 
