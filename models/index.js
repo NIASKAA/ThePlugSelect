@@ -15,7 +15,9 @@ Bid.belongsTo(Product, {
 Bid.belongsTo(User, {
   foreignKey: "user_id"
 })
-
+User.hasMany(Bid, {
+  foreignKey:"user_id"
+})
 Product.belongsTo(Category, {
   foreignKey: "category_id"
 })
@@ -29,11 +31,11 @@ Product.belongsTo(Brand, {
 })
 
 User.hasMany(Product, {
-  foreignKey: "id"
+  foreignKey: "user_id"
 })
 
 Product.belongsTo(User, {
-  foreignKey: "id"
+  foreignKey: "user_id"
 })
 
 
