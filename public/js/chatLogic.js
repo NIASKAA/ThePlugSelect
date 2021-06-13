@@ -5,7 +5,7 @@ $(function() {
     const TYPING_TIMER_LENGTH = 400;
 
     const $window = $(window);
-    let $usernameInput = $('.usernameInput');
+    let $userName = $('.userName');
     let $messages = $('.messages');
     let $inputMessage = $('.inputMessage');
 
@@ -14,7 +14,7 @@ $(function() {
     let connected = false;
     let typing = false;
     let lastTypingTime;
-    let $currentInput = $usernameInput.focus();
+    let $currentInput = $userName.focus();
 
     let socket = io();
 
@@ -30,7 +30,7 @@ $(function() {
     }
 
     function setUsername() {
-        username = cleanInput($usernameInput.val().trim());
+        username = cleanInput($userName.val().trim());
 
         if (username) {
             $loginPage.fadeOut();
@@ -67,8 +67,8 @@ $(function() {
     }
 
     // This will add the visual chat message o the message list
-    function addChattMessage (data, options) {
-        let $typingMssages = getTypingMessages(data);
+    function addChatMessage (data, options) {
+        let $typingMessages = getTypingMessages(data);
         options = options || {};
         if ($typingMessages.length !== 0) {
             options.fade = false;
@@ -211,6 +211,10 @@ $(function() {
                 setUsername();
             }
         }
+    });
+
+    $inputMessage.on('input', function() {
+        updateTyping();
     });
 
     // Whenever the server emits a 'new message', update the chat body
