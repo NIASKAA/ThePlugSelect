@@ -42,8 +42,16 @@
 								<div>
                                     <img src="/images/work-3.jpg" class="rounded-circle" style="width: 50px; height: 40px;">
                                 </div>
-                                <div class="msgContainer">
-									Yeetus Deletus
+                                <div class="chatContainer">
+									<form id="chat-form">
+                                    <input
+                                    id="msg"
+                                    type="text"
+                                    placeholder="Enter Message"
+                                    requiredautocomplete="off"
+                                    />
+                                    <button class="btn"><i class="fas fa-paper-plane"></button></i> Send</button>
+                                    </form>
 									<span class="msgTime">8:40 AM, Today</span>
 								</div>
                             </div>
@@ -93,3 +101,7 @@
         </div>
 
         <script src="/js/bidItem.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/public/js/chatbox.js"></script>
+        {{!-- <script src="/public/js/chatLogic.js"></script>
+        <script src="/public/js/timer.js"></script> --}}
