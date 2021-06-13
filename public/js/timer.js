@@ -8,7 +8,7 @@ function Timer() {
 
 Timer.prototype = {
     setEndTime: function(time) {
-        this.endTime = new Date.getTime() + time;
+       this.endTime = new Date.getTime() + time;
     },
     getEndTime: function() {
         return this.endTime;
@@ -18,3 +18,8 @@ Timer.prototype = {
 exports.Timer = Timer;
 
 })(typeof exports === 'undefined' ? this : exports);
+
+
+  
+
+  
