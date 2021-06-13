@@ -10,8 +10,6 @@ const app = express();
 const server = http.createServer(app);
 const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
-let app = express();
-const io = require('socket.io')(server);
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
