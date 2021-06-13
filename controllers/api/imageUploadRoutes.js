@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const cloudinary = require("cloudinary");
-const upload = require("../../config/multer");
-const fs = require("fs");
 const formidable = require('formidable');
 require("dotenv").config();
 

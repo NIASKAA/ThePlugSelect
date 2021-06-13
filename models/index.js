@@ -28,6 +28,15 @@ Product.belongsTo(Brand, {
     foreignKey: 'brand_id'
 })
 
+User.hasMany(Product, {
+  foreignKey: "id"
+})
+
+Product.belongsTo(User, {
+  foreignKey: "id"
+})
+
+
 Brand.hasMany(Product, {
     foreignKey: "brand_id"
 })
