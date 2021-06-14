@@ -1,126 +1,150 @@
 // Chatroom setup
-const chatForm = document.getElementById('chat-form');
-const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
-const username = document.getElementById('userName');
+let FADE_TIME = 150;
+let TYPING_TIMER_LENGTH = 400;
 
-const socket = io();
+let window = window;
+let setTimeout;
+let usernameInput = document.getElementById("usernameInput");
+let messages = document.getElementById("messages");
+let rightLogMsg = document.getElementById("rightLogMsg");
+let allBidsLogs = document.getElementById("allBidsLogs");
+let inputMessage = document.getElementById("inputMessage");
+let chatPage = document.getElementById("chatPage");
 
-// Join chatroom
-socket.emit('joinRoom', { username });
+let username;
+let connected = true;
+let bidding = false;
+let lastTypingTime = '';
+let currentInput = usernameInput.focus();
 
-// Message from server
-socket.on('message', (message) => {
-    console.log(message);
-    outputMessage(message);
+let socket = io();
 
-    // Scroll down through messages
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-});
-
-// Get users
-socket.on('roomUsers', ({ users}) => {
-    outputUsers(users);
-});
-
-// Message submit
-chatForm.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // Get message text
-    let msg = e.target.elements.msg.value;
-
-    msg = msg.trim();
-
-    if(!msg) {
-        return false;
+addParticipantBidders = (data) => {
+    let message = '';
+    if (data.numUsers === 1) {
+        message += "There's 1 bidder";
+    } else {
+        message += `there are ${data.numUsers} bidders`;
     }
-
-    // Emit message to server
-    socket.emit('chatMessage', msg);
-
-    // Clear input
-    e.target.elements.msg.value = '';
-    e.target.elements.msg.focus();    
-});
-
-// Output message to page
-function outputMessage(message) {
-    const div = document.createElement('div');
-    div.classList.add('message');
-    const p = document.createElement('p');
-    p.classList.add('meta');
-    p.innerText = message.username;
-    p.innerH
+    log(message);
 }
 
-// socket.on('message', message => {
-//     console.log(message);
-// });
+setUsername = () => {
+    username = cleanInput(username*nput.val().trim());
 
-// let numUsers = 0;
+    if (username) {
+        loginPage.fadeOut();
+        chatPage.show();
+        loginPage.off('click');
+        currentInput = inputMessage.focus();
 
-// io.on('connection', socket => {
-//     console.log('New WS Connection...');
+        socket.emit('add users', username);
+    }
+}
 
-//     let addedUser = false;
+bid = (c) => {
+    let now = moment().format("MM-DD-YYYY, h:mm:ss SSS a");
+    let init_bid_condition = parseInt(c) == 00 ? 0 : parseInt(c);
 
-//     socket.emit('message', 'Welcome to our ChatBox!');
+    let init_bid_amt = parseInt('init-bid').text(10);
+    let data_init_bid_amt = document.getElementById('init-bid').data('init-bid');
+    let latest_bid_amt = parseInt('show:last-child').find('messageBody').text(10);
+    let bid_amt_condition = data_init_bid_amt == 99 ? init_bid_amt : latest_bid_amt;
 
-//     // Sets timer for buyers
-//     socket.emit('currentEndTime', { time: timer.getEndTime() });
-
-//     socket.on('setTimer', data => {
-//         timer.setEndTime(data.time);
-//         socket.broadcast.emit('currentEndTime', { time: time.getEndTime });
-//     });
-
-//     // When the chatroom emits a new message, this listens for the message, and executes it
-//     socket.on('new message', data => {
-//         socket.broadcast.emit('new message', {
-//             username: socket.username,
-//             message: data
-//         });
-//     });
-
-//     // When the chatroom emits 'adding user', this listens for the action and executes it
-//     socket.on('add user', username => {
-//         if (addUser) return;
-
-//         // This stores the username in the socket session for the chatroom
-//         socket.username = username;
-//         ++numUsers;
-//         addedUser = true;
-//         socket.emit('login', {
-//             numUsers: numUsers
-//         });
-//     });
-
-//     // When the chatroom emits 'typing', this will broadcast to other users
-//     socket.on('typing', () => {
-//         socket.boradcast.emit(`${username} is typing`, {
-//             username: socket.username
-//         });
-//     });
-
-//     // When the chatroom emits 'stopped typing', this will broadcast to other users
-//     socket.on('stopped typing', () => {
-//         socket.broadcast.emti(`${username} has stopped typing`, {
-//             username: socket.username
-//         });
-//     });
+    let messag = init_bid_condition + bid_amt_condition + ' ['+now+']';
+    let bid_sold_at = init_bid_condition + bid_amt_condition;
+    init-bid.data(init-bid,0);
+    message = cleanInput(message);
     
-//     // When a user disconnect from the chatroom, this action will perform
-//     socket.on('disconnect', () => {
-//         if (addedUser) {
-//             --numUsers;
+    if (message && connected) {
+        inputMessage.val('');
+        addBids({
+            username: username,
+            message: message,
+            bid_sold_at : bid_sold_at
+        });
 
-//             // This will globally display the user has left
-//             socket.boradcast.emi(`${username} has left the chatroom`, {
-//                 username: socket.username,
-//                 numUsers: numUsers
-//             });
-//         }
-//     });
-// });
+        socket.emit('new message', { message, bid_sold_at });
+    }
+}
+
+countdown = (data) => {
+    let seconds = BIDDER_TIMER_LIMIT;
+    let username = data ? data.username : 'error';
+    let bidAmt = data ? data.bid_sold_at : 'error';
+
+    tick = () => {
+        let s = document.getElementById('time');
+        seconds--;
+        s.val(sconds).trigger("change");
+        if (seconds > 0) {
+            setTimeOut = setTimeout(function() {
+                tick();
+            }, 1000);
+        } else {
+            $('#container').html('<p class="text-center">Sold To '+username+' @ ' +bidAmt+ '</p>');
+            $('.all-bid-logs').find('li:first-child').append('[ SOLD ]');
+            $('.all-bid-logs').find('li:first-child').css({'background-color':'yellow', 'font-weight': 'bold'});
+            $('.bid-btns').prop('disabled',true);
+        }
+    }
+    tick();
+}
+
+socket.on('login', function (data) {
+    connected = true;
+    // Display the welcome message
+    var message = "Welcome to Live Auction Demo MI – ";
+    log(message, {
+      prepend: true
+    }); 
+    addParticpantBidders(data);
+    //setTimer();
+  });
+
+  // Whenever the server emits 'new message', update the chat body
+  socket.on('new message', function (data) {
+    addBids(data);
+  });
+
+  // Whenever the server emits 'user joined', log it in the chat body
+  socket.on('user joined', function (data) {
+    log(data.username + ' joined');
+    addParticpantBidders(data);
+  });
+
+  // Whenever the server emits 'user left', log it in the chat body
+  socket.on('user left', function (data) {
+    log(data.username + ' left');
+    addParticpantBidders(data);
+    removingBiddingState(data);
+  });
+
+  // Whenever the server emits 'bidding', show the bidding message
+  socket.on('bidding', function (data) {
+    addBiddersBidding(data);
+  });
+
+  // Whenever the server emits 'stop bidding', kill the bidding message
+  socket.on('stop bidding', function (data) {
+    removingBiddingState(data);
+  });
+
+  socket.on('disconnect', function () {
+    log('you have been disconnected');
+  });
+
+  socket.on('reconnect', function () {
+    log('you have been reconnected');
+    if (username) {
+      socket.emit('add user', username);
+    }
+  });
+
+  socket.on('reconnect_error', function () {
+    log('attempt to reconnect has failed');
+  });
+
+  socket.on('strike initial bid price', function (bid_value) {
+    strikeInitialBid(bid_value);
+  });
