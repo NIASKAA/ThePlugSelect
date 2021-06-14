@@ -1,9 +1,7 @@
 const uploadImage = async () => {
-
   const inputImage = document.querySelector("#file").files[0];
   const formData = new FormData();
   formData.append("image", inputImage);
-  console.log(formData.get("image"));
   const response = await fetch("/api/upload", {
     method: "POST",
     body: formData,

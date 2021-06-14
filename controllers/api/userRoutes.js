@@ -116,4 +116,8 @@ router.delete('/:id', withAuth, (req, res) => {
     });
 });
 
+router.put('/profilepicture', async (req,res)=> {
+    
+})
+
 module.exports = router;
