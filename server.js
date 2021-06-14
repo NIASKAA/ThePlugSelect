@@ -49,8 +49,8 @@ app.use(routes);
 const botName = "Plug Bot";
 
 
-io.on('connecton', socket => {
-    console.log('New WS Connecion...');
+io.on('connection', socket => {
+    console.log('New WS Connection...');
 
     socket.on('joinRoom', ({ username, bidRoom }) => {
         const user = userJoin(socket.id, username, bidRoom)
