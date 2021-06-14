@@ -52,6 +52,7 @@ const botName = "Plug Bot";
 io.on('connection', socket => {
     console.log('New WS Connection...');
 
+
     // socket.on('joinRoom', ({ username, bidRoom }) => {
     //     const user = userJoin(socket.id, username, bidRoom)
 
@@ -91,7 +92,9 @@ io.on('connection', socket => {
 
     //     io.to(user.bidRoom).emit('message', formatMessage(user.username,msg));
     // });
+
 });
+
 app.use(
    fileUpload({
       createParentPath: true,
