@@ -33,3 +33,6 @@ socket.on('chat', message=> {
     renderMessage(message)
 })
   
+socket.on('userLeft', () => {
+  
+})
