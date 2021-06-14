@@ -48,6 +48,7 @@ body {
 
 .card {
     margin: 5px;
+    padding:0;
 }
 
 .teamMember {
@@ -201,6 +202,11 @@ body {
 .teamMember:hover .teamInfo p,
 .teamMember:focus .teamInfo p {
     color: #ffffff;
+}
+
+.gitBtns:hover{
+    background-color: seashell;
+
 }
 
 /* Login Style */
@@ -405,12 +411,23 @@ body {
     font-family: "Bangers";
     font-size: 20px;
 }
+.titleFont{
+    font-family: "Bangers";
+    font-size: 40px;
+   
+}
+.addBid:hover{
+    background-color: rgba(0,0,0,0.4);
+}
 
 .basicFont {
     border-color: black;
     border-style: solid;
     border-width: 3px;
     font-family: "Bangers";
+}
+.basicFont:hover{
+    background-color: #FFC312;
 }
 
 .postCard {
@@ -554,4 +571,23 @@ body {
     border-style: solid;
     border-width: 2px;
     font-family: "Bangers";
+}
+
+/*Style for Upload Bid*/
+.uploadCard{
+    align-items: center;
+    justify-content:flex-end;
+    font-family: "Bangers";
+    font-size: 20px;
+    border-color: black;
+}
+
+.h6,h6{
+    font-size: x-large;
+
+}
+
+.h2,h2{
+    font-family:"Bangers" ;
+    font-size: 50px;
 }
