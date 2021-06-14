@@ -3,7 +3,7 @@ const withAuth = require('../utils/auth');
 const {User, Bid, Product} = require('../models');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.userID, {
         attributes: { exclude: ['password']},
         raw: true
