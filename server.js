@@ -61,6 +61,10 @@ io.on('connection', socket => {
         console.log(`User # bids: ${message}`);
         io.emit('chat', message)
     })
+
+    
+    io.emit('userLeft', "User Disconnected");
+    
 });
 
 app.use(

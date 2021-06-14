@@ -14,10 +14,10 @@ const categoryData = [
       category_name: 'Hats',
     },
     {
-        category_name: 'Figurines'
+      category_name: 'Figurines'
     },
     {
-        category_name:'Jackets'
+      category_name:'Jackets'
     },
     {
       category_name: 'Shoes',
