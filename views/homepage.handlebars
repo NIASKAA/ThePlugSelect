@@ -5,8 +5,8 @@
     <div class="row mx-auto my-auto justify-content-center">
         {{#each products as |product| }}
         <div class="card" style="width: 18rem;">
-            <img src= "{{this.image}}"class="card-img-top">
-            <div class="card-body m-0 ">
+            <img src= "{{product.image}}" class="card-img-top">
+            <div class="card-body">
                 <div class="row">
                     <p class="titleFont">{{product.product_name}}</p>
                     <p class="regularFont">Price: {{product.price}}</p>

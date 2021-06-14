@@ -46,18 +46,17 @@ router.post("/", (req, res) => {
     tagIds: [1, 2, 3, 4]
     }
 */
-  Product.create(req.body)
+  Product.create({
+    product_name: req.body.product_name,
+    description : req.body.description,
+    price : req.body.price,
+    size: req.body.size,
+    stock : req.body.stock,
+    image: req.body.image,
+    user_id: req.session.userID
+})
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-      if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
-          return {
-            product_id: product.product_id,
-            tag_id,
-          };
-        });
-        return ProductTag.bulkCreate(productTagIdArr);
-      }
       // if no product tags, just respond
       res.status(200).json(product);
     })
@@ -73,7 +72,7 @@ router.post("/:id/bid", async (req, res) => {
   try {
     // create a new bid
     const bid = await Bid.create({
-      user_id: req.session.user_id,
+      user_id: req.session.userID,
       bid: req.body.price,
       item_id: req.params.id,
     });

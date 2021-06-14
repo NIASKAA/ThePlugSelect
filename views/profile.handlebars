@@ -21,14 +21,21 @@
                                         About
                                     </h5>
                                         <p class="profileInfo">
-                                            Name:
+                                            Name: {{userData.username}}
                                         </p>
                                 </div>
                                 <div class="col-md-12">
                                     <h4 class="mt-2 profileInfo">Recent Bids</h4>
                                     <table class="table table-sm table-hover table-striped">
-                                        <tbody>                                    
-                                            
+                                        <tbody>
+                                        <!--product fields include produt_name, description, price, stock, image -->                                    
+                                        {{#each productData as |product|}}
+                                        <div class="card">
+                                        <img src="{{product.image}}" class="card-img-top">
+                                        <p class="card-text"> Product: {{product.product_name}} </p>
+                                        <p class="card-text"> Description: {{product.description}} </p>
+                                        </div>
+                                        {{/each}}
                                         </tbody>
                                     </table>
                                 </div>
@@ -72,7 +79,7 @@
                                         <input class="form-control" type="text" value="" placeholder="State">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Username</label>
                                     <div class="col-lg-9">

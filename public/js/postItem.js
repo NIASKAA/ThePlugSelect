@@ -1,14 +1,25 @@
+
+
+
 async function newFormHandler(event) {
     event.preventDefault();
-
-    const title = document.querySelector('input[name="post-title"]').value;
-    const content = document.querySelector('input[name="bid-content"]').value;
+    let image = await uploadImage();
+    image = image.substring(1, image.length - 1);
+    console.log(image);
+    const product_name = document.querySelector('input[name="post-title"]').value;
+    const description = document.querySelector('input[name="bid-content"]').value;
     const size = document.querySelector('input[name="bid-content-size"]').value;
-    const response = await fetch('/api/postItem', {
+    const price =  0;
+    const stock =  1;
+    const response = await fetch('/api/products', {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            content
+            product_name,
+            description,
+            price,
+            size,
+            stock,
+            image
         }),
         headers: {
             'Content-Type': 'application/json'

@@ -1,5 +1,15 @@
-<div class="timer">
-            <h3 class="timerStyle text-center">TIME LEFT:{{> timer}}</h3>
+<div class="timer text-center">
+        <div class="timer">Bidding will start in : 
+            <span id="timer" style="color:red;">0
+                0:00
+            </span> 
+            (Initial Bid Amt : 
+            <span class="init-bid" data-init-bid="99">
+                99
+            </span>)
+        </div>
+
+        <!-- <h3 class="timerStyle text-center">TIME LEFT:{{> timer}}</h3>-->
         </div>
         <div class="container">
             <div class="row justify-content-center">
@@ -9,7 +19,7 @@
                             <h4 class="itemName text-center" style="font-family: Bangers;">{{productData.product_name}}</h4>
                         </div>
                         <div class="card-body border-0 imageContain">
-                            <img src= "{{this.image}}" style="width: 80%;" class="rounded d-block mx-auto">
+                            <img src= "{{productData.image}}" style="width: 80%;" class="rounded d-block mx-auto">
                         </div>
                         <div class="card-footer itemInfo">
                             <div class="d-flex justify-content-start">
@@ -17,7 +27,7 @@
                                     <li class="infoList">Category: {{getObjectProperty productData "category.category_name"}} </li>
                                     <li class="infoList">Brand: {{getObjectProperty productData "brand.brand_name"}} </li>
                                     <li class="infoList">Description: {{productData.description}} </li>
-                                    <li class="infoList">Price: {{productData.price}} </li>
+                                    <li class="infoList" id="price">Price: {{productData.price}} </li>
                                     <li class="infoList">Size: {{productData.size}} </li>
                                 </ul>
                             </div>
@@ -42,8 +52,16 @@
 								<div>
                                     <img src="/images/work-3.jpg" class="rounded-circle" style="width: 50px; height: 40px;">
                                 </div>
-                                <div class="msgContainer">
-									Yeetus Deletus
+                                <div class="chatContainer">
+									<form id="chat-form">
+                                    <input
+                                    id="msg"
+                                    type="text"
+                                    placeholder="Enter Message"
+                                    requiredautocomplete="off"
+                                    />
+                                    <button class="btn"><i class="fas fa-paper-plane"></button></i> Send</button>
+                                    </form>
 									<span class="msgTime">8:40 AM, Today</span>
 								</div>
                             </div>
@@ -63,7 +81,7 @@
                                 <button class="btn bidBtns" type="submit">400</button>
                                 <button class="btn bidBtns" type="submit">500</button>
                                 <button class="btn bidBtns" type="submit">1000</button>
-                                <div class="dropdown">
+                                <div class="dropdown" data-toggle="dropdown">
                                     <button class=" btn bidBtns" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Custom Bid
                                     </button>
@@ -74,10 +92,9 @@
                                            <input class="form-control" type="text" id="bid-form" />
                                       </div>
                                     <div class="form-group">
-                                        <button class="btn bidBtns" type="submit">Enter</button>
+                                        <button class="btn bidBtns" id="customBidBtn" type="submit">Enter</button>
                                    </div>
                                    </form>
-                    
                 
 
                                 </div>
@@ -91,5 +108,10 @@
 				</div>
             </div>
         </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
         <script src="/js/bidItem.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/public/js/chatbox.js"></script>
+        {{!-- <script src="/public/js/chatLogic.js"></script>
+        <script src="/public/js/timer.js"></script> --}}

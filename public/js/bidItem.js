@@ -1,20 +1,26 @@
 // get the current bidding item id
-const item_id = document.location.href.split('/')[4];
+const item_id = document.location.href.split("/")[4];
+let currentPrice = Number(
+  document.querySelector("#price").textContent.split(":")[1]
+);
 
 // request to back end for bidding item
 const bidItem = async (price) => {
-    console.log(item_id)
-
-  let response = await fetch(`/api/products/${item_id}/bid`, {
-    method: "POST",
-    body: JSON.stringify({ price }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(response);
-  if (response.ok) {
-    document.location.reload();
+  console.log(item_id);
+  if (price > currentPrice) {
+    let response = await fetch(`/api/products/${item_id}/bid`, {
+      method: "POST",
+      body: JSON.stringify({ price }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(response);
+    if (response.ok) {
+      document.location.reload();
+    }
+  } else {
+    return;
   }
 };
 
@@ -27,3 +33,10 @@ for (let button of buttons) {
     bidItem(bidAmount);
   });
 }
+document.querySelector("#customBidBtn").addEventListener("click", () => {
+  let customBid = Number(document.querySelector("#bid-form").value.trim());
+  console.log(customBid);
+  if (customBid > 0) {
+    bidItem(customBid);
+  }
+});
