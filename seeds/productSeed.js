@@ -59,7 +59,7 @@ const productData = [
         description: "Sus",
         category_id: 1,
         brand_id: 11,
-        image: ""
+        image: "/images/yikes.jpg"
     },
     {
         product_name: 'Balenciaga Shoes',
