@@ -1,9 +1,9 @@
 // get the current bidding item id
-const item_id = document.location.href.split('/')[4];
+const item_id = document.location.href.split("/")[4];
 
 // request to back end for bidding item
 const bidItem = async (price) => {
-    console.log(item_id)
+  console.log(item_id);
 
   let response = await fetch(`/api/products/${item_id}/bid`, {
     method: "POST",
@@ -27,3 +27,10 @@ for (let button of buttons) {
     bidItem(bidAmount);
   });
 }
+
+document.querySelector("#customBidBtn").addEventListener("click", () => {
+  let customBid = Number(document.querySelector("#bid-form").textContent.trim());
+  if (customBid > 0) {
+    bidItem(customBid);
+  }
+});
