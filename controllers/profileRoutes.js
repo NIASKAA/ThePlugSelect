@@ -3,15 +3,22 @@ const withAuth = require('../utils/auth');
 const {User, Bid, Product} = require('../models');
 
 
-router.get('/profile', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.userID, {
         attributes: { exclude: ['password']},
-        include: [{model: Product}],
         raw: true
     })
-    console.log(userData);
+    const productData = await Product.findAll({
+        where: {
+            user_id: req.session.userID
+        },
+        raw: true
+    })
+    console.log("REACHED!")
+    console.log(userData, productData);
     res.render('profile', {
-        userData
+        userData,
+        productData
     })
 });
 

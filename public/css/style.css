@@ -1,557 +1,606 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
 /* Main body */
 body {
-    min-height: 100vh;
-    margin-top:20px;
-    background: #eee;
+  min-height: 100vh;
+  margin-top: 20px;
+  background: #eee;
 }
 .text-dark {
-    font-size: 10px;
-    font-family: "Bangers";
+  font-size: 10px;
+  font-family: "Bangers";
 }
 
 #logo-main {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 /* About Style */
 .title {
-    font-family: "Bangers";
+  font-family: "Bangers";
 }
 
 .card-title {
-    font-family: "Bangers";
+  font-family: "Bangers";
 }
 
 .rounded {
-    border-top: 8px solid black;
-    border-radius: 5px;
+  border-top: 8px solid black;
+  border-radius: 5px;
 }
 
 #aboutContain {
-    background-color: #FFC312;
-    border-color: black;
-    border-style: solid;
-    border-width: 10px;
+  background-color: #ffc312;
+  border-color: black;
+  border-style: solid;
+  border-width: 10px;
 }
 
 #aboutTitle {
-    font-size: 100px;
+  font-size: 100px;
 }
 
 .aboutText {
-    font-family: "Bangers";
-    text-align: center;
+  font-family: "Bangers";
+  text-align: center;
 }
 
 .card {
-    margin: 5px;
+  margin: 5px;
+  padding: 0;
 }
 
 .teamMember {
-    position: relative;
-    margin-bottom: 50px;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    z-index: 1;
-    border-radius: 15px;
-    -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
-    box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  position: relative;
+  margin-bottom: 50px;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  z-index: 1;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
 }
 
 .teamMember .teamImage {
-    position: relative;
-    z-index: 1;
-    border-radius: 15px 15px 0 0;
-    margin: 0 auto;
-    padding: 30px 30px 0 30px;
-    background-color: #FFC312;
-    overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-radius: 15px 15px 0 0;
+  margin: 0 auto;
+  padding: 30px 30px 0 30px;
+  background-color: #ffc312;
+  overflow: hidden;
 }
 
 .teamMember .teamImage::after {
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    position: absolute;
-    width: 150%;
-    height: 80px;
-    bottom: -45px;
-    left: -25%;
-    content: "";
-    background-color: #ffffff;
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  position: absolute;
+  width: 150%;
+  height: 80px;
+  bottom: -45px;
+  left: -25%;
+  content: "";
+  background-color: #ffffff;
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
 
 @media only screen and (max-width: 575px) {
-    .teamMember .teamImage::after {
-        height: 160px;
-        bottom: -90px;
-    }
+  .teamMember .teamImage::after {
+    height: 160px;
+    bottom: -90px;
+  }
 }
 
 .teamMember .teamImage .social-info {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    bottom: 0;
-    right: 30px;
-    text-align: right;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  right: 30px;
+  text-align: right;
 }
 
 .teamMember .teamImage .social-info a {
-    font-size: 14px;
-    color: #020710;
-    padding: 0 5px;
+  font-size: 14px;
+  color: #020710;
+  padding: 0 5px;
 }
 
 .teamMember .teamImage .social-info a:hover,
 .teamMember .teamImage .social-info a:focus {
-    color: #FFC312;
+  color: #ffc312;
 }
 
 .teamMember .teamImage .social-info a:last-child {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 .teamMember .teamInfo {
-    position: relative;
-    z-index: 1;
-    padding: 30px;
-    text-align: right;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    border-radius: 0 0 15px 15px;
-    background-color: #ffffff;
-    font-family: "Bangers";
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  text-align: right;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  border-radius: 0 0 15px 15px;
+  background-color: #ffffff;
+  font-family: "Bangers";
 }
 
 .teamMember .teamInfo::after {
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    position: absolute;
-    z-index: 1;
-    width: 50px;
-    height: 3px;
-    background-color: black;
-    content: "";
-    top: 12px;
-    right: 30px;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+  content: "";
+  top: 12px;
+  right: 30px;
 }
 
 .teamMember .teamInfo h6 {
-    margin-bottom: 0.25rem;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
+  margin-bottom: 0.25rem;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .teamMember .teamInfo h6 {
-        font-size: 14px;
-    }
+  .teamMember .teamInfo h6 {
+    font-size: 14px;
+  }
 }
 
 .teamMember .teamInfo p {
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    margin-bottom: 0;
-    font-size: 14px;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  margin-bottom: 0;
+  font-size: 14px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .single_advisor_profile .teamInfo p {
-        font-size: 12px;
-    }
+  .single_advisor_profile .teamInfo p {
+    font-size: 12px;
+  }
 }
 
 .teamMember:hover .teamImage::after,
 .teamMember:focus .teamImage::after {
-    background-color: black
+  background-color: black;
 }
 
 .teamMember:hover .teamImage .social-info a,
 .teamMember:focus .teamImage .social-info a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .teamMember:hover .teamImage .social-info a:hover,
 .teamMember:hover .teamImage .social-info a:focus,
 .teamMember:focus .teamImage .social-info a:hover,
 .teamMember:focus .teamImage .social-info a:focus {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .teamMember:hover .teamInfo,
 .teamMember:focus .teamInfo {
-    background-color: black
+  background-color: black;
 }
 
 .teamMember:hover .teamInfo::after,
 .teamMember:focus .teamInfo::after {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .teamMember:hover .teamInfo h6,
 .teamMember:focus .teamInfo h6 {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .teamMember:hover .teamInfo p,
 .teamMember:focus .teamInfo p {
-    color: #ffffff;
+  color: #ffffff;
+}
+
+.gitBtns:hover {
+  background-color: seashell;
 }
 
 /* Login Style */
 .showcase {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 .videoContainer {
-    position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .videoContainer video {
-    min-width: 100%;
-	min-height: 100%;
-    position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 .videoContainer:after {
-    content: '';
-	z-index: 1;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.5);
-	position: absolute;
+  content: "";
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
 }
 
 #loginContain {
-    z-index: 2;
+  z-index: 2;
 }
 
-#cardLogin{
-    height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
+#cardLogin {
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.card-header h3{
-    color: white;
-    font-family: "Bangers";
+.card-header h3 {
+  color: white;
+  font-family: "Bangers";
 }
 
 .loginLabel {
-    font-family: "Bangers";
-    color: white;
+  font-family: "Bangers";
+  color: white;
 }
 
-.loginBtn{
-    color: black;
-    background-color: #FFC312;
-    font-family: "Bangers";
-    width: 100px;
-    float: right;
-    margin: 8px;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    }
-    
-.loginBtn:hover{
-    color: black;
-    background-color: white;
+.loginBtn {
+  color: black;
+  background-color: #ffc312;
+  font-family: "Bangers";
+  width: 100px;
+  float: right;
+  margin: 8px;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.loginBtn:hover {
+  color: black;
+  background-color: white;
 }
 
 #dropdownMenuButton {
-    background-color: #FFC312;
-    font-family: "Bangers";
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
+  background-color: #ffc312;
+  font-family: "Bangers";
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
 }
 
 #dropdownMenuButton:hover {
-    color: black;
-    background-color: white;
+  color: black;
+  background-color: white;
 }
 
 .signup-form {
-    background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .signUpBtn {
-    font-family: "Bangers";
-    background-color: #FFC312;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
+  font-family: "Bangers";
+  background-color: #ffc312;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
 }
-
-
 
 /* Navbar Style */
 .navbar-header {
-    margin: auto;   
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    z-index: 2;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 2;
 }
 
 .navBtns {
-    font-family: "Bangers";
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    z-index: 1;
+  font-family: "Bangers";
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  z-index: 1;
 }
 
 .navBtns:hover {
-    background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.card-body{
-    border-color: black;
-    border-style: solid;
-    border-width: 2px;
+.card-body {
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
 }
 
 #brands {
-    width: 100%;
-    max-height: 20%;
+  width: 100%;
+  max-height: 20%;
 }
 
 .imgBrand {
-    color: black;
+  color: black;
 }
 
 .imgBrand:hover {
-    color: black;
+  color: black;
 }
 
-.card-title {   
-    font-size: 24px;
+.card-title {
+  font-size: 24px;
 }
 
 .col {
-    font-family: "Bangers";
-    font-size: 19px;
+  font-family: "Bangers";
+  font-size: 19px;
 }
 
 .nav-tabs {
-    font-family: "Bangers";
+  font-family: "Bangers";
 }
-
-
 
 /* Profile Style */
 .profileTab {
-    color: black;
-    font-size: 20px;
+  color: black;
+  font-size: 20px;
 }
 
 .profileTab:hover {
-    color: black;
+  color: black;
 }
 
 .profileInfo {
-    font-family: "Bangers";
+  font-family: "Bangers";
 }
 
 .form-control-label {
-    font-family: "Bangers";
-    color: black;
+  font-family: "Bangers";
+  color: black;
 }
 .bg-light {
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
 }
 
 .saveBtn {
-    background-color: #FFC312;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Bangers"
+  background-color: #ffc312;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-family: "Bangers";
 }
 
 .addBid {
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Bangers"
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-family: "Bangers";
 }
 
 .regularFont {
-    font-family: "Bangers";
-    font-size: 20px;
+  font-family: "Bangers";
+  font-size: 20px;
+}
+.titleFont {
+  font-family: "Bangers";
+  font-size: 40px;
+}
+.addBid:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .basicFont {
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Bangers";
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-family: "Bangers";
+}
+.basicFont:hover {
+  background-color: #ffc312;
 }
 
 .postCard {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .formLabel {
-    font-family: "Bangers";
+  font-family: "Bangers";
 }
 
 .addBtn {
-    margin: 3px;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Bangers";
+  margin: 3px;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-family: "Bangers";
 }
-
 
 /* ChatRoom Style */
 .timerStyle {
-    font-family: "Bangers";
-
+  font-family: "Bangers";
 }
-.d-flex{
-    display:flex;
-    flex-wrap: wrap;;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
 /*Checkout Style*/
-.card-header h4{
-    color: #FFC312;
-    font-family: "Bangers";
+.card-header h4 {
+  color: #ffc312;
+  font-family: "Bangers";
 }
 
-.btn-primary{
-    background-color: #FFC312;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Bangers"
+.btn-primary {
+  background-color: #ffc312;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-family: "Bangers";
 }
-
 
 @media only screen and (max-width: 575px) {
-    .teamMember .teamImage::after {
-        height: 160px;
-        bottom: -90px;
-    }
+  .teamMember .teamImage::after {
+    height: 160px;
+    bottom: -90px;
+  }
 }
 .imageCard {
-    height: 600px;
-    border-radius: 15px;
-    border-color: black;
-    border-style: solid;
-    border-width: 4px;
-    background-color: white !important;
+  height: 600px;
+  border-radius: 15px;
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+  background-color: white !important;
 }
 
 .itemInfo {
-    border-top: solid;
-    border-color: black;
+  border-top: solid;
+  border-color: black;
 }
-.infoList{
-    font-family: "Bangers";
-    font-size: 14px;
-    list-style: none;
+.infoList {
+  font-family: "Bangers";
+  font-size: 14px;
+  list-style: none;
 }
 
-.chatCard{
-    height: 600px;
-    border-radius: 15px;
-    border-color: black;
-    border-style: solid;
-    border-width: 4px;
-    background-color: rgba(0,0,0,0.4) !important;
+.chatCard {
+  height: 600px;
+  border-radius: 15px;
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
 .chatHeader {
-    height: 12%;
-    border-radius: 15px 15px 0 0 !important;
-    border-bottom: black;
-    border-bottom-style: solid;
+  height: 12%;
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: black;
+  border-bottom-style: solid;
 }
 
-.msgBody{
-    border: none;
+.msgBody {
+  border: none;
 }
 
-.cardEnd{
-    border-radius: 0 0 15px 15px !important;
-    border-top: solid;
+.cardEnd {
+  border-radius: 0 0 15px 15px !important;
+  border-top: solid;
 }
 
-.userName{
-    font-family: "Bangers";
-    font-size: 20px;
-    color: white;
+.userName {
+  font-family: "Bangers";
+  font-size: 20px;
+  color: white;
 }
 
 .bidItem {
-    color: white;
-    font-family: "Bangers";
+  color: white;
+  font-family: "Bangers";
 }
 
-.msgContainer{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
-    border-radius: 25px;
-    background-color: white;
-    padding: 10px;
-    position: relative;
+.msgContainer {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: white;
+  padding: 10px;
+  position: relative;
 }
 
-.msgContainerReply{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 10px;
-    border-radius: 25px;
-    background-color: white;
-    padding: 10px;
-    position: relative;
+.msgContainerReply {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: white;
+  padding: 10px;
+  position: relative;
 }
 
-.msgTime{
-    position: absolute;
-    left: 0;
-    bottom: -15px;
-    color: rgba(255,255,255,0.5);
-    font-size: 10px;
+.msgTime {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
 }
 
 .bidBtns {
+  background-color: white;
+  color: black;
+  margin: 20px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  font-family: "Bangers";
+}
+
+.customBidBtn {
+  background-color: white;
+  color: black;
+  margin: 20px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  font-family: "Bangers";
+}
+.render-message {
     background-color: white;
-    color:black;
+    color: black;
     margin: 20px;
     border-color: black;
     border-style: solid;
     border-width: 2px;
+    border-radius: 15px;
+    padding: 5px;
     font-family: "Bangers";
+
+}
+/*Style for Upload Bid*/
+.uploadCard {
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Bangers";
+  font-size: 20px;
+  border-color: black;
+}
+
+.h6,
+h6 {
+  font-size: x-large;
+}
+
+.h2,
+h2 {
+  font-family: "Bangers";
+  font-size: 50px;
 }
