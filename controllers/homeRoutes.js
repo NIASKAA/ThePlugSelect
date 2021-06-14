@@ -183,9 +183,15 @@ router.get("/bid/:id", async (req, res) => {
       },
     ],
   });
-  console.log(productData);
+
+  const userData = await User.findByPk(req.session.userID, {
+    raw: true,
+    attributes: {exclude: ['password']},
+  })
+  console.log(userData);
   res.render("chatRoom", {
     productData,
+    userData,
     loggedIn: req.session.loggedIn,
   });
 });
