@@ -3,11 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const http = require('http');
-const Handlebars = require('handlebars');
-const socketio = require('socket.io');
-
 const app = express();
 const server = http.createServer(app);
+const socketio = require('socket.io');
 const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -19,9 +17,10 @@ timer = new Timer();
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
-const io = socketio(server);
 
 const PORT = process.env.port || 3001;
+
+const io = socketio(server);
 
 const sess = {
     secret: 'wetheplugselect',
@@ -46,53 +45,16 @@ app.use(express.static("images"));
 app.use(express.static("video"));
 app.use(routes);
 
-const botName = "Plug Bot";
-
+const numUsers = 0;
 
 io.on('connection', socket => {
-    console.log('New WS Connection...');
+    const addedUser = false;
 
-
-    // socket.on('joinRoom', ({ username, bidRoom }) => {
-    //     const user = userJoin(socket.id, username, bidRoom)
-
-    //     socket.join(user.bidRoom);
-
-    //     // Welcome message to user
-    //     socket.emit('message', 'Welcome to The Plug Select');
-
-    //     // Broadcast when a user connects
-    //     socket.broadcast.to(user.bidRoom).emit(
-    //         'message', 
-    //         formatMessage(botName, `${user.username} has joined the chat`)
-    //     );
-
-    //     // Sends users to room
-    //     io.to(user.bidRoom).emit('roomUsers', {
-    //         room: userbidRoom,
-    //         users: getRoomUsers(user.bidRoom)
-    //     });
-    // });
-
-    // // Runs when client disconnects
-    // socket.on('disconnect', () => {
-    //     const user = userLeave(socket.id);
-
-    //     if (user) {
-    //         io.to(user.bidRoom).emit(
-    //             'message',
-    //             formatMessage(botName, `${user.username} has left the chat`)
-    //         );
-    //     }
-    // });
-
-    // // Listen for chatMessage
-    // socket.on('chatMessage', msg => {
-    //     const user = getCurrentUser(socket.id);
-
-    //     io.to(user.bidRoom).emit('message', formatMessage(user.username,msg));
-    // });
-
+    console.log('User Connected: ' + socket.id);
+    
+    socket.on('message', (data) => {
+        socket.broadcast.emit('message', data)
+    });
 });
 
 app.use(
