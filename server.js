@@ -49,12 +49,18 @@ const numUsers = 0;
 
 io.on('connection', socket => {
     const addedUser = false;
-
+    io.emit('message', "User connected");
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
-        socket.broadcast.emit('message', data)
+        console.log("From client: " , data);
+        socket.broadcast.emit('message', data);
     });
+
+    socket.on('chat', message => {
+        console.log(`User # bids: ${message}`);
+        io.emit('chat', message)
+    })
 });
 
 app.use(
