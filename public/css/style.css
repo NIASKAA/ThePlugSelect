@@ -14,6 +14,19 @@ body {
 #logo-main {
   display: block;
   margin: auto;
+  z-index: 6;
+  animation-name: fadeIn;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* About Style */
@@ -70,6 +83,56 @@ body {
   padding: 30px 30px 0 30px;
   background-color: #ffc312;
   overflow: hidden;
+}
+/*Animation */
+.teamMember:hover {
+}
+/*Animation Shake*/
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px);
+    rotate: (0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px);
+    rotate: (-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px);
+    rotate: (1deg);
+  }
+  30% {
+    transform: translate(2px, 3px);
+    rotate: (0deg);
+  }
+  40% {
+    transform: translate(3px, -1px);
+    rotate: (-1deg);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+    rotate: (1deg);
+  }
+  60% {
+    transform: translate(1px, -3px);
+    rotate: (0deg);
+  }
+  70% {
+    transform: translate(-3px, -2px);
+    rotate: (-1deg);
+  }
+  80% {
+    transform: translate(-2px, 1px);
+    rotate: (1deg);
+  }
+  90% {
+    transform: translate(-2px, 2px);
+    rotate: (0deg);
+  }
+  100% {
+    transform: translate(2px, -3px);
+    rotate: (-1deg);
+  }
 }
 
 .teamMember .teamImage::after {
@@ -202,6 +265,8 @@ body {
 .teamMember:hover .teamInfo p,
 .teamMember:focus .teamInfo p {
   color: #ffffff;
+  animation: shake 0.5s;
+  animation-iteration-count: 3;
 }
 
 .gitBtns:hover {
@@ -244,6 +309,10 @@ body {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
+}
+
+#loginVideo {
+  z-index: -1;
 }
 
 #loginContain {
@@ -318,12 +387,15 @@ body {
   justify-content: center;
   z-index: 2;
 }
-
+.navBtns:hover {
+  background-color: #ffc312 !important;
+}
 .navBtns {
   font-family: "Bangers";
   border-color: black;
   border-style: solid;
   border-width: 3px;
+  color: #ffc312;
   z-index: 1;
 }
 
@@ -340,6 +412,7 @@ body {
 #brands {
   width: 100%;
   max-height: 20%;
+  z-index: 3;
 }
 
 .imgBrand {
@@ -354,6 +427,9 @@ body {
   font-size: 24px;
 }
 
+.card:hover {
+  box-shadow: 0 4px 8px 0 #ffc312, 0 6px 20px 0 #ffc312;
+}
 .col {
   font-family: "Bangers";
   font-size: 19px;
@@ -420,10 +496,12 @@ body {
 .basicFont {
   border-color: black;
   border-style: solid;
+
   border-width: 3px;
   font-family: "Bangers";
 }
-.basicFont:hover {
+.basicFont:hover,
+.addBid:hover {
   background-color: #ffc312;
 }
 
@@ -622,4 +700,3 @@ h2 {
   font-family: "Bangers";
   font-size: 50px;
 }
-
