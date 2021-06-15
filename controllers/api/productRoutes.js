@@ -8,6 +8,8 @@ const {
   Bid,
 } = require("../../models");
 
+const moment = require("moment"); 
+
 // get all products
 router.get("/", async (req, res) => {
   try {
@@ -68,6 +70,11 @@ router.post("/", (req, res) => {
 });
 
 //
+// 3 different queries
+// 1st query check if there is a bid period.. 
+// 2nd check if bid is available based on the current time and end date. 
+// 3rd place bid for that user. (meaning multiple users can have a bid)
+// 4th query create or update that bid for that user... 
 router.post("/:id/bid", async (req, res) => {
   try {
     // create a new bid
