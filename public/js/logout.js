@@ -14,9 +14,6 @@ async function logout() {
 async function loggingOut() {
     console.log("connected");
     let signoff = document.querySelector('#logout')
-
-    console.log(signoff);
-
     signoff.addEventListener('click', logout);
 };
 
