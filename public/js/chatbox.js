@@ -9,9 +9,11 @@ const chatWindow = document.querySelector('.chatContainer')
 const socket = io();
 
 const renderMessage = message => {
-    const div = document.createElement('div')
+    const div = document.createElement('div');
+    const span = document.createElement('span');
     div.classList.add('render-message')
     div.innerText = message
+
     chatWindow.appendChild(div)
   }
   
