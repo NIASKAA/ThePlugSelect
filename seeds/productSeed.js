@@ -8,20 +8,18 @@ const productData = [
         size: "1/60",
         description: "PG Unicorn Phenex NIB",
         category_id: 5,
-        brand_id: 11,
-        image: '/images/phenex.jpeg'
-
+        brand_id: 5,
+        image: 'https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718857/phenex_scb1um.jpg'
     },
     {
         product_name: 'Off-White Jackets',
         price: 500,
         stock: 14,
         size: "L",
-        description: "Art work inspired",
-        category_id: 6,
+        description: "Galaxy paint inspired",
+        category_id: 1,
         brand_id: 6,
-        image: '/images/offwhiteJacket.JPG'
-
+        image: 'https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718857/offwhitegalaxy_wii4hp.jpg'
     },
     {
         product_name: 'Off-White T-Shirt',
@@ -29,30 +27,19 @@ const productData = [
         stock: 14,
         size: "M",
         description: "Luggage Tag Style",
+        category_id: 3,
+        brand_id: 6,
+        image: 'https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/offwhiteair_xzr2qi.jpg'
+    },
+    {
+        product_name: 'Off-White Shoes',
+        price: 800,
+        stock: 14,
+        size: "43",
+        description: "Moto-Wrap",
         category_id: 1,
         brand_id: 6,
-        image: 'public/images/offwhiteT2.JPG'
-
-    },
-    {
-        product_name: 'Balenciaga Shoes',
-        price: 800,
-        stock: 1,
-        size: "10",
-        description: "Black balenciaga shoes",
-        category_id: 7,
-        brand_id: 9,
-        image: "public/images/balenciagashoes.jpg"
-    },
-    {
-        product_name: 'Northface Jacket',
-        price: 100,
-        stock: 1,
-        size: "L",
-        description: "Tan northface jacket",
-        category_id: 6,
-        brand_id: 7,
-        image: "public/images/DSC_0113.JPG"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718839/offwhiteshoes_cmxsyk.jpg"
     },
     {
         product_name: 'Off-White T Shirt',
@@ -62,18 +49,17 @@ const productData = [
         description: "Do Not Cross Style",
         category_id: 1,
         brand_id: 6,
-        image: "/images/donotcross.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718854/donotcross_fpxcua.jpg"
     },
     {
-        product_name: 'Jordans',
-        price: 100,
+        product_name: 'Amongus chicken nugget',
+        price: 10000000,
         stock: 1,
-        size: "10",
-        description: "Black Jordans",
-        category_id: 7,
-        brand_id: 10,
-        image: "public/images/jordans.jpg"
-
+        size: "Sus",
+        description: "Sus",
+        category_id: 1,
+        brand_id: 11,
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718837/yikes_eh7ujm.jpg"
     },
     {
         product_name: 'Balenciaga Shoes',
@@ -83,7 +69,7 @@ const productData = [
         description: "Socks Bro",
         category_id: 1,
         brand_id: 12,
-        image: "/images/balenciagashoes.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718839/balenciagashoes_w1oqji.jpg"
     },
     {
         product_name: 'Off-White Sweater',
@@ -93,7 +79,7 @@ const productData = [
         description: "Outline Style",
         category_id: 1,
         brand_id: 6,
-        image: "/images/offwhitesweater.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718862/offwhitesweater_rpfjtq.jpg"
     },
     {
         product_name: 'Moncler X Off-White',
@@ -103,7 +89,7 @@ const productData = [
         description: "Reflective Jacket",
         category_id: 1,
         brand_id: 13,
-        image: "/images/offwhitemonclear.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718858/offwhitemonclear_ebb4ey.jpg"
     },
     {
         product_name: 'Off-White Shoes',
@@ -113,7 +99,7 @@ const productData = [
         description: "Jordan Style Inspired",
         category_id: 1,
         brand_id: 6,
-        image: "/images/offwhiteshoes2.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718855/offwhiteshoes2_a7anr9.jpg"
     },
     {
         product_name: 'Off-White T-Shirt',
@@ -123,7 +109,7 @@ const productData = [
         description: "Alien Style Inspired",
         category_id: 1,
         brand_id: 6,
-        image: "/images/offwhiteT.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/offwhitealien_regjfq.jpg"
     },
     {
         product_name: 'Off-White T-Shirt',
@@ -133,7 +119,7 @@ const productData = [
         description: " Incomplete Art ",
         category_id: 1,
         brand_id: 6,
-        image: "/images/offwhiteJacket.jpg"
+        image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/offwhiteart_ddbnxd.jpg"
     },
   ];
   
