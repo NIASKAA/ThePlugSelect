@@ -10,8 +10,8 @@ const fileUpload = require("express-fileupload");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
-Timer = require('./public/js/timer').Timer,
-timer = new Timer();
+// Timer = require('./public/js/timer').Timer,
+// timer = new Timer();
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');

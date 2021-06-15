@@ -8,6 +8,9 @@
                 99
             </span>)
         </div>
+        <div class="timer-two"> There is only this much time left:
+            <span id="bid-timer" style="color:orange;">00:00:00</span>
+        </div>
 
         <!-- <h3 class="timerStyle text-center">TIME LEFT:{{> timer}}</h3>-->
         </div>
@@ -55,10 +58,19 @@
 								<div>
                                     <img src="{{userData.profile_picture}}" class="rounded-circle" style="width: 50px; height: 40px;">
                                 </div>
+<<<<<<< HEAD
+                                <form="chatContainer">
+									{{!-- <div id="test"></div> --}}
+                                    <input type="text" class="form-control" id="test">
+                                    <button onclick="sendMessage()" class="btn"><i class="fas fa-paper-plane"></button></i>Send</button>
+									
+								</form>
+=======
                                 {{/if}}
                                 <div class="chatContainer">
 									<div id="test"></div>
 								</div>
+>>>>>>> master
                             </div>
                         </div>
                         
@@ -117,3 +129,5 @@ crossorigin="anonymous"
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chatbox.js"></script>
 <script src="/js/bidItem.js"></script>
+<script src="/public/js/postItem.js"></script>
+<script src="/public//js/timer.js"></script>
