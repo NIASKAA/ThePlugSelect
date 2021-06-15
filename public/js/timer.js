@@ -20,10 +20,5 @@ var countdown = setInterval(function(auctionTimer) {
 
  
 
-function setTimer(num) {
-    var counter = setInterval(function () {
-        document.getElementById('timer').innerHTML = num;
-        num-- || clearInterval(counter);
-    }, 1000);
-}
-setTimer(10);
+
+
