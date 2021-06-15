@@ -33,7 +33,7 @@ User.init(
       },
       profile_picture: {
          type: DataTypes.STRING,
-         defaultValue: "/images/work-3.jpg",
+         defaultValue: "https://res.cloudinary.com/theplugselect/image/upload/v1623718802/logo_tguljs.png",
       },
       password: {
          type: DataTypes.STRING,
