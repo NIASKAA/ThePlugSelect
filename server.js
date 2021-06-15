@@ -10,8 +10,8 @@ const fileUpload = require("express-fileupload");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
-Timer = require('./public/js/timer').Timer,
-timer = new Timer();
+// Timer = require('./public/js/timer').Timer,
+// timer = new Timer();
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -48,17 +48,20 @@ const numUsers = 0;
 
 io.on('connection', socket => {
     const addedUser = false;
-    io.emit('message', "");
+    io.emit('message', '');
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
-        console.log("From client: " , data);
         socket.broadcast.emit('message', data);
     });
 
     socket.on('chat', message => {
         io.emit('chat', message)
     })
+    socket.on('disconnect', function () {
+        socket.broadcast.emit('disconnected');
+  
+    });
 
     
     io.emit('userLeft', "User Disconnected");
