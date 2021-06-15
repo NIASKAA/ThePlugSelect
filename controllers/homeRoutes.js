@@ -88,13 +88,7 @@ router.get("/profile", withAuth, (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-<<<<<<< HEAD
   res.render("about");
-=======
-  res.render("about", {
-    loggedIn: req.session.loggedIn
-  });
->>>>>>> e7c74f181644bff1ba0b35b514be56f22a084a14
 });
 
 router.get("/postItem", (req, res) => {
@@ -192,8 +186,8 @@ router.get("/bid/:id", async (req, res) => {
 
   const userData = await User.findByPk(req.session.userID, {
     raw: true,
-    attributes: {exclude: ['password']},
-  })
+    attributes: { exclude: ["password"] },
+  });
   console.log(userData);
   res.render("chatRoom", {
     productData,
