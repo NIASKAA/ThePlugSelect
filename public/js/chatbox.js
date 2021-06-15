@@ -16,7 +16,21 @@ const renderMessage = message => {
     chatWindow.appendChild(div)
   }
   
-  
+function setTimer(num) {
+  var counter = setInterval(function () {
+      document.getElementById('timer').innerHTML = num;
+      num-- || clearInterval(counter);
+  }, 1000);
+}
+setTimer(10);
+
+function bidSold(data){
+  document.getElementById('test').innerHTML = data;
+  alert(`$${username} Won the bid!`)
+};
+
+setTimeout(bidSold, 12000);
+
 socket.on('message', (data) => {
     document.getElementById('test').innerHTML = data;
     socket.emit('message', `\n\n\n\n\n${username} joined the chat\n\n\n\n\n\n`)
@@ -35,6 +49,7 @@ socket.on('chat', message => {
     renderMessage(message)
 })
   
+
 socket.on('userLeft', () => {
   
 })
