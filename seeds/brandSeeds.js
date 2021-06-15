@@ -42,10 +42,19 @@ const brandData = [
         brand_name: "Jordans"
     },
     {
+
         brand_id:11,
         brand_name: "Gundam"
-    }
+    },
+    {
+        brand_id: 12,
+        brand_name: "Balenciaga"
+    },
+    {
+        brand_id: 13,
+        brand_name: "Moncler"
 
+    }
   ];
   
 const seedBrands = () => Brand.bulkCreate(brandData);

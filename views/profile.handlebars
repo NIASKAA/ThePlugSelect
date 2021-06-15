@@ -1,128 +1,189 @@
-  <div class="container">
-            <div class="row my-2">
-                <div class="col-lg-8 order-lg-2">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a href="" data-target="#profile" data-toggle="tab" class="nav-link profileTab">Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" data-target="#messages" data-toggle="tab" class="nav-link profileTab">Messages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" data-target="#edit" data-toggle="tab" class="nav-link profileTab">Edit</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content py-4">
-                        <div class="tab-pane active" id="profile">
-                            <h4 class="mb-3 profileInfo">User Info</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5 class="profileInfo">
-                                        About
-                                    </h5>
-                                        <p class="profileInfo">
-                                            Name: {{userData.username}}
-                                        </p>
-                                </div>
-                                <div class="col-md-12">
-                                    <h4 class="mt-2 profileInfo">Recent Bids</h4>
-                                    <table class="table table-sm table-hover table-striped">
-                                        <tbody>
-                                        <!--product fields include produt_name, description, price, stock, image -->                                    
-                                        {{#each productData as |product|}}
-                                        <div class="card">
-                                        <img src="{{product.image}}" class="card-img-top">
-                                        <p class="card-text"> Product: {{product.product_name}} </p>
-                                        <p class="card-text"> Description: {{product.description}} </p>
-                                        </div>
-                                        {{/each}}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="messages">
-                            
-                        </div>
-                        <div class="tab-pane" id="edit">
-                            <form role="form">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" placeholder="Street">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-6">
-                                        <input class="form-control" type="text" value="" placeholder="City">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <input class="form-control" type="text" value="" placeholder="State">
-                                    </div>
-                                </div>
+<div class="container">
+   <div class="row my-2">
+      <div class="col-lg-8 order-lg-2">
+         <ul class="nav nav-tabs">
+            <li class="nav-item">
+               <a
+                  href=""
+                  data-target="#profile"
+                  data-toggle="tab"
+                  class="nav-link profileTab"
+               >Info</a>
+            </li>
+            <li class="nav-item">
+               <a
+                  href=""
+                  data-target="#messages"
+                  data-toggle="tab"
+                  class="nav-link profileTab"
+               >Messages</a>
+            </li>
+            <li class="nav-item">
+               <a
+                  href=""
+                  data-target="#edit"
+                  data-toggle="tab"
+                  class="nav-link profileTab"
+               >Edit</a>
+            </li>
+         </ul>
+         <div class="tab-content py-4">
+            <div class="tab-pane active" id="profile">
+               <h4 class="mb-3 profileInfo">User Info</h4>
+               <div class="row">
+                  <div class="col-md-6">
+                     <h5 class="profileInfo">
+                        About
+                     </h5>
+                     <div class="card">
 
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-9">
-                                        <input type="reset" class="btn bg-light" value="Cancel">
-                                        <input type="button" class="btn saveBtn" value="Save Changes">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-lg-8 order-lg-2">
-                    <div class="card uploadCard">
-                       <form enctype="multipart/form-data" method="post" class="col-lg-4 order-lg-1 text-center">
-                          <h6 class="mt-2">Upload a photo</h6>
-                          <label class="custom-file">
-                            <input type="text" name="title" /><br/>
-                            <input type="file" name="upload" multiple="multiple" /><br/>
-                            <input type="submit" id="file" class="custom-file-input">
-                          </label>
-                       </form>
-                   </div>
-                </div>
+                         <img class="card-img-top" src="{{userData.profile_picture}}">
+                     </div>
+                     <p class="profileInfo">
+                        Name:
+                        {{userData.username}}
+                     </p>
+                     <p class="profileInfo">
+                         Email: {{userData.email}}
+                     </p>
+                  </div>
+                  <div class="col-md-12">
+                     <h4 class="mt-2 profileInfo">Recent Bids</h4>
+                     <table class="table table-sm table-hover table-striped">
+                        <tbody>
+                           <!--product fields include produt_name, description, price, stock, image -->
+                           {{#each productData as |product|}}
+                              <div class="card">
+                                 <img src="{{product.image}}" class="card-img-top" />
+                                 <p class="profileInfo">
+                                    Product:
+                                    {{product.product_name}}
+                                 </p>
+                                 <p class="profileInfo">
+                                    Description:
+                                    {{product.description}}
+                                 </p>
+                                 <p>
+                                 </p>
+                              </div>
+                           {{/each}}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
             </div>
-        </div>
+            <div class="tab-pane" id="messages">
 
+            </div>
+            <div class="tab-pane" id="edit">
+               <form role="form">
+                  <div class="form-group row">
+                     <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="text" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="text" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label
+                        class="col-lg-3 col-form-label form-control-label"
+                     >Email</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="email" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label
+                        class="col-lg-3 col-form-label form-control-label"
+                     >Address</label>
+                     <div class="col-lg-9">
+                        <input
+                           class="form-control"
+                           type="text"
+                           value=""
+                           placeholder="Street"
+                        />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label class="col-lg-3 col-form-label form-control-label"></label>
+                     <div class="col-lg-6">
+                        <input
+                           class="form-control"
+                           type="text"
+                           value=""
+                           placeholder="City"
+                        />
+                     </div>
+                     <div class="col-lg-3">
+                        <input
+                           class="form-control"
+                           type="text"
+                           value=""
+                           placeholder="State"
+                        />
+                     </div>
+                  </div>
 
-        <script src="/js/imageUpload.js"></script>
+                  <div class="form-group row">
+                     <label
+                        class="col-lg-3 col-form-label form-control-label"
+                     >Username</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="text" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label
+                        class="col-lg-3 col-form-label form-control-label"
+                     >Password</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="password" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label class="col-lg-3 col-form-label form-control-label">Confirm
+                        password</label>
+                     <div class="col-lg-9">
+                        <input class="form-control" type="password" />
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <label class="col-lg-3 col-form-label form-control-label"></label>
+                     <div class="col-lg-9">
+                        <input type="reset" class="btn bg-light" value="Cancel" />
+                        <input type="button" class="btn saveBtn" value="Save Changes" />
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="container col-lg-8 order-lg-2">
+         <div class="card uploadCard">
+            <form
+               enctype="multipart/form-data"
+               method="post"
+               class="col-lg-4 order-lg-1 text-center"
+            >
+               <h6 class="mt-2">Upload a profile photo</h6>
+               <label class="custom-file">
+                  <input type="text" name="title" /><br />
+                  <input type="file" name="upload" multiple="multiple" id="file" /><br />
+                  <div class="text-center">
+                     <button type="submit" class="btn addBtn">Upload image</button>
+                  </div>
+               </label>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script src="/js/imageUpload.js"></script>
+<script src="/js/uploadProfilePic.js"></script>
