@@ -1,24 +1,57 @@
 // Bid timer setup
-// let auctionTimer = 10000;
 
-var countdown = setInterval(function(auctionTimer) {
+let chatBox = document.querySelector(".msgBody");
+let bidButtons = document.querySelector(".cardEnd");
+let timer = document.getElementById("bid-timer").innerHTML;
 
-    if (auctionTimer <= 0) {
-        clearInterval(countdown);
-        document.getElementById("bid-timer").innerHTML = "The auction is now over."
-    } else {
-        let hours = Math.floor((auctionTimer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((auctionTimer % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((auctionTimer % (1000 * 60) / 1000));
-        document.getElementById('bid-timer').innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+function hideButtons() {
+  let buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => button.setAttribute("style", "display:none"));
+}
+
+function showButtons() {
+  let buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => button.setAttribute("style", "display:"));
+}
+
+function endAuction() {
+  let auctions = document.querySelectorAll(".render-message");
+  let winnerBid = auctions[auctions.length - 1].textContent.trim().split(" ");
+  let winnerMessage = `<div class="render-message"> Item sold to ${winnerBid[0]} with a bid of $ ${winnerBid[2]}</div>`;
+  hideButtons();
+  bidButtons.innerHTML = `<h5 class="itemName"> Auction ended </h5>`;
+  chatBox.innerHTML = winnerMessage;
+}
+
+function auctionTimer(num) {
+  var counter = setInterval(function () {
+    document.getElementById("bid-timer").innerHTML = new Date(num * 1000)
+      .toISOString()
+      .substr(11, 8);
+    if (num <= 0) {
+      clearInterval(counter);
+      endAuction();
     }
+    num--;
+  }, 1000);
+}
 
-    auctionTimer--;
-    
-}, 1000);
 
+function setTimer(num) {
+  hideButtons();
+  var counter = setInterval(function () {
+    document.getElementById("timer").innerHTML = num;
+    if (num <= 0) {
+      clearInterval(counter);
+      showButtons();
+      auctionTimer(30);
+    }
+    num--;
+  }, 1000);
+}
 
- 
+setTimer(10);
+
 
 
 
