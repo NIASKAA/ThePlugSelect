@@ -6,11 +6,6 @@ let currentPrice = Number(
 );
 const chat = document.querySelector(".chat-form")
 
-let currentPrice = Number(
-  document.querySelector("#price").textContent.split(":")[1]
-);
-const chat = document.querySelector(".chat-form")
-
 // request to back end for bidding item
 const bidItem = async (price) => {
   if (price > currentPrice) {

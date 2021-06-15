@@ -25,10 +25,13 @@ const sendMessage = () => {
 }
 
 socket.on('chat', message => {
-  console.log('From server: ', message)
+  console.log(`${username} ${message}`)
 })
 
-socket.on('chat', message=> {
+socket.on('chat', message => {
     renderMessage(message)
 })
   
+socket.on('userLeft', () => {
+  
+})

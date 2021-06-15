@@ -88,7 +88,9 @@ router.get("/profile", withAuth, (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get("/postItem", (req, res) => {
@@ -186,8 +188,8 @@ router.get("/bid/:id", async (req, res) => {
 
   const userData = await User.findByPk(req.session.userID, {
     raw: true,
-    attributes: { exclude: ["password"] },
-  });
+    attributes: {exclude: ['password']},
+  })
   console.log(userData);
   res.render("chatRoom", {
     productData,
