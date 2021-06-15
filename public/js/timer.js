@@ -36,6 +36,7 @@ function auctionTimer(num) {
   }, 1000);
 }
 
+
 function setTimer(num) {
   hideButtons();
   var counter = setInterval(function () {
@@ -50,3 +51,7 @@ function setTimer(num) {
 }
 
 setTimer(10);
+
+
+
+

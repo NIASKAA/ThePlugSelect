@@ -42,3 +42,7 @@ socket.on("chat", (message) => {
 });
 
 socket.on("userLeft", () => {});
+    socket.emit('message', "Hey")
+}
+
+
