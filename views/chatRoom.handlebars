@@ -40,29 +40,23 @@
 						<div class="card-header chatHeader">
 							<div class="d-flex bd-highlight mb-3">
 								<div class="p-2 bd-highlight userImg">
-                                    <img src="/images/work-3.jpg" class="rounded-circle" style="width: 55px; height: 40px;">
+                                    <img src="{{userData.profile_picture}}" class="rounded-circle" style="width: 55px; height: 40px;">
 								</div>
 								<div class="userName">
-									<p>Username</p>
+									<p>{{userData.username}}</p>
                                 </div>
 							</div>
 						</div>
 						<div class="card-body msgBody">
 							<div class="d-flex justify-content-start mb-4">
 								<div>
-                                    <img src="/images/work-3.jpg" class="rounded-circle" style="width: 50px; height: 40px;">
+                                    <img src="{{userData.profile_picture}}" class="rounded-circle" style="width: 50px; height: 40px;">
                                 </div>
                                 <div class="chatContainer">
-									<form id="chat-form">
-                                    <input
-                                    id="msg"
-                                    type="text"
-                                    placeholder="Enter Message"
-                                    requiredautocomplete="off"
-                                    />
-                                    <button class="btn"><i class="fas fa-paper-plane"></button></i> Send</button>
+									<div id="test"></div>
+                                    <button onclick="sendMessage()" class="btn"><i class="fas fa-paper-plane"></button></i>Send</button>
                                     </form>
-									<span class="msgTime">8:40 AM, Today</span>
+									
 								</div>
                             </div>
                         </div>
@@ -82,7 +76,7 @@
                                 <button class="btn bidBtns" type="submit">500</button>
                                 <button class="btn bidBtns" type="submit">1000</button>
                                 <div class="dropdown" data-toggle="dropdown">
-                                    <button class=" btn bidBtns" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class=" btn customBidBtn" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Custom Bid
                                     </button>
                                     <div class="dropdown-menu">
@@ -92,7 +86,7 @@
                                            <input class="form-control" type="text" id="bid-form" />
                                       </div>
                                     <div class="form-group">
-                                        <button class="btn bidBtns" id="customBidBtn" type="submit">Enter</button>
+                                        <button class="btn customBidBtn" id="customBidBtn" type="submit">Enter</button>
                                    </div>
                                    </form>
                 
@@ -100,7 +94,7 @@
                                 </div>
                                 
                                 {{else}}
-                                <p>You must be logged in to make a bid</p>>
+                                <p>You must be logged in to make a bid</p>
                             </div>
                             {{/if}}
 						</div>
@@ -108,10 +102,17 @@
 				</div>
             </div>
         </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-        <script src="/js/bidItem.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/public/js/chatbox.js"></script>
-        {{!-- <script src="/public/js/chatLogic.js"></script>
-        <script src="/public/js/timer.js"></script> --}}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+crossorigin="anonymous"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+crossorigin="anonymous"
+></script>
+<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chatbox.js"></script>
+<script src="/js/bidItem.js"></script>

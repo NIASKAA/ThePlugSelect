@@ -116,4 +116,21 @@ router.delete('/:id', withAuth, (req, res) => {
     });
 });
 
+router.put('/', async (req,res)=> {
+    try {
+        const updatedUser = await User.update(req.body, {
+            where: {
+                id: req.session.userID
+            }
+        })
+        res.status(200).json(updatedUser);
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+
+})
+
 module.exports = router;
