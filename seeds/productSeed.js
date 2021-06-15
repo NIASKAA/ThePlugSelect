@@ -8,7 +8,7 @@ const productData = [
         size: "1/60",
         description: "PG Unicorn Phenex NIB",
         category_id: 5,
-        brand_id: 5,
+        brand_id: 11,
         image: '/images/phenex.jpeg'
     },
     {
@@ -16,10 +16,10 @@ const productData = [
         price: 500,
         stock: 14,
         size: "L",
-        description: "Galaxy paint inspired",
-        category_id: 1,
-        brand_id: 1,
-        image: '/images/balenciagashoes.jpg'
+        description: "Art work inspired",
+        category_id: 6,
+        brand_id: 6,
+        image: '/images/offwhiteJacket.JPG'
     },
     {
         product_name: 'Off-White T-Shirt',
@@ -27,39 +27,39 @@ const productData = [
         stock: 14,
         size: "M",
         description: "Luggage Tag Style",
-        category_id: 3,
-        brand_id: 1,
-        image: '/images/mastermind.jpeg'
+        category_id: 1,
+        brand_id: 6,
+        image: 'public/images/offwhiteT2.JPG'
     },
     {
-        product_name: 'Off-White Shoes',
+        product_name: 'Balenciaga Shoes',
         price: 800,
-        stock: 14,
-        size: "43",
-        description: "Moto-Wrap",
-        category_id: 1,
-        brand_id: 1,
-        image: "/images/bape.png"
-    },
-    {
-        product_name: 'Plain T-Shirt',
-        price: 10000,
-        stock: 14,
-        size: "L",
-        description: "",
-        category_id: 1,
-        brand_id: 1,
-        image: "/images/kaws.jpeg"
-    },
-    {
-        product_name: 'Amongus chicken nugget',
-        price: 10000000,
         stock: 1,
-        size: "Sus",
-        description: "Sus",
-        category_id: 1,
-        brand_id: 1,
-        image: ""
+        size: "10",
+        description: "Black balenciaga shoes",
+        category_id: 7,
+        brand_id: 9,
+        image: "public/images/balenciagashoes.jpg"
+    },
+    {
+        product_name: 'Northface Jacket',
+        price: 100,
+        stock: 1,
+        size: "L",
+        description: "Tan northface jacket",
+        category_id: 6,
+        brand_id: 7,
+        image: "public/images/DSC_0113.JPG"
+    },
+    {
+        product_name: 'Jordans',
+        price: 100,
+        stock: 1,
+        size: "10",
+        description: "Black Jordans",
+        category_id: 7,
+        brand_id: 10,
+        image: "public/images/jordans.jpg"
     },
   ];
   
