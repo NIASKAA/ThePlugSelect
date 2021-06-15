@@ -40,8 +40,10 @@
 						<div class="card-header chatHeader">
 							<div class="d-flex bd-highlight mb-3">
 								<div class="p-2 bd-highlight userImg">
+                                    {{#if loggedIn}}
                                     <img src="{{userData.profile_picture}}" class="rounded-circle" style="width: 55px; height: 40px;">
-								</div>
+                                    {{/if}}
+                                </div>
 								<div class="userName">
 									<p>{{userData.username}}</p>
                                 </div>
@@ -49,14 +51,13 @@
 						</div>
 						<div class="card-body msgBody">
 							<div class="d-flex justify-content-start mb-4">
+                                {{#if loggedIn}}
 								<div>
                                     <img src="{{userData.profile_picture}}" class="rounded-circle" style="width: 50px; height: 40px;">
                                 </div>
+                                {{/if}}
                                 <div class="chatContainer">
 									<div id="test"></div>
-                                    <button onclick="sendMessage()" class="btn"><i class="fas fa-paper-plane"></button></i>Send</button>
-                                    </form>
-									
 								</div>
                             </div>
                         </div>
