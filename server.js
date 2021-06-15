@@ -49,7 +49,7 @@ const numUsers = 0;
 
 io.on('connection', socket => {
     const addedUser = false;
-    io.emit('message', "User connected");
+    io.emit('message', "");
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
@@ -58,7 +58,6 @@ io.on('connection', socket => {
     });
 
     socket.on('chat', message => {
-        console.log(`User # bids: ${message}`);
         io.emit('chat', message)
     })
 

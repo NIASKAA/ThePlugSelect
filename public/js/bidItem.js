@@ -1,6 +1,6 @@
 // get the current bidding item id
 const item_id = document.location.href.split("/")[4];
-
+const userName = document.querySelector(".userName").textContent.trim();
 let currentPrice = Number(
   document.querySelector("#price").textContent.split(":")[1]
 );
@@ -34,7 +34,7 @@ for (let button of buttons) {
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
     let bidAmount = Number(event.target.textContent.trim());
     let date = new Date();
-    let message = `User bids ${bidAmount} ----- ${time}`
+    let message = `${userName} bids ${bidAmount} ----  ${time}`
     socket.emit('chat', message)
     bidItem(bidAmount);
   });
@@ -43,9 +43,9 @@ for (let button of buttons) {
 document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   event.preventDefault();
   let today = new Date();
-  let time = today.toUTCString();
+  let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   let customBid = Number(document.querySelector("#bid-form").value.trim());
-  let message = `User bids ${customBid} ----  ${time}`
+  let message = `${userName} bids ${customBid} ----  ${time}`
   socket.emit('chat', message)
   if (customBid > 0) {
     bidItem(customBid);
