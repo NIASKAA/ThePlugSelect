@@ -29,7 +29,7 @@ const productData = [
         description: "Luggage Tag Style",
         category_id: 1,
         brand_id: 6,
-        image: 'public/images/offwhiteT2.JPG'
+        image: '/images/offwhiteT2.JPG'
     },
     {
         product_name: 'Balenciaga Shoes',
@@ -39,7 +39,7 @@ const productData = [
         description: "Black balenciaga shoes",
         category_id: 7,
         brand_id: 9,
-        image: "public/images/balenciagashoes.jpg"
+        image: "/images/balenciagashoes.jpg"
     },
     {
         product_name: 'Northface Jacket',
@@ -49,7 +49,7 @@ const productData = [
         description: "Tan northface jacket",
         category_id: 6,
         brand_id: 7,
-        image: "public/images/DSC_0113.JPG"
+        image: "/images/DSC_0113.JPG"
     },
     {
         product_name: 'Jordans',
@@ -59,7 +59,7 @@ const productData = [
         description: "Black Jordans",
         category_id: 7,
         brand_id: 10,
-        image: "public/images/jordans.jpg"
+        image: "/images/jordans.jpg"
     },
   ];
   
