@@ -31,6 +31,10 @@ socket.on('chat', message => {
   console.log(`${username} ${message}`)
 })
 
+socket.on('disconnect', message => {
+  socket.emit('message', `\n\n\n\n${username} disconnected\n\n\n\n\n`);
+})
+
 socket.on('chat', message => {
     renderMessage(message)
 })

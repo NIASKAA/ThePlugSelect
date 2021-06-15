@@ -59,6 +59,10 @@ io.on('connection', socket => {
     socket.on('chat', message => {
         io.emit('chat', message)
     })
+    socket.on('disconnect', function () {
+        socket.broadcast.emit('disconnected');
+  
+    });
 
     
     io.emit('userLeft', "User Disconnected");
