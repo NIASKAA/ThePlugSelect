@@ -31,10 +31,10 @@ for (let button of buttons) {
   button.addEventListener("click", function (event) {
     event.preventDefault();
     let today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+    let time = today.toLocaleTimeString()
     let bidAmount = Number(event.target.textContent.trim());
     let date = new Date();
-    let message = `${userName} bids ${bidAmount} ----  ${time}`
+    let message = `${userName} bids ${bidAmount} == ${time}`
     socket.emit('chat', message)
     bidItem(bidAmount);
   });
@@ -43,9 +43,9 @@ for (let button of buttons) {
 document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   event.preventDefault();
   let today = new Date();
-  let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  let time = today.toLocaleTimeString()
   let customBid = Number(document.querySelector("#bid-form").value.trim());
-  let message = `${userName} bids ${customBid} ----  ${time}`
+  let message = `${userName} bids ${customBid} ==  ${time}`
   socket.emit('chat', message)
   if (customBid > 0) {
     bidItem(customBid);

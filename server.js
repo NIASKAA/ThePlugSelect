@@ -7,7 +7,6 @@ const app = express();
 const server = http.createServer(app);
 const socketio = require('socket.io');
 const fileUpload = require("express-fileupload");
-const bodyParser = require("body-parser");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
@@ -71,9 +70,6 @@ app.use(
       createParentPath: true,
    })
 );
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 sequelize.sync({force: false}).then(() => {
     server.listen(PORT, () => console.log(`App listening on port ${PORT}`));
