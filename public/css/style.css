@@ -594,7 +594,7 @@ body {
     border-radius: 15px;
     padding: 5px;
     font-family: "Bangers";
-    width: 25rem
+    width: 20rem
 
 }
 /*Style for Upload Bid*/
@@ -634,4 +634,11 @@ h2 {
 img {
     max-height: 100%;
     max-width: 100%;
+  }
+
+  div.scroll {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
   }

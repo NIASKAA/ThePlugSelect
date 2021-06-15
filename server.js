@@ -48,7 +48,7 @@ const numUsers = 0;
 
 io.on('connection', socket => {
     const addedUser = false;
-    io.emit('message', "");
+    io.emit('message', '');
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
