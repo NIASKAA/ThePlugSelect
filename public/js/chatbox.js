@@ -41,8 +41,8 @@ socket.on("chat", (message) => {
   renderMessage(message);
 });
 
-socket.on("userLeft", () => {});
+socket.on("userLeft", () => {
     socket.emit('message', "Hey")
-}
+})
 
 

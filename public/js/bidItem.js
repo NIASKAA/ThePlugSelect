@@ -5,7 +5,6 @@ let currentPrice = Number(
   document.querySelector("#price").textContent.split(":")[1]
 );
 const chat = document.querySelector(".chat-form");
-document.querySelector(".init-bid").textContent = `$ ${currentPrice}`;
 
 // request to back end for bidding item
 const bidItem = async (price) => {
