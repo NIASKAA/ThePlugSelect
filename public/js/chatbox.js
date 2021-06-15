@@ -19,7 +19,7 @@ const renderMessage = message => {
   
 socket.on('message', (data) => {
     document.getElementById('test').innerHTML = data;
-    socket.emit('message', `\n\n\n\n\n${username} joined the chat\n\n\n\n\n\n`)
+    socket.emit('message', `${username} joined the chat`)
 
 })
 
