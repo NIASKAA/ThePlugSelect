@@ -29,11 +29,7 @@ const productData = [
         description: "Luggage Tag Style",
         category_id: 3,
         brand_id: 6,
-<<<<<<< HEAD
-        image: '/images/offwhiteT2.JPG'
-=======
         image: 'https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/offwhiteair_xzr2qi.jpg'
->>>>>>> 3df9ac22b81e0bb16d1d27d3ed86a163353218b3
     },
     {
         product_name: 'Off-White Shoes',
@@ -70,34 +66,20 @@ const productData = [
         price: 1000,
         stock: 14,
         size: "10",
-<<<<<<< HEAD
-        description: "Black balenciaga shoes",
-        category_id: 7,
-        brand_id: 9,
-        image: "/images/balenciagashoes.jpg"
-=======
         description: "Socks Bro",
         category_id: 1,
         brand_id: 12,
         image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718839/balenciagashoes_w1oqji.jpg"
->>>>>>> 3df9ac22b81e0bb16d1d27d3ed86a163353218b3
     },
     {
         product_name: 'Off-White Sweater',
         price: 10000,
         stock: 14,
         size: "L",
-<<<<<<< HEAD
-        description: "Tan northface jacket",
-        category_id: 6,
-        brand_id: 7,
-        image: "/images/DSC_0113.JPG"
-=======
         description: "Outline Style",
         category_id: 1,
         brand_id: 6,
         image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718862/offwhitesweater_rpfjtq.jpg"
->>>>>>> 3df9ac22b81e0bb16d1d27d3ed86a163353218b3
     },
     {
         product_name: 'Moncler X Off-White',
@@ -114,12 +96,6 @@ const productData = [
         price: 800,
         stock: 14,
         size: "10",
-<<<<<<< HEAD
-        description: "Black Jordans",
-        category_id: 7,
-        brand_id: 10,
-        image: "/images/jordans.jpg"
-=======
         description: "Jordan Style Inspired",
         category_id: 1,
         brand_id: 6,
@@ -144,7 +120,6 @@ const productData = [
         category_id: 1,
         brand_id: 6,
         image: "https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/offwhiteart_ddbnxd.jpg"
->>>>>>> 3df9ac22b81e0bb16d1d27d3ed86a163353218b3
     },
   ];
   
