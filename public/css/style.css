@@ -374,7 +374,10 @@ body {
 }
 
 .profileInfo {
-  font-family: "Bangers";
+
+    font-family: "Bangers";
+    font-size: xx-large;
+
 }
 
 .form-control-label {
@@ -463,6 +466,14 @@ body {
   border-style: solid;
   border-width: 3px;
   font-family: "Bangers";
+}
+
+.imageContain {
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  max-width: 70%;
+  max-height: 70%;
 }
 
 @media only screen and (max-width: 575px) {
@@ -583,6 +594,7 @@ body {
     border-radius: 15px;
     padding: 5px;
     font-family: "Bangers";
+    width: 20rem
 
 }
 /*Style for Upload Bid*/
@@ -599,8 +611,34 @@ h6 {
   font-size: x-large;
 }
 
+
+.h2,h2{
+    font-family:"Bangers" ;
+    font-size: 50px;
+}
+
+.mx-auto{
+    border:solid;
+}
+
+label{
+    font-family: 'Bangers';
+}
+
 .h2,
 h2 {
   font-family: "Bangers";
   font-size: 50px;
 }
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  div.scroll {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+  }

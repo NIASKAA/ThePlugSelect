@@ -18,7 +18,8 @@ router.get('/', withAuth, async (req, res) => {
     console.log(userData, productData);
     res.render('profile', {
         userData,
-        productData
+        productData,
+        loggedIn: req.session.loggedIn
     })
 });
 

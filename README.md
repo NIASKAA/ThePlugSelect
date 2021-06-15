@@ -16,7 +16,7 @@ Node.js, Javascript, mySql, Express.js, Sequelize, Socket.Io, Bcrypt, Handlebars
 Link to repo: https://github.com/NIASKAA/ThePlugSelect
 
 # Contribution 
-Thomas, Christian, Avi, Santos, Alan
+Thomas, Christian L, Avi, Santos, Alan
 
 # Github Name
 NIASKAA

@@ -7,7 +7,6 @@ const app = express();
 const server = http.createServer(app);
 const socketio = require('socket.io');
 const fileUpload = require("express-fileupload");
-const bodyParser = require("body-parser");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Timer for auction dependencies
@@ -49,7 +48,7 @@ const numUsers = 0;
 
 io.on('connection', socket => {
     const addedUser = false;
-    io.emit('message', "User connected");
+    io.emit('message', '');
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
@@ -58,9 +57,12 @@ io.on('connection', socket => {
     });
 
     socket.on('chat', message => {
-        console.log(`User # bids: ${message}`);
         io.emit('chat', message)
     })
+
+    
+    io.emit('userLeft', "User Disconnected");
+    
 });
 
 app.use(
@@ -68,9 +70,6 @@ app.use(
       createParentPath: true,
    })
 );
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 sequelize.sync({force: false}).then(() => {
     server.listen(PORT, () => console.log(`App listening on port ${PORT}`));
