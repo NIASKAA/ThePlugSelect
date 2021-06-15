@@ -9,8 +9,7 @@ const chatWindow = document.querySelector('.chatContainer')
 const socket = io();
 
 const renderMessage = message => {
-    const div = document.createElement('div');
-    const span = document.createElement('span');
+    const div = document.createElement('div')
     div.classList.add('render-message')
     div.innerText = message
 
@@ -19,7 +18,9 @@ const renderMessage = message => {
   
   
 socket.on('message', (data) => {
-    document.getElementById('test').innerHTML = `${username} joined the chat`;
+    document.getElementById('test').innerHTML = data;
+    socket.emit('message', `\n\n\n\n\n${username} joined the chat\n\n\n\n\n\n`)
+
 })
 
 const sendMessage = () => {
