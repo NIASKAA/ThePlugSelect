@@ -33,7 +33,7 @@ setTimeout(bidSold, 12000);
 
 socket.on('message', (data) => {
     document.getElementById('test').innerHTML = data;
-    socket.emit('message', `\n\n\n\n\n${username} joined the chat\n\n\n\n\n\n`)
+    socket.emit('message', `${username} joined the chat`)
 
 })
 
@@ -43,6 +43,10 @@ const sendMessage = () => {
 
 socket.on('chat', message => {
   console.log(`${username} ${message}`)
+})
+
+socket.on('disconnect', message => {
+  socket.emit('message', `\n\n\n\n${username} disconnected\n\n\n\n\n`);
 })
 
 socket.on('chat', message => {
