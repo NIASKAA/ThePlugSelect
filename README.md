@@ -52,3 +52,11 @@ Link to heroku:
 ## Feedback
 
 If you have any feedback, please reach out to us at mkman751@yahoo.com
+
+| Members      |   |
+|------------:|---|
+| Alan M.     | A |
+| Thomas B    | B |
+| Avi M       | C |
+| Christian L | D |
+| Santos G    | E |
