@@ -374,7 +374,10 @@ body {
 }
 
 .profileInfo {
-  font-family: "Bangers";
+
+    font-family: "Bangers";
+    font-size: xx-large;
+
 }
 
 .form-control-label {
@@ -600,8 +603,23 @@ h6 {
   font-size: x-large;
 }
 
+
+.h2,h2{
+    font-family:"Bangers" ;
+    font-size: 50px;
+}
+
+.mx-auto{
+    border:solid;
+}
+
+label{
+    font-family: 'Bangers';
+}
+
 .h2,
 h2 {
   font-family: "Bangers";
   font-size: 50px;
 }
+
