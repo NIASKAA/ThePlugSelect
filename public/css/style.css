@@ -468,6 +468,11 @@ body {
   font-family: "Bangers";
 }
 
+.imageContain {
+  max-width: 70%;
+  max-height: 70%;
+}
+
 @media only screen and (max-width: 575px) {
   .teamMember .teamImage::after {
     height: 160px;
