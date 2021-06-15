@@ -25,7 +25,7 @@ Add badges from somewhere like:
   
 ## Deployment
 
-Link to github: https://github.com/NIASKAA/ThePlugSelect
+Link to github: https://github.com/NIASKAA/ThePlugSelect \
 Link to heroku: 
 
   
