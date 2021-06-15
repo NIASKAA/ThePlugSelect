@@ -88,7 +88,13 @@ router.get("/profile", withAuth, (req, res) => {
 });
 
 router.get("/about", (req, res) => {
+<<<<<<< HEAD
   res.render("about");
+=======
+  res.render("about", {
+    loggedIn: req.session.loggedIn
+  });
+>>>>>>> e7c74f181644bff1ba0b35b514be56f22a084a14
 });
 
 router.get("/postItem", (req, res) => {

@@ -450,7 +450,10 @@ body {
 }
 
 .profileInfo {
-  font-family: "Bangers";
+
+    font-family: "Bangers";
+    font-size: xx-large;
+
 }
 
 .form-control-label {
@@ -652,15 +655,17 @@ body {
   font-family: "Bangers";
 }
 .render-message {
-  background-color: white;
-  color: black;
-  margin: 20px;
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 15px;
-  padding: 5px;
-  font-family: "Bangers";
+    background-color: white;
+    color: black;
+    margin: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: "Bangers";
+    width: 25rem
+
 }
 /*Style for Upload Bid*/
 .uploadCard {
@@ -674,6 +679,20 @@ body {
 .h6,
 h6 {
   font-size: x-large;
+}
+
+
+.h2,h2{
+    font-family:"Bangers" ;
+    font-size: 50px;
+}
+
+.mx-auto{
+    border:solid;
+}
+
+label{
+    font-family: 'Bangers';
 }
 
 .h2,
