@@ -574,8 +574,11 @@ body {
   border-width: 2px;
   font-family: "Bangers";
 }
+.bidBtns:hover{
+  background-color: #ffc312
+}
 
-.customBidBtn {
+.customBidBtn{
   background-color: white;
   color: black;
   margin: 20px;
@@ -583,6 +586,9 @@ body {
   border-style: solid;
   border-width: 2px;
   font-family: "Bangers";
+}
+.customBidBtn:hover{
+  background-color: #ffc312;
 }
 .render-message {
     background-color: white;
