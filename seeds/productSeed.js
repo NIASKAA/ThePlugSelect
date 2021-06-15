@@ -18,7 +18,7 @@ const productData = [
         size: "L",
         description: "Galaxy paint inspired",
         category_id: 1,
-        brand_id: 1,
+        brand_id: 6,
         image: '/images/offwhitejacket1.jpg'
     },
     {
