@@ -1,39 +1,71 @@
 <div class="container">
-    <div class="card mx-auto postCard ">
-        <h4 class="card-title text-center">Post Your Item</h4>
-        <form class="new-post-form">
-            <div class="form-group text-center">
-                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-                <h6 class="mt-2 formLabel">Upload your photo</h6>
-                <label class="custom-file">
-                    <input type="file" id="file" class="custom-file-input">
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="formLabel" for="post-title">Item Name</label>
-                <input type="text" class="form-control" id="post-title" name="post-title">
-            </div>
-            <div class="form-group">
-                <label class="formLabel" for="bid-content">Item Description</label>
-                <input type="text" class="form-control" id="bid-content" name="bid-content">
-            </div>
-            <div class="form-group">
-                <label class="formLabel" for="bid-content-size">Item Size</label>
-                <input type="text" class="form-control" id="bid-content-size" name="bid-content-size">
-            </div>
-            <div class="form-group">
-                <label class="formLabel" for="bid-content-brand">Brand</label>
-                <input type="text" class="form-control" id="bid-content-brand" name="bid-content-brand">
-            </div>
-            <div class="form-group">
-                <label class="formLabel" for="bid-content-price">Price</label>
-                <input type="text" class="form-control" id="" name="bid-content-price">
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn addBtn">Post!</button>
-            </div>
-        </form>
-    </div>
+   <div class="card mx-auto postCard">
+      <h4 class="card-title text-center">Post Your Item</h4>
+      <form class="new-post-form">
+         <div class="form-group text-center">
+            <img
+               src="//placehold.it/150"
+               class="mx-auto img-fluid img-circle d-block"
+               alt="avatar"
+            />
+            <h6 class="mt-2 formLabel">Upload your photo</h6>
+            <label class="custom-file">
+               <input type="file" id="file" class="custom-file-input" />
+            </label>
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="post-title">Item Name</label>
+            <input type="text" class="form-control" id="post-title" name="post-title" />
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="bid-content">Item Description</label>
+            <input type="text" class="form-control" id="bid-content" name="bid-content" />
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="bid-content-size">Item Size</label>
+            <input
+               type="text"
+               class="form-control"
+               id="bid-content-size"
+               name="bid-content-size"
+            />
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="bid-content-brand">Brand</label>
+            <input
+               type="text"
+               class="form-control"
+               id="bid-content-brand"
+               name="bid-content-brand"
+            />
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="bid-content-bid-start">Bidding start</label>
+
+            <input
+               type="date"
+               name="bid-start"
+               placeholder="select the bidding start date"
+            />
+         </div>
+         <div class="form-group">
+            <label class="formLabel" for="bid-content-bid-end">Bidding end</label>
+            <input
+               type="date"
+               name="bid-start"
+               placeholder="select the bidding end date"
+            />
+         </div>
+
+         <div class="form-group">
+            <label class="formLabel" for="bid-content-price">Price</label>
+            <input type="text" class="form-control" id="" name="bid-content-price" />
+         </div>
+         <div class="text-center">
+            <button type="submit" class="btn addBtn">Post!</button>
+         </div>
+      </form>
+   </div>
 </div>
 
 <script src="/js/imageUpload.js"></script>
