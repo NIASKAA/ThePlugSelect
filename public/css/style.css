@@ -393,7 +393,7 @@ body {
   border-color: black;
   border-style: solid;
   border-width: 3px;
-  color: #ffc312;
+  color: black;
   z-index: 1;
 }
 
@@ -722,3 +722,20 @@ img {
     overflow-y: auto;
     text-align: center;
   }
+
+/* Contact Form */
+.contactForm {
+  margin: 5%;
+}
+
+#name {
+  width: 40%;
+} 
+
+#email {
+  width: 40%;
+}
+
+#message {
+  width: 40%;
+}

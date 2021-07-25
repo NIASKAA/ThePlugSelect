@@ -83,6 +83,10 @@ router.get("/bid", (req, res) => {
   res.render("chatRoom");
 });
 
+router.get("/contact", (req, res) => {
+  res.render("contact")
+})
+
 router.get("/product/:id", async (req, res) => {
   try {
     const dbProductData = await Product.findOne({
