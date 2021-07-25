@@ -74,6 +74,15 @@ Product.init(
          type: DataTypes.DATE,
          defaultValue: new Date(new Date().setDate(new Date().getDate() + 14)),
       },
+      winner_id: {
+         type: DataTypes.INTEGER,
+         references: {
+            model:"user",
+            key:"id",
+            unique: false,
+            allowNull:true,
+         }
+      }
    },
    {
       sequelize,

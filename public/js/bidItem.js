@@ -1,5 +1,5 @@
 // get the current bidding item id
-const item_id = document.location.href.split("/")[4];
+let item_id = document.location.href.split("/")[4];
 const userName = document.querySelector(".userName").textContent.trim();
 let currentPrice = Number(
   document.querySelector("#price").textContent.split(":")[1]
@@ -17,8 +17,6 @@ const bidItem = async (price) => {
       },
     });
     console.log(response);
-    if (response.ok) {
-    }
   } else {
     return;
   }

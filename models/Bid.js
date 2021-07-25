@@ -17,22 +17,6 @@ Bid.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    bid_has_started: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
-    bid_start_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
-
-    bid_end_date: { // assume bid is 24 hours... 1 day. 
-      type: DataTypes.DATE,
-      allowNull: true,
-    },
-
     user_id: {
       type: DataTypes.INTEGER,
       reference: {

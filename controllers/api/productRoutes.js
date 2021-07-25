@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Product, ProductTag, Tag, Category, Brand, Bid } = require("../../models");
-
-const moment = require("moment");
+const sequelize = require('sequelize');
 
 // get all products
 router.get("/", async (req, res) => {
@@ -93,4 +92,22 @@ router.post("/:id/bid", async (req, res) => {
    }
 });
 
+router.put('/:id/win', async(req,res)=> {
+   const product = await Product.findByPk(req.params.id);
+   const bids = await Bid.findAll({
+      where: {
+         item_id: req.params.id,
+      },
+      attributes: [
+         [sequelize.fn("max", sequelize.col("bid")), "maxBid"],
+         "item_id",
+         "user_id",
+      ],
+      raw: true,
+   });
+   product.update({
+      winner_id: bids[0].user_id
+   })
+   res.status(200).json(product);
+})
 module.exports = router;
