@@ -25,6 +25,10 @@ router.get("/", async (req, res) => {
         "image",
         "bid_end"
       ],
+      // some logic to make sure bids with winners dont get displayed
+      where: {
+        winner_id: null
+      },
       include: [
         {
           model: Category,
@@ -34,29 +38,6 @@ router.get("/", async (req, res) => {
           model: Brand,
           attributes: ["brand_id", "brand_name"],
         },
-        // {
-        //     model: ProductTag,
-        //     attributes: [],
-        //     include:
-        //     [
-        //         {
-        //             model: Product,
-        //             attributes: ['id', 'product_name', 'price', 'stock', 'size', 'description'],
-        //         },
-        //         {
-        //             model: Tag,
-        //             attributes: ['tag_name'],
-        //         },
-        //         {
-        //             model: Brand,
-        //             attributes: ['brand_name'],
-        //         },
-        //     ],
-        // },
-        // {
-        //     model: User,
-        //     attributes: ['username'],
-        // }
       ],
     });
     const products = dbProductData.map((product) =>
