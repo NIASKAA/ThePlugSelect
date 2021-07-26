@@ -9,8 +9,6 @@ const socketio = require("socket.io");
 const fileUpload = require("express-fileupload");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-
-
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
@@ -42,32 +40,29 @@ app.use(express.static("images"));
 app.use(express.static("video"));
 app.use(routes);
 
-const numUsers = 0;
+const rooms = [];
 
 io.on("connection", (socket) => {
-   const addedUser = false;
-   io.emit("message", "");
    console.log("User Connected: " + socket.id);
 
-   socket.on("message", (data) => {
-      socket.broadcast.emit("message", data);
+   socket.on("joinRoom", ({ username, room }) => {
+      // add to the room array
+      rooms.push(room);
+      // emit the message to the client so it appears on the chat that the user joined
+      socket.broadcast.emit("message", `${username} joined ${room}`);
+      console.log(`${username} joined ${room}`);
+      socket.join(room);
    });
 
-   socket.on("chat", (message) => {
-      io.emit("chat", message);
+   // this is the function that allows for room-specific messages
+   socket.on("chat", ({ message, room }) => {
+      // the destructured object param containes information about the room that the message was sent in
+      //this information is sent from the client in the
+      io.to(room).emit("chat", message);
    });
    socket.on("disconnect", function () {
       socket.broadcast.emit("disconnected");
    });
-
-   socket.on('join', ({ username, room }, callback) => {
-    
-   }); // add user with socket id and room info
-
-   socket.on("say to someone", (id, msg) => {
-      socket.to(id).emit("my message", msg);
-   });
-
    io.emit("userLeft", "User Disconnected");
 });
 
