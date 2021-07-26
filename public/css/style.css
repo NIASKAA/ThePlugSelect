@@ -739,3 +739,11 @@ img {
 #message {
   width: 40%;
 }
+
+.increasePrice {
+    color: #df2929;
+    -webkit-transition: color 500ms linear;
+    -ms-transition: color 500ms linear;
+    transition: color 500ms linear;
+
+}
