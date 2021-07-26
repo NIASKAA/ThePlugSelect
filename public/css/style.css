@@ -534,7 +534,11 @@ body {
   font-family: "Bangers";
 }
 
-.btn-primary {
+#checkoutContain {
+  font-family: "Bangers";
+}
+
+.checkoutSubmit {
   background-color: #ffc312;
   border-color: black;
   border-style: solid;

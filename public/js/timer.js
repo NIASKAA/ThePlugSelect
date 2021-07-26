@@ -60,16 +60,13 @@ function auctionTimer(deadline) {
       const t = getTimeRemaining(deadline);
       const timer = document.getElementById("bid-timer");
       timer.innerHTML =
-         "days: " +
+         " days: " +
          t.days +
-         "<br>" +
-         "hours: " +
+         " hours: " +
          t.hours +
-         "<br>" +
-         "minutes: " +
+         " minutes: " +
          t.minutes +
-         "<br>" +
-         "seconds: " +
+         " seconds: " +
          t.seconds;
       if (t.total <= 0) {
          clearInterval(counter);
