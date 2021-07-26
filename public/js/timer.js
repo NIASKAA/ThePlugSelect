@@ -1,7 +1,7 @@
 // Bid timer setup
-// let auctionTimer = 10000;
+let auctionTimer = 10000;
 
-var countdown = setInterval(function(auctionTimer) {
+var countdown = setInterval(function() {
 
     if (auctionTimer <= 0) {
         clearInterval(countdown);
