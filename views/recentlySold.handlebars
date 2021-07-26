@@ -1,11 +1,12 @@
 <!--Home page is where we should see biddings-->
 <div class="container text-center my-3">
-   <h2 class="font-weight-light">Current Live Biddings</h2>
+   <h2 class="font-weight-light">Recently Sold</h2>
    {{#if loggedIn}}
       <a href="/postItem" class="btn addBid">Add new Bid</a>
    {{/if}}
+   <a href="/recentlySold" class="btn addBid"> Recently sold</a>
    <div class="row mx-auto my-auto justify-content-center">
-      {{#each products as |product|}}
+      {{#each recentlySold as |product|}}
          <div class="card" style="width: 18rem;">
             <img
                src="{{product.image}}"
@@ -19,7 +20,6 @@
                   <p class="regularFont">Size: {{product.size}} </p>
                   <p class="regularFont">Brand: {{brand.brand_name}}</p>
                </div>
-               <a href="/bid/{{product.product_id}}" class="btn basicFont">Bid</a>
             </div>
          </div>
 

@@ -15,7 +15,9 @@ const renderMessage = (message) => {
 
   chatWindow.appendChild(div);
 };
+//socket.connect(`localhost:3000/bid/chat/${item_id}`);
 
+socket.on("connection", )
 socket.on("message", (data) => {
   document.getElementById("test").innerHTML = data;
   message =

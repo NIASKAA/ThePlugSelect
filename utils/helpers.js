@@ -12,4 +12,12 @@ module.exports = {
       console.log(Buffer.toString(img));
       return Buffer.toString(img);
    },
+
+   getTotalPriceInCart: (products) => {
+      total = 0;
+
+      products.forEach((product) => (total += Number(product.price)));
+
+      return total;
+   },
 };
