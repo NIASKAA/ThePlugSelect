@@ -6,7 +6,8 @@ const userList = document.getElementById("users");
 const username = document.querySelector(".userName").textContent.trim();
 const chatWindow = document.querySelector(".chatContainer");
 item_id = document.location.href.split("/")[4];
-
+// keeping it simple, room id is the room + item id
+let room = `room${item_id}`;
 const socket = io();
 
 const renderMessage = (message) => {
@@ -16,8 +17,8 @@ const renderMessage = (message) => {
    chatWindow.appendChild(div);
 };
 
-
-socket.on("connection");
+// emit a joinroom event from to the server with the specific room that was joined
+socket.emit("joinRoom", { username, room });
 socket.on("message", (data) => {
    document.getElementById("test").innerHTML = data;
    message =
@@ -26,10 +27,6 @@ socket.on("message", (data) => {
          : "Unregistered user joined the chat";
    socket.emit("message", message);
 });
-
-const sendMessage = () => {
-   socket.emit("message", "Hey");
-};
 
 socket.on("chat", (message) => {
    console.log(`${username} ${message}`);
@@ -42,10 +39,6 @@ socket.on("disconnect", (message) => {
 socket.on("chat", (message) => {
    renderMessage(message);
 });
-
-socket.on("say to someone", ({user, bid}) => {
-  alert(user, bid)
-})
 
 socket.on("userLeft", () => {
    socket.emit("message", "Hey");
