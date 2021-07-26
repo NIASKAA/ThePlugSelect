@@ -52,13 +52,16 @@ io.on('connection', socket => {
     console.log('User Connected: ' + socket.id);
     
     socket.on('message', (data) => {
-        console.log("From client: " , data);
         socket.broadcast.emit('message', data);
     });
 
     socket.on('chat', message => {
         io.emit('chat', message)
     })
+    socket.on('disconnect', function () {
+        socket.broadcast.emit('disconnected');
+  
+    });
 
     
     io.emit('userLeft', "User Disconnected");

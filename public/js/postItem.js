@@ -7,6 +7,11 @@ async function newFormHandler(event) {
    const size = document.querySelector('input[name="bid-content-size"]').value;
    const price = Number(document.querySelector('input[name="bid-content-price"]').value);
    const stock = 1;
+   const startDate = document.querySelector("#startDate").value;
+   const endDate = document.querySelector("#endDate").value;
+
+   console.log(startDate, endDate)
+
    const response = await fetch("/api/products", {
       method: "POST",
       body: JSON.stringify({
@@ -16,6 +21,8 @@ async function newFormHandler(event) {
          size,
          stock,
          image,
+         startDate,
+         endDate,
       }),
       headers: {
          "Content-Type": "application/json",

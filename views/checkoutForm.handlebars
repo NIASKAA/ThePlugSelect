@@ -1,6 +1,25 @@
 <!--Checkout form would be routed after winning a bid-->
 <div class="container " id="checkoutContain">
                      <div class="d-flex justify-content-center h-100 ">
+                        <div class="card">
+                          <div class="col-25">
+                          <div class="container">
+                            <h4>
+                              <span class="price" style="color:black">
+                                <i class="fa fa-shopping-cart"></i>
+                                <b>Your loot</b>
+                              </span>
+                            </h4>
+                            {{#each auctionsWon as |product|}}
+                                <p> {{product.product_name}}  ${{product.price}}</p>
+                            {{/each}}
+                            <hr>
+                            <p>Total <span class="price" style="color:black"><b>${{getTotalPriceInCart auctionsWon}}</b></span></p>
+                          </div>
+                        </div>
+                    </div>
+
+                       </div>
                          <div class="card" id="cardCheckout">
                              <div class="card-header ">
                                  <h4>Payment Details</h4>

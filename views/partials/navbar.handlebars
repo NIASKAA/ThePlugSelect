@@ -1,124 +1,229 @@
 <header role="banner">
-    <a href="/">
-        <img id="logo-main" src="/images/logo.png" width="180" alt="Logo Thing" role="banner">
-    </a>
-    <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                {{#if loggedIn}}
-                <a href="/" class="btn navBtns">Current Bids</a>
-                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
-                <a href="/about" class="btn navBtns">About Us</a>
-                <a href="/profile" class="btn navBtns ">Your Profile</a>
-                <a class="btn navBtns" id="logout">Logout</a>
-                {{else}}
-                <a href="/" class="btn navBtns">Current Bids</a>
-                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
-                <a href="/about" class="btn navBtns">About Us</a>
-                <a href="/login" class="btn navBtns">Login</a>
-                {{/if}}
+   <a href="/">
+      <img
+         id="logo-main"
+         src="/images/logo.png"
+         width="180"
+         alt="Logo Thing"
+         role="banner"
+      />
+   </a>
+   <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            {{#if loggedIn}}
+               <a href="/" class="btn navBtns">Current Bids</a>
+               <a href="/recentlySold" class="btn addBid"> Recently sold</a>
+
+               <a
+                  class="btn navBtns"
+                  data-toggle="collapse"
+                  href="#brands"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="brands"
+               >Brands</a>
+               <a href="/about" class="btn navBtns">About Us</a>
+               <a href="/profile" class="btn navBtns">Your Profile</a>
+               <a href="/checkout" class="btn navBtns">Checkout </a>
+               <a class="btn navBtns" id="logout">Logout</a>
+            {{else}}
+               <a href="/" class="btn navBtns">Current Bids</a>
+
+               <a
+                  class="btn navBtns"
+                  data-toggle="collapse"
+                  href="#brands"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="brands"
+               >Brands</a>
+               <a href="/about" class="btn navBtns">About Us</a>
+               <a href="/login" class="btn navBtns">Login</a>
+            {{/if}}
+         </div>
+      </div>
+      <div class="collapse" id="brands">
+         <div class="card card-body">
+            <div class="card-title">
+               Top Brands
             </div>
-        </div>
-        <div class="collapse" id="brands">
-            <div class="card card-body">
-                <div class="card-title">
-                    Top Brands
-                </div>
-                <div class="card-content">
-                    <div class="row">
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.off---white.com/en-us/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxP9D5xyjhzu6aD-W7nOebdzn6bmekwjT4NqBU2bGLI2DIwiAMztUQaAvLwEALw_wcB&gclsrc=aw.ds">
-                                <img src="/images/offwhite.jpeg" style="width: 50px; border-radius: 8%;">  Off-White
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.supremenewyork.com/">
-                                <img src="/images/supreme.png" style="width: 50px; border-radius: 8%;">  Supreme
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://kawsone.com/">
-                                <img src="/images/kaws.jpeg" style="width: 50px; border-radius: 8%;">  KAWS
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://global.mastermindtokyo.com/">
-                                <img src="/images/mastermind.jpeg" style="width: 50px; border-radius: 8%;">  Mastermind
-                            </a>
-                        </div>
-                    </div>
+            <div class="card-content">
+               <div class="row">
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.off---white.com/en-us/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxP9D5xyjhzu6aD-W7nOebdzn6bmekwjT4NqBU2bGLI2DIwiAMztUQaAvLwEALw_wcB&gclsrc=aw.ds"
+                     >
+                        <img
+                           src="/images/offwhite.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Off-White
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.supremenewyork.com/">
+                        <img
+                           src="/images/supreme.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Supreme
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://kawsone.com/">
+                        <img
+                           src="/images/kaws.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        KAWS
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://global.mastermindtokyo.com/">
+                        <img
+                           src="/images/mastermind.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Mastermind
+                     </a>
+                  </div>
+               </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.balenciaga.com/en-us?ad=RSA&targetid=kwd-30438560&location=9027583&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQyV1umH0blZSXSktmuzMyq7Sy9TeMLMkv0uzNhxxFG_BwK_VCUmKZoaAiPJEALw_wcB">
-                                <img src="/images/Balenciaga.png" style="width: 50px; border-radius: 8%;">  Balenciaga
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://vetementswebsite.com/">
-                                <img src="/images/vetements.jpeg" style="width: 50px; border-radius: 8%;">  Vetements
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.adidas.com/us/y_3">
-                                <img src="/images/y3.jpeg" style="width: 50px; border-radius: 8%;">  Y-3
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.gucci.com/us/en/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQzxlypFu5rkT3hOT9-k6rOeq2pBMQlJdfS-Q4SUpob-NrhBTuDyP7saAjwnEALw_wcB">
-                                <img src="/images/gucci.jpg" style="width: 50px; border-radius: 8%;">  Gucci
-                            </a>
-                        </div>
-                    </div>
+               <div class="row">
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.balenciaga.com/en-us?ad=RSA&targetid=kwd-30438560&location=9027583&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQyV1umH0blZSXSktmuzMyq7Sy9TeMLMkv0uzNhxxFG_BwK_VCUmKZoaAiPJEALw_wcB"
+                     >
+                        <img
+                           src="/images/Balenciaga.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Balenciaga
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://vetementswebsite.com/">
+                        <img
+                           src="/images/vetements.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Vetements
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.adidas.com/us/y_3">
+                        <img
+                           src="/images/y3.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Y-3
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.gucci.com/us/en/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQzxlypFu5rkT3hOT9-k6rOeq2pBMQlJdfS-Q4SUpob-NrhBTuDyP7saAjwnEALw_wcB"
+                     >
+                        <img
+                           src="/images/gucci.jpg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Gucci
+                     </a>
+                  </div>
+               </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.givenchy.com/us/en-US/homepage?cmpid&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxL4X684dBlnlaYxdBnDpG913KgkBYoE1glZlQTR4GkdZttMQ0DvjgaAgTnEALw_wcB">
-                                <img src="/images/Givenchy.png" style="width: 50px; border-radius: 8%;">  Givenchy
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.burberry.com/">
-                                <img src="/images/burberry.jpeg" style="width: 50px; border-radius: 8%;">  Burberry
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.alexanderwang.com/us-en/women-newarrivals?tp=97228&utm_term=newarrivalslp&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx687cThvyZ30Yc6gFFvy5sLOycWq2VP4nXMzzqgkRUXXIv9aCH4mcaAp9iEALw_wcB">
-                                <img src="/images/wang.png" style="width: 50px; border-radius: 8%;">  Alexander Wang
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.ysl.com/en-us?ad=standard&targetid=kwd-17728831&location=9027599&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx4zMdV_cDDe7a7Edc6Ayx7hjO5PXcL1-DxL0F_gQQw6rBTd5Be858aAudJEALw_wcB">
-                                <img src="/images/saintLaurent.jpeg" style="width: 50px; border-radius: 8%;">  Saint LaurenT
-                            </a>
-                        </div>
-                    </div>
+               <div class="row">
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.givenchy.com/us/en-US/homepage?cmpid&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxL4X684dBlnlaYxdBnDpG913KgkBYoE1glZlQTR4GkdZttMQ0DvjgaAgTnEALw_wcB"
+                     >
+                        <img
+                           src="/images/Givenchy.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Givenchy
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.burberry.com/">
+                        <img
+                           src="/images/burberry.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Burberry
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.alexanderwang.com/us-en/women-newarrivals?tp=97228&utm_term=newarrivalslp&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx687cThvyZ30Yc6gFFvy5sLOycWq2VP4nXMzzqgkRUXXIv9aCH4mcaAp9iEALw_wcB"
+                     >
+                        <img
+                           src="/images/wang.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Alexander Wang
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a
+                        class="imgBrand"
+                        href="https://www.ysl.com/en-us?ad=standard&targetid=kwd-17728831&location=9027599&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx4zMdV_cDDe7a7Edc6Ayx7hjO5PXcL1-DxL0F_gQQw6rBTd5Be858aAudJEALw_wcB"
+                     >
+                        <img
+                           src="/images/saintLaurent.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Saint LaurenT
+                     </a>
+                  </div>
+               </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.boy-london.com/">
-                                <img src="/images/boylondon.jpeg" style="width: 50px; border-radius: 8%;">  Boy London
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.adidas.com/us/yeezy">
-                                <img src="/images/yeezy.png" style="width: 50px; border-radius: 8%;">  Yeezy
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://bape.com/">
-                                <img src="/images/bape.png" style="width: 50px; border-radius: 8%;">  BAPE
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a class="imgBrand" href="https://www.rickowens.eu/en/US">
-                                <img src="/images/rick.jpeg" style="width: 50px; border-radius: 8%;">  Rick Owens
-                            </a>
-                        </div>
-                    </div>
-                </div>
+               <div class="row">
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.boy-london.com/">
+                        <img
+                           src="/images/boylondon.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Boy London
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.adidas.com/us/yeezy">
+                        <img
+                           src="/images/yeezy.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Yeezy
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://bape.com/">
+                        <img
+                           src="/images/bape.png"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        BAPE
+                     </a>
+                  </div>
+                  <div class="col">
+                     <a class="imgBrand" href="https://www.rickowens.eu/en/US">
+                        <img
+                           src="/images/rick.jpeg"
+                           style="width: 50px; border-radius: 8%;"
+                        />
+                        Rick Owens
+                     </a>
+                  </div>
+               </div>
             </div>
-        </div>
-    </nav>
+         </div>
+      </div>
+   </nav>
 </header>
-

@@ -2,30 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
-  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="public/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Plug Select</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href='/public/css/style.css'>
 </head>
 
 <body>
-   
-    <main class="main-body">
-        <header role="banner">
-            <img id="logo-main" src="public/images/logo.png" width="200" alt="Logo Thing main logo" role="banner">
-            <p class = 'title'> ThePlugSelect</p>
+<div> 
+  <main class="main-body">
+    <header role="banner">
+        <a href="/">
+            <img id="logo-main" src="./public/images/logo.png" width="180" alt="Logo Thing" role="banner">
+        </a>
         <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
             <div class="container">
+                <a href="/" class="btn navBtns">Current Bids</a>
+                <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
+                <a href="/about" class="btn navBtns">About Us</a>
+                <a href="/login" class="btn navBtns">Login</a>
                 <div class="navbar-header">
-                    <a href="/profile" class="btn navBtns ">Your Profile</a>
-                    <a href="/bids" class="btn navBtns">Current Bids</a>
-                    <a class="btn navBtns" data-toggle="collapse" href="#brands" role="button" aria-expanded="false" aria-controls="brands">Brands</a>
-                    <a href="/about" class="btn navBtns">About Us</a>
-                    <a class="btn navBtns" id="logout">Logout</a>
                 </div>
             </div>
             <div class="collapse" id="brands">
@@ -37,91 +38,91 @@
                         <div class="row">
                             <div class="col">
                                 <a class="imgBrand" href="https://www.off---white.com/en-us/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxP9D5xyjhzu6aD-W7nOebdzn6bmekwjT4NqBU2bGLI2DIwiAMztUQaAvLwEALw_wcB&gclsrc=aw.ds">
-                                    <img src="/public/images/offwhite.jpeg" style="width: 50px; border-radius: 8%;">  Off-White
+                                    <img src="/images/offwhite.jpeg" style="width: 50px; border-radius: 8%;">  Off-White
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/supreme.png" style="width: 50px; border-radius: 8%;">  Supreme
+                                <a class="imgBrand" href="https://www.supremenewyork.com/">
+                                    <img src="/images/supreme.png" style="width: 50px; border-radius: 8%;">  Supreme
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/kaws.jpeg" style="width: 50px; border-radius: 8%;">  KAWS
+                                <a class="imgBrand" href="https://kawsone.com/">
+                                    <img src="/images/kaws.jpeg" style="width: 50px; border-radius: 8%;">  KAWS
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/mastermind.jpeg" style="width: 50px; border-radius: 8%;">  Mastermind
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/Balenciaga.png" style="width: 50px; border-radius: 8%;">  Balenciaga
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/vetements.jpeg" style="width: 50px; border-radius: 8%;">  Vetements
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/y3.jpeg" style="width: 50px; border-radius: 8%;">  Y-3
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/gucci.jpg" style="width: 50px; border-radius: 8%;">  Gucci
+                                <a class="imgBrand" href="https://global.mastermindtokyo.com/">
+                                    <img src="/images/mastermind.jpeg" style="width: 50px; border-radius: 8%;">  Mastermind
                                 </a>
                             </div>
                         </div>
-
+    
                         <div class="row">
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/Givenchy.png" style="width: 50px; border-radius: 8%;">  Givenchy
+                                <a class="imgBrand" href="https://www.balenciaga.com/en-us?ad=RSA&targetid=kwd-30438560&location=9027583&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQyV1umH0blZSXSktmuzMyq7Sy9TeMLMkv0uzNhxxFG_BwK_VCUmKZoaAiPJEALw_wcB">
+                                    <img src="/images/Balenciaga.png" style="width: 50px; border-radius: 8%;">  Balenciaga
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/burberry.jpeg" style="width: 50px; border-radius: 8%;">  Burberry
+                                <a class="imgBrand" href="https://vetementswebsite.com/">
+                                    <img src="/images/vetements.jpeg" style="width: 50px; border-radius: 8%;">  Vetements
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/wang.png" style="width: 50px; border-radius: 8%;">  Alexander Wang
+                                <a class="imgBrand" href="https://www.adidas.com/us/y_3">
+                                    <img src="/images/y3.jpeg" style="width: 50px; border-radius: 8%;">  Y-3
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/saintLaurent.jpeg" style="width: 50px; border-radius: 8%;">  Saint LaurenT
+                                <a class="imgBrand" href="https://www.gucci.com/us/en/?gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQzxlypFu5rkT3hOT9-k6rOeq2pBMQlJdfS-Q4SUpob-NrhBTuDyP7saAjwnEALw_wcB">
+                                    <img src="/images/gucci.jpg" style="width: 50px; border-radius: 8%;">  Gucci
                                 </a>
                             </div>
                         </div>
-
+    
                         <div class="row">
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/boylondon.jpeg" style="width: 50px; border-radius: 8%;">  Boy London
+                                <a class="imgBrand" href="https://www.givenchy.com/us/en-US/homepage?cmpid&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxL4X684dBlnlaYxdBnDpG913KgkBYoE1glZlQTR4GkdZttMQ0DvjgaAgTnEALw_wcB">
+                                    <img src="/images/Givenchy.png" style="width: 50px; border-radius: 8%;">  Givenchy
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/yeezy.png" style="width: 50px; border-radius: 8%;">  Yeezy
+                                <a class="imgBrand" href="https://www.burberry.com/">
+                                    <img src="/images/burberry.jpeg" style="width: 50px; border-radius: 8%;">  Burberry
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/bape.png" style="width: 50px; border-radius: 8%;">  BAPE
+                                <a class="imgBrand" href="https://www.alexanderwang.com/us-en/women-newarrivals?tp=97228&utm_term=newarrivalslp&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx687cThvyZ30Yc6gFFvy5sLOycWq2VP4nXMzzqgkRUXXIv9aCH4mcaAp9iEALw_wcB">
+                                    <img src="/images/wang.png" style="width: 50px; border-radius: 8%;">  Alexander Wang
                                 </a>
                             </div>
                             <div class="col">
-                                <a class="imgBrand" href="">
-                                    <img src="/public/images/rick.jpeg" style="width: 50px; border-radius: 8%;">  Rick Owens
+                                <a class="imgBrand" href="https://www.ysl.com/en-us?ad=standard&targetid=kwd-17728831&location=9027599&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQx4zMdV_cDDe7a7Edc6Ayx7hjO5PXcL1-DxL0F_gQQw6rBTd5Be858aAudJEALw_wcB">
+                                    <img src="/images/saintLaurent.jpeg" style="width: 50px; border-radius: 8%;">  Saint LaurenT
+                                </a>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col">
+                                <a class="imgBrand" href="https://www.boy-london.com/">
+                                    <img src="/images/boylondon.jpeg" style="width: 50px; border-radius: 8%;">  Boy London
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="imgBrand" href="https://www.adidas.com/us/yeezy">
+                                    <img src="/images/yeezy.png" style="width: 50px; border-radius: 8%;">  Yeezy
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="imgBrand" href="https://bape.com/">
+                                    <img src="/images/bape.png" style="width: 50px; border-radius: 8%;">  BAPE
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="imgBrand" href="https://www.rickowens.eu/en/US">
+                                    <img src="/images/rick.jpeg" style="width: 50px; border-radius: 8%;">  Rick Owens
                                 </a>
                             </div>
                         </div>
@@ -129,142 +130,40 @@
                 </div>
             </div>
         </nav>
-        </header>
+    </header>
 
-        <div class="container">
-            <div class="row my-2">
-                <div class="col-lg-8 order-lg-2">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a href="" data-target="#profile" data-toggle="tab" class="nav-link profileTab">Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" data-target="#messages" data-toggle="tab" class="nav-link profileTab">Messages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" data-target="#edit" data-toggle="tab" class="nav-link profileTab">Edit</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content py-4">
-                        <div class="tab-pane active" id="profile">
-                            <h4 class="mb-3 profileInfo">User Info</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5 class="profileInfo">
-                                        About
-                                    </h5>
-                                        <p class="profileInfo">
-                                            Name:
-                                        </p>
-                                </div>
-                                <div class="col-md-12">
-                                    <h4 class="mt-2 profileInfo">Recent Bids</h4>
-                                    <table class="table table-sm table-hover table-striped">
-                                        <tbody>                                    
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="messages">
-                            
-                        </div>
-                        <div class="tab-pane" id="edit">
-                            <form role="form">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" placeholder="Street">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-6">
-                                        <input class="form-control" type="text" value="" placeholder="City">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <input class="form-control" type="text" value="" placeholder="State">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
-                                    <div class="col-lg-9">
-                                        <input class="form-control" type="password">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-9">
-                                        <input type="reset" class="btn bg-light" value="Cancel">
-                                        <input type="button" class="btn saveBtn" value="Save Changes">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                
-                <form  action="/upload" enctype="multipart/form-data" method="post" class="col-lg-4 order-lg-1 text-center">
-                    <h6 class="mt-2">Upload a photo</h6>
-                    <label class="custom-file">
-                        <input type="submit" id="file" class="custom-file-input">
-                    </label>
-                </form>
-            </div>
+    <form class="contactForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="name" class="form-control" id="name">
         </div>
-         
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+        <button type="submit" class="btn navBtns">Submit</button>
+      </form>
+    
+    <footer class="text-center">
+        <div class="text-center text-dark p-1">
+            © 2021 Copyright:
+            <a class="text-dark" href="#">ThePlugSelect.com</a>
+            <a class="text-dark" href="/contact">Contact Us</a>
+        </div>
+    </footer>
+  </main>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-        <footer class="text-center fixed-bottom">
-
-            <div class="text-center text-dark p-1">
-              © 2021 Copyright:
-              <a class="text-dark" href="#">ThePlugSelect.com</a>
-              <a class="text-dark" href="#">Contact Us</a>
-            </div>
-          
-          </footer>
-    </main>
-  </div>
-
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="/public/js/logout.js"></script>
 </body>
 
 </html>
