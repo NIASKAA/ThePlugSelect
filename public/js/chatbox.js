@@ -5,46 +5,48 @@ const roomName = document.getElementById("room-name");
 const userList = document.getElementById("users");
 const username = document.querySelector(".userName").textContent.trim();
 const chatWindow = document.querySelector(".chatContainer");
+item_id = document.location.href.split("/")[4];
 
 const socket = io();
 
 const renderMessage = (message) => {
-  const div = document.createElement("div");
-  div.classList.add("render-message");
-  div.innerText = message;
-
-  chatWindow.appendChild(div);
+   const div = document.createElement("div");
+   div.classList.add("render-message");
+   div.innerText = message;
+   chatWindow.appendChild(div);
 };
-//socket.connect(`localhost:3000/bid/chat/${item_id}`);
 
-socket.on("connection", )
+
+socket.on("connection");
 socket.on("message", (data) => {
-  document.getElementById("test").innerHTML = data;
-  message =
-    username.length > 0
-      ? `${username} joined the chat`
-      : "Unregistered user joined the chat";
-  socket.emit("message", message);
+   document.getElementById("test").innerHTML = data;
+   message =
+      username.length > 0
+         ? `${username} joined the chat`
+         : "Unregistered user joined the chat";
+   socket.emit("message", message);
 });
 
 const sendMessage = () => {
-  socket.emit("message", "Hey");
+   socket.emit("message", "Hey");
 };
 
 socket.on("chat", (message) => {
-  console.log(`${username} ${message}`);
+   console.log(`${username} ${message}`);
 });
 
 socket.on("disconnect", (message) => {
-  socket.emit("message", `\n\n\n\n${username} disconnected\n\n\n\n\n`);
+   socket.emit("message", `\n\n\n\n${username} disconnected\n\n\n\n\n`);
 });
 
 socket.on("chat", (message) => {
-  renderMessage(message);
+   renderMessage(message);
 });
 
-socket.on("userLeft", () => {
-    socket.emit('message', "Hey")
+socket.on("say to someone", ({user, bid}) => {
+  alert(user, bid)
 })
 
-
+socket.on("userLeft", () => {
+   socket.emit("message", "Hey");
+});

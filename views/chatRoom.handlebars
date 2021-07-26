@@ -26,9 +26,9 @@
                                     <li class="infoList">Category: {{getObjectProperty productData "category.category_name"}} </li>
                                     <li class="infoList">Brand: {{getObjectProperty productData "brand.brand_name"}} </li>
                                     <li class="infoList">Description: {{productData.description}} </li>
-                                    <li class="infoList" id="price">Price: {{productData.price}} </li>
+                                    <li class="infoList" id="price">Price: <span id="currentPrice" class="infoList">{{productData.price}}</span> </li>
                                     <li class="infoList">Size: {{productData.size}} </li>
-                                    <li class="infoList" data-endtime={{format_date productData.bid_end}} id="endTime">End Date: {{format_date productData.bid_end}}</li>
+                                    <li class="infoList" style="display:none;" data-endtime={{format_date productData.bid_end}} id="endTime">End Date: {{format_date productData.bid_end}}</li>
                                 </ul> 
                             </div>
                         </div>
