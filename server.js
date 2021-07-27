@@ -45,6 +45,12 @@ const rooms = [];
 io.on("connection", (socket) => {
    console.log("User Connected: " + socket.id);
 
+   socket.on('chatForm', message => {
+    console.log('From server: ', message)
+
+    io.emit('chatForm', message)
+})
+
    socket.on("joinRoom", ({ username, room }) => {
       // add to the room array
       rooms.push(room);
@@ -55,10 +61,10 @@ io.on("connection", (socket) => {
    });
 
    // this is the function that allows for room-specific messages
-   socket.on("chat", ({ message, room }) => {
+   socket.on("chatForm", ({ message, room }) => {
       // the destructured object param containes information about the room that the message was sent in
       //this information is sent from the client in the
-      io.to(room).emit("chat", message);
+      io.to(room).emit("chatForm", message);
    });
    socket.on("disconnect", function () {
       socket.broadcast.emit("disconnected");
