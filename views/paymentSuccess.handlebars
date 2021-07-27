@@ -1,0 +1,12 @@
+  <container class="paymentContain">
+        <div class="card paymentCard">
+            <div class="card-body">
+                 {{#each auctionsWon as |product|}}
+                    <p> Hey {{userData.username}}! You have purchased {{product.product_name}} for ${{product.price}}.</p>
+                {{/each}}
+            </div>
+            <div class="card-footer text-muted text-center">
+                Thank you for using The Plug Select!
+            </div> 
+        </div>
+    </container>

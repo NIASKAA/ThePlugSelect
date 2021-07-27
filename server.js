@@ -9,11 +9,13 @@ const socketio = require("socket.io");
 const fileUpload = require("express-fileupload");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
+const bodyParser = require("body-parser");
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 
 const io = socketio(server);
 
@@ -77,6 +79,7 @@ app.use(
       createParentPath: true,
    })
 );
+
 
 sequelize.sync({ force: false }).then(() => {
    server.listen(PORT, () => console.log(`App listening on port ${PORT}`));

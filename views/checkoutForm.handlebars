@@ -1,114 +1,38 @@
 <!--Checkout form would be routed after winning a bid-->
 <div class="container " id="checkoutContain">
-                     <div class="d-flex justify-content-center h-100 ">
-                        <div class="card">
-                          <div class="col-25">
-                          <div class="container">
-                            <h4>
-                              <span class="price" style="color:black">
-                                <i class="fa fa-shopping-cart"></i>
-                                <b>Your loot</b>
-                              </span>
-                            </h4>
-                            {{#each auctionsWon as |product|}}
-                                <p> {{product.product_name}}  ${{product.price}}</p>
-                            {{/each}}
-                            <hr>
-                            <p>Total <span class="price" style="color:black"><b>${{getTotalPriceInCart auctionsWon}}</b></span></p>
-                          </div>
-                        </div>
-                    </div>
+  <div class="d-flex justify-content-center h-100 ">
+    <div class="card">
+      <div class="col-25">
+        <div class="container">
+          <h4>
+            <span class="price" style="color:black">
+              <i class="fa fa-shopping-cart"></i>
+              <b>Your Items</b>
+            </span>
+          </h4>
+          {{#each auctionsWon as |product|}}
+              <p> {{product.product_name}}  ${{product.price}}</p>
+          {{/each}}
+          <hr>
+          <p>Total <span class="price" style="color:black"><b>${{getTotalPriceInCart auctionsWon}}</b></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                       </div>
-                         <div class="card" id="cardCheckout">
-                             <div class="card-header ">
-                                 <h4>Payment Details</h4>
-                             </div>
-                             <div class="card-body">
-                                <form class="row g-3 needs-validation" novalidate>
-                                    <div class="col-md-4">
-                                      <label for="validationCustom01" class="form-label">First name</label>
-                                      <input type="text" class="form-control" id="validationCustom01" value="" required>
-                                      <div class="valid-feedback">
-                                        Looks good!
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="validationCustom02" class="form-label">Last name</label>
-                                      <input type="text" class="form-control" id="validationCustom02" value="" required>
-                                      <div class="valid-feedback">
-                                        Looks good!
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="validationCustomUsername" class="form-label"></label>
-                                      <div class="input-group has-validation">
-                                        <span class="input-group-text" ></span>
-                                        <input type="text" class="form-control" id="validationCustomUsername" placeholder= "Credit Card Number" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                          Please enter credit card number.
-                                        </div>
-                                      </div>
-                                    </div>
+  <h3>Payment Gateway</h3>
+  <form action="payment" method="POST" class="paymentForm">
+    <script 
+      src="//checkout.stripe.com/v2/checkout.js"
+      class="stripe-button"
+      data-key="pk_test_51Iuh6nAyuy17BR8EvFLWRonr4uXr83y7IX58uJU6cF9fMJ2MKULdrxjTRynrGbqVRhQOU789XUXxf4LsMUdLcLLc00aRzQIJME"
+      data-amount={{product.price}}
+      data-currency="usd"
+      data-locale="auto"
+      data-description={{product.product_name}} >
+    </script>
+  </form>
+</div>
 
-                                    <div class="col-md-3">
-                                        <label for="validationCustom05" class="form-label"></label>
-                                        <input type="text" class="form-control" id="validationCustom05" placeholder= "Expiration Date" required>
-                                        <div class="invalid-feedback">
-                                          Please provide expiration date.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="validationCustom05" class="form-label"></label>
-                                        <input type="text" class="form-control" id="validationCustom05" placeholder= "CVV" required>
-                                        <div class="invalid-feedback">
-                                          Please provide CVV.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <label for="validationCustom03" class="form-label">City</label>
-                                      <input type="text" class="form-control" id="validationCustom03" required>
-                                      <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                      </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                      <label for="validationCustom04" class="form-label">State</label>
-                                      <select class="form-select" id="validationCustom04" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        <option>...</option>
-                                      </select>
-                                      <div class="invalid-feedback">
-                                        Please select a valid state.
-                                      </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                      <label for="validationCustom05" class="form-label">Zip</label>
-                                      <input type="text" class="form-control" id="validationCustom05" required>
-                                      <div class="invalid-feedback">
-                                        Please provide a valid zip.
-                                      </div>
-                                    </div>
-                                    <div class="col-12">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        <label class="form-check-label" for="invalidCheck">
-                                          Agree to terms and conditions
-                                        </label>
-                                        <div class="invalid-feedback">
-                                          You must agree before submitting.
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-12">
-                                      <button class="btn btn-primary " type="submit">Submit form</button>
-                                    </div>
-                                  </form>
-                                
-                            </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+          
+         
