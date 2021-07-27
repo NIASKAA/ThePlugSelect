@@ -4,7 +4,7 @@ const userName = document.querySelector(".userName").textContent.trim();
 let currentPrice = Number(
   document.querySelector("#price").textContent.split(":")[1]
 );
-const chat = document.querySelector(".chat-form");
+const chat = document.querySelector(".chat-window");
 
 // request to back end for bidding item
 const bidItem = async (price) => {
@@ -32,7 +32,7 @@ for (let button of buttons) {
     let bidAmount = Number(event.target.textContent.trim());
     let message = `${userName} bids ${bidAmount} == ${time}`;
     if (bidAmount > currentPrice) {
-      socket.emit("chat", message);
+      socket.emit("chatForm", message);
       bidItem(bidAmount);
     } else {
       alert("A bid must be greater than the current price");
@@ -47,7 +47,7 @@ document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   let customBid = Number(document.querySelector("#bid-form").value.trim());
   let message = `${userName} bids ${customBid} ==  ${time}`;
   if (customBid > currentPrice) {
-    socket.emit("chat", message);
+    socket.emit("chatForm", message);
     bidItem(customBid);
   } else {
     alert("A bid must be greater than the current price");

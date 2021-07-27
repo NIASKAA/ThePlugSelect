@@ -639,6 +639,25 @@ body {
   font-size: 10px;
 }
 
+.chat-input {
+  width: 480px;
+  height: 60px;
+}
+
+.chatBtn {
+  background-color: white;
+  color: black;
+  margin: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  font-family: "Bangers";
+}
+
+.chatBtn:hover {
+  background-color: #ffc312;
+}
+
 .bidBtns {
   background-color: white;
   color: black;
