@@ -9,12 +9,6 @@ const socketio = require('socket.io');
 const fileUpload = require("express-fileupload");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const {
-    userJoin,
-    getCurrentUser,
-    userLeave
-} = require('./utils/users');
-
 // Timer for auction dependencies
 // Timer = require('./public/js/timer').Timer,
 // timer = new Timer();
@@ -65,26 +59,6 @@ io.on('connection', socket => {
 
         io.emit('chatForm', message)
     })
-
-    // socket.on("joinRoom", ({ username, room }) => {
-    //     // add to the room array
-    //     rooms.push(room);
-    //     // emit the message to the client so it appears on the chat that the user joined
-    //     socket.broadcast.emit("message", `${username} joined ${room}`);
-    //     console.log(`${username} joined ${room}`);
-    //     socket.join(room);
-    //  });
-  
-    //  // this is the function that allows for room-specific messages
-    //  socket.on("chat", ({ message, room }) => {
-    //     // the destructured object param containes information about the room that the message was sent in
-    //     //this information is sent from the client in the
-    //     io.to(room).emit("chat", message);
-    //  });
-    //  socket.on("disconnect", function () {
-    //     socket.broadcast.emit("disconnected");
-    //  });
-    //  io.emit("userLeft", "User Disconnected");
 });
 
 app.use(
