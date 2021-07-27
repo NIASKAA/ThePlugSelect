@@ -55,11 +55,13 @@ document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   let customBid = Number(document.querySelector("#bid-form").value.trim());
   let message = `bids ${customBid} ==  ${time}`;
   if (customBid > currentPrice) {
-  socket.emit("chatForm", { message, room: room });
+  // pass the room to the emit function so the server tells which
+  // room it was sent from  
+  socket.emit("chatForm", message);
     bidItem(customBid);
     currentPrice = customBid;
     document.querySelector("#currentPrice").textContent = customBid;
-     setPriceToRed();
+    setPriceToRed();
   } else {
     alert("A bid must be greater than the current price");
   }
