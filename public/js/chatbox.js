@@ -2,7 +2,7 @@
 const chatForm = document.querySelector(".chat-form");
 const chatMessages = document.querySelector(".chat-window");
 const roomName = document.getElementById("room-name");
-const userName = document.querySelector(".userName").textContent.trim();
+const chatterName = document.querySelector(".userName").textContent.trim();
 const chatWindow = document.querySelector(".chatContainer");
 const input = document.querySelector(".chat-input");
 
@@ -76,7 +76,7 @@ chatForm.addEventListener('submit', (e) => {
 });
 
 socket.on('chatForm', message => {
-  renderMessage(`${userName}:  ${message}`)
+  renderMessage(`${chatterName}:  ${message}`)
 })
 
 // Outputs message to the chat window
