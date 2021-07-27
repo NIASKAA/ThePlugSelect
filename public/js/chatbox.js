@@ -2,7 +2,7 @@
 const chatForm = document.querySelector(".chat-form");
 const chatMessages = document.querySelector(".chat-window");
 const roomName = document.getElementById("room-name");
-const userList = document.getElementById("userName");
+const userName = document.querySelector(".userName").textContent.trim();
 const chatWindow = document.querySelector(".chatContainer");
 const input = document.querySelector(".chat-input");
 
@@ -55,6 +55,16 @@ const socket = io();
 //   chatMessages.scrollTop = chatMessages.scrollHeight;
 // });
 
+const botName = 'Plug Bot';
+
+function userLeave(id) {
+  const index = users.findIndex(userName => userName.id === id);
+
+  if (index !== -1) {
+    return users.splice(index, 1)[0];
+  }
+};
+
 // Message submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -66,7 +76,7 @@ chatForm.addEventListener('submit', (e) => {
 });
 
 socket.on('chatForm', message => {
-  renderMessage(message)
+  renderMessage(`${userName}:  ${message}`)
 })
 
 // Outputs message to the chat window
@@ -77,6 +87,8 @@ const renderMessage = message => {
   chatMessages.appendChild(div)
   console.log(chatMessages)
 }
+
+
 
 // // Add users to DOM
 // function outputUsers(users) {

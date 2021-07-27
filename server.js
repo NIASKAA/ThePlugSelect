@@ -45,10 +45,6 @@ app.use(express.static("images"));
 app.use(express.static("video"));
 app.use(routes);
 
-const numUsers = 0;
-
-const botName = 'BidRoom Bot';
-
 io.on('connection', socket => {
     // const addedUser = false;
     // io.emit('message', '');
