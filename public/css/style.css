@@ -546,6 +546,12 @@ body {
   font-family: "Bangers";
 }
 
+.paymentForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .imageContain {
   display: block;
   margin-left:auto;
@@ -769,4 +775,17 @@ img {
     -ms-transition: color 500ms linear;
     transition: color 500ms linear;
 
+}
+
+/*Payment Success*/
+.paymentContain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paymentCard {
+  width: 40%;
+  font-family: "Bangers";
+  text-align: center;
 }

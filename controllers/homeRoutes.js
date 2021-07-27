@@ -4,6 +4,10 @@ const { Brand, Category, Product, ProductTag, Tag, User, Bid } = require("../mod
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 const Op = require("sequelize").Op;
+const SECRETKEY = process.env.STRIPE_SECRET
+const stripe = require('stripe')(SECRETKEY)
+
+
 router.get("/", async (req, res) => {
    try {
       const dbProductData = await Product.findAll({
@@ -192,6 +196,24 @@ router.get("/checkout", withAuth, async (req, res) => {
       user_id: req.session.userID,
    });
 });
+
+router.post("/payment", (req, res) => {
+   
+   stripe.customers.create({
+      source: req.body.stripeToken,
+   })
+   .then((customer) => {
+      return stripe.charges.create({
+         amount: 500,
+         currency: 'USD',
+         customer: customer.id,
+      })
+   })
+   .then((charge) => {
+      console.log(charge)
+      res.render("paymentSuccess")
+   })
+})
 
 router.get("/recentlysold", async (req, res) => {
    const recentlySold = await Product.findAll({
