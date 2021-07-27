@@ -1,26 +1,26 @@
 // get the current bidding item id
 let item_id = document.location.href.split("/")[4];
-const userName = document.querySelector(".userName").textContent.trim();
+let user = document.querySelector(".userName").textContent.trim();
 let currentPrice = Number(document.querySelector("#currentPrice").textContent);
 const chat = document.querySelector(".chat-window");
-
+const userName = document.querySelector(".userName").textContent.trim();
 // room number is just room+itemID
 room = `room${item_id}`;
 
 // request to back end for bidding item
 const bidItem = async (price) => {
-   if (price > currentPrice) {
-      let response = await fetch(`/api/products/${item_id}/bid`, {
-         method: "POST",
-         body: JSON.stringify({ price }),
-         headers: {
-            "Content-Type": "application/json",
-         },
-      });
-      console.log(response);
-   } else {
-      return;
-   }
+  if (price > currentPrice) {
+    let response = await fetch(`/api/products/${item_id}/bid`, {
+      method: "POST",
+      body: JSON.stringify({ price }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(response);
+  } else {
+    return;
+  }
 };
 
 // adding an event listener to submit bit for all the buttons
@@ -31,10 +31,10 @@ for (let button of buttons) {
     let today = new Date();
     let time = today.toLocaleTimeString();
     let bidAmount = Number(event.target.textContent.trim());
-    let message = `bids ${bidAmount} == ${time}`;
+    let message = `${user} bids ${bidAmount} == ${time}`;
     if (bidAmount > currentPrice) {
-      socket.emit("chatForm", message);
-      // request to back end 
+      socket.emit("bid", { message, room: room });
+      // request to back end
       bidItem(bidAmount);
       // set the current price as the amout that was bid
       currentPrice = bidAmount;
@@ -53,11 +53,11 @@ document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   let today = new Date();
   let time = today.toLocaleTimeString();
   let customBid = Number(document.querySelector("#bid-form").value.trim());
-  let message = `bids ${customBid} ==  ${time}`;
+  let message = `${user} bids ${customBid} ==  ${time}`;
   if (customBid > currentPrice) {
-  // pass the room to the emit function so the server tells which
-  // room it was sent from  
-  socket.emit("chatForm", message);
+    // pass the room to the emit function so the server tells which
+    // room it was sent from
+    socket.emit("bid", { bid: message, room: room });
     bidItem(customBid);
     currentPrice = customBid;
     document.querySelector("#currentPrice").textContent = customBid;
@@ -67,13 +67,13 @@ document.querySelector("#customBidBtn").addEventListener("click", (event) => {
   }
 });
 
-
 // this function sets the price's color to red for a few seconds when a bid happens
-// superfluous at best 
+// superfluous at best
 const setPriceToRed = () => {
-   const price = document.querySelector("#currentPrice");
-   price.setAttribute("class", "increasePrice");
-   setTimeout(function () {
-      price.setAttribute("class", "");
-   }, 2000);
+  const price = document.querySelector("#currentPrice");
+  price.setAttribute("class", "increasePrice");
+  setTimeout(function () {
+    price.setAttribute("class", "");
+  }, 2000);
 };
+

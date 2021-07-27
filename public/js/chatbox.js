@@ -8,10 +8,10 @@ const input = document.querySelector(".chat-input");
 
 const socket = io();
 item_id = document.location.href.split("/")[4];
-// keeping it simple, room id is the room + item id
+// keeping it simple, room id is  room + item id
 let room = `room${item_id}`;
 
-const botName = 'Plug Bot';
+const botName = 'Plug Bot'; 
 
 function userLeave(id) {
   const index = users.findIndex(userName => userName.id === id);
@@ -24,14 +24,14 @@ function userLeave(id) {
 // Message submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
-
+  if(input.value.length <= 0 ) return;
   // Emit message to display to the chat window
-  socket.emit('chatForm', input.value);
+  socket.emit('chat', {message: input.value, room: room}, );
   input.value='';
 
 });
 
-socket.on('chatForm', message => {
+socket.on('chat', message => {
   renderMessage(`${chatterName}:  ${message}`)
 })
 
@@ -46,15 +46,19 @@ const renderMessage = message => {
 
 // This was created by Santos see if I can get to work
 // emit a joinroom event from to the server with the specific room that was joined
-// socket.emit("joinRoom", { username, room });
-// socket.on("message", (data) => {
-//    document.getElementById("test").innerHTML = data;
-//    message =
-//       username.length > 0
-//          ? `${username} joined the chat`
-//          : "Unregistered user joined the chat";
-//    socket.emit("message", message);
-// });
+socket.emit("joinRoom", { username: chatterName, room: room });
+socket.on("message", (data) => {
+   document.getElementById("user-joined-div").innerHTML = data;
+   message =
+      chatterName.length > 0
+         ? `${username} joined the chat`
+         : "Unregistered user joined the chat";
+   socket.emit("message", message);
+});
+
+socket.on("bid", (bid)=> {
+  renderMessage(bid);
+})
 
 // socket.on("chat", (message) => {
 //    console.log(`${username} ${message}`);
