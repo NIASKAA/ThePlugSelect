@@ -47,7 +47,7 @@ const renderMessage = message => {
 // This was created by Santos see if I can get to work
 // emit a joinroom event from to the server with the specific room that was joined
 socket.emit("joinRoom", { username: chatterName, room: room });
-socket.on("message", (data) => {
+socket.on("joinMessage", (data) => {
    document.getElementById("user-joined-div").innerHTML = data;
    message =
       chatterName.length > 0

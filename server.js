@@ -53,7 +53,7 @@ io.on("connection", (socket) => {
       // add to the room array
       rooms.push(room);
       // emit the message to the client so it appears on the chat that the user joined
-      socket.broadcast.emit("message", `${username} joined ${room}`);
+      io.to(room).emit("joinMessage", `${username} joined ${room}`);
       console.log(`${username} joined ${room}`);
       socket.join(room);
    });
