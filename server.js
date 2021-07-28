@@ -47,13 +47,11 @@ const rooms = [];
 io.on("connection", (socket) => {
    console.log("User Connected: " + socket.id);
 
-
-
    socket.on("joinRoom", ({ username, room }) => {
       // add to the room array
       rooms.push(room);
       // emit the message to the client so it appears on the chat that the user joined
-      io.to(room).emit("joinMessage", `${username} joined ${room}`);
+      io.to(room).emit("joinMessage", `${username} joined bidding ${room}`);
       console.log(`${username} joined ${room}`);
       socket.join(room);
    });
