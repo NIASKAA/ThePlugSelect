@@ -11,28 +11,20 @@ item_id = document.location.href.split("/")[4];
 // keeping it simple, room id is  room + item id
 let room = `room${item_id}`;
 
-const botName = 'Plug Bot'; 
-
-function userLeave(id) {
-  const index = users.findIndex(userName => userName.id === id);
-
-  if (index !== -1) {
-    return users.splice(index, 1)[0];
-  }
-};
 
 // Message submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  let time = new Date().toLocaleTimeString();
   if(input.value.length <= 0 ) return;
   // Emit message to display to the chat window
-  socket.emit('chat', {message: input.value, room: room}, );
+  socket.emit('chat', {message: `${chatterName} says: ${input.value} == ${time}`, room: room}, );
   input.value='';
 
 });
 
 socket.on('chat', message => {
-  renderMessage(`${chatterName}:  ${message}`)
+  renderMessage(message)
 })
 
 // Renders message for the chat window
@@ -49,29 +41,10 @@ const renderMessage = message => {
 socket.emit("joinRoom", { username: chatterName, room: room });
 socket.on("joinMessage", (data) => {
    document.getElementById("user-joined-div").innerHTML = data;
-   message =
-      chatterName.length > 0
-         ? `${username} joined the chat`
-         : "Unregistered user joined the chat";
-   socket.emit("message", message);
 });
 
 socket.on("bid", (bid)=> {
   renderMessage(bid);
 })
 
-// socket.on("chat", (message) => {
-//    console.log(`${username} ${message}`);
-// });
 
-// socket.on("disconnect", (message) => {
-//    socket.emit("message", `\n\n\n\n${username} disconnected\n\n\n\n\n`);
-// });
-
-// socket.on("chat", (message) => {
-//    renderMessage(message);
-// });
-
-// socket.on("userLeft", () => {
-//    socket.emit("message", "Hey");
-// });
