@@ -33,7 +33,7 @@ for (let button of buttons) {
     let bidAmount = Number(event.target.textContent.trim());
     let message = `${user} bids ${bidAmount} == ${time}`;
     if (bidAmount > currentPrice) {
-      socket.emit("bid", { bid: message, room: room });
+      socket.emit("bid", { message, room: room });
       // request to back end
       bidItem(bidAmount);
       // set the current price as the amout that was bid
