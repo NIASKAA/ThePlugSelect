@@ -34,13 +34,18 @@ function getTimeRemaining(endtime) {
 
 // wraps up all of the
 function endAuction() {
-  let auctions = document.querySelectorAll(".render-message");
-  let winnerBid = auctions[auctions.length - 1].textContent.trim().split(" ");
-  let winnerMessage = `<div class="render-message"> Item sold to ${winnerBid[0]} with a bid of $ ${winnerBid[2]}</div>`;
-  hideButtons();
-  setAuctionWinner();
-  bidButtons.innerHTML = `<h5 class="itemName"> Auction ended </h5>`;
-  chatBox.innerHTML = winnerMessage;
+  try {
+    let auctions = document.querySelectorAll(".render-message");
+    let winnerBid = auctions[auctions.length - 1].textContent.trim().split(" ");
+    let winnerMessage = `<div class="render-message"> Item sold to ${winnerBid[0]} with a bid of $ ${winnerBid[2]}</div>`;
+    chatBox.innerHTML = winnerMessage;
+  } catch (e) {
+    console.log(e);
+  } finally {
+    hideButtons();
+    setAuctionWinner();
+    bidButtons.innerHTML = `<h5 class="itemName"> Auction ended </h5>`;
+  }
 }
 
 // this function simply call for the server to set the auction winner. all login is handled on the server
@@ -50,7 +55,8 @@ async function setAuctionWinner() {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
   });
-  console.log(response);
+  const winner = await response.json();
+  console.log(winner)
 }
 
 // this function makes a countdown from the current date to the date the bid expires
@@ -59,8 +65,8 @@ function auctionTimer(deadline) {
   counter = setInterval(function () {
     const t = getTimeRemaining(deadline);
     const timer = document.getElementById("bid-timer");
-    timer.innerHTML = t.days + " days " + t.hours +
-    " hours " + t.minutes + " minutes " + t.seconds + " seconds ";
+    timer.innerHTML =
+      t.days + " days " + t.hours + " hours " + t.minutes + " minutes " + t.seconds + " seconds ";
     if (t.total <= 0) {
       clearInterval(counter);
       endAuction();

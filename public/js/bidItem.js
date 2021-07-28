@@ -76,4 +76,3 @@ const setPriceToRed = () => {
     price.setAttribute("class", "");
   }, 2000);
 };
-
