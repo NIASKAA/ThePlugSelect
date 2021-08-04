@@ -36,6 +36,14 @@ Link to heroku: https://plugselect.herokuapp.com/
 - Searching Ability
 
 
+## Installation
+
+Clone this repository to receive all of the files
+Set up your environment variables in a .env file
+Run "npm install" in the command line of your terminal to set up all of the dependencies
+Populate the existing database items by running "npm run seed" in your terminal
+Run "npm start" to start the application's connection
+Go to the url of the application (http//:localhost:3001) to begin using it
 
   
 ## Authors
