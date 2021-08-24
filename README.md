@@ -5,6 +5,8 @@ Ever wanted to buy an item that is a bit more harder to obtained? Now you can do
 
 
 ![Logo](https://res.cloudinary.com/ddtqwizaf/image/upload/v1623718856/logo_dphoku.png)
+![Demo1](https://res.cloudinary.com/ddtqwizaf/image/upload/v1629836903/plug1_chd0e3.png)
+![Demo2](https://res.cloudinary.com/ddtqwizaf/image/upload/v1629836868/plug2_nuebqa.png)
 
     
 ## Tech Usage
